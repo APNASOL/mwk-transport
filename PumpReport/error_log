@@ -1,0 +1,4 @@
+[09-Jun-2023 10:55:54 UTC] PHP Notice:  Undefined variable: totalDueAmount in /home/eaw8vnu7odc0/public_html/PumpReport/get_yearly_single_pump_report.php on line 85
+[09-Jun-2023 10:56:11 UTC] PHP Notice:  Undefined variable: totalDueAmount in /home/eaw8vnu7odc0/public_html/PumpReport/get_custom_single_pump_report.php on line 82
+[09-Jun-2023 11:08:29 UTC] PHP Notice:  Undefined variable: totalDueAmount in /home/eaw8vnu7odc0/public_html/PumpReport/get_yearly_single_pump_report.php on line 85
+[09-Jun-2023 11:08:40 UTC] PHP Notice:  Undefined variable: totalDueAmount in /home/eaw8vnu7odc0/public_html/PumpReport/get_custom_single_pump_report.php on line 82
