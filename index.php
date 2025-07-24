@@ -249,7 +249,7 @@ $trips_all_expenses_current_month = $trips_expenses['total_expenses'];
                                     <div class="d-flex align-items-center">
                                         <div
                                             class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                            <i class="bi bi-file-post text-info"></i>
+                                            <i class="bi bi-file-post"></i>
                                         </div>
                                         <div class="ps-3">
                                             <h6><?php echo $pumps_array['total_pumps']?></h6>

@@ -67,7 +67,7 @@ $current_vehicle_id = $_SESSION['current_vehicle_id'];
     <li class="nav-item">
       <a class="nav-link d-flex align-items-center gap-2 <?= in_array($activePage, ['pump-index', 'pump-details']) ? 'active' : 'text-dark'; ?>"
         href="pump-index.php">
-        <i class="bi bi-fuel-pump"></i>
+        <i class="bi bi-file-post"></i>
         <span>Pumps</span>
       </a>
     </li>
@@ -123,13 +123,13 @@ $reportPages = ['vehicle-reports', 'customer-reports', 'pump-reports'];
 $isReportActive = in_array($activePage, $reportPages);
 ?>
 
-    <li class="nav-item">
+    <li class="nav-item ">
       <a class="nav-link d-flex align-items-center gap-2 <?= $isReportActive ? 'active' : 'collapsed'; ?>"
         data-bs-toggle="collapse" href="#reportMenu" role="button"
         aria-expanded="<?= $isReportActive ? 'true' : 'false'; ?>" aria-controls="reportMenu">
-        <i class="bi bi-bar-chart-line <?= $isReportActive ? 'text-primary' : ''; ?>"></i>
-        <span class="<?= $isReportActive ? 'text-primary fw-semibold' : ''; ?>">Reports</span>
-        <i class="bi bi-chevron-down ms-auto <?= $isReportActive ? 'text-primary' : ''; ?>"></i>
+        <i class="bi bi-bar-chart-line <?= $isReportActive ? 'text-white' : ''; ?>"></i>
+        <span class="<?= $isReportActive ? 'text-white fw-semibold' : ''; ?>">Reports</span>
+        <i class="bi bi-chevron-down ms-auto <?= $isReportActive ? 'text-white' : ''; ?>"></i>
       </a>
 
       <div class="collapse <?= $isReportActive ? 'show' : ''; ?>" id="reportMenu">
@@ -159,12 +159,13 @@ $isReportActive = in_array($activePage, $reportPages);
 
     <?php endif; ?>
 
-    
+     <li>
 
+    <img  class="mb-5" src="assets/img/logo.png" alt="" width="250px">
+    </li>
   </ul>
 
   
-      <img  class="mt-5" src="assets/img/logo.png" alt="" width="250px">
   
 
 </aside>
@@ -205,4 +206,9 @@ $isReportActive = in_array($activePage, $reportPages);
     color: white !important;
   }
   
+  .sidebar-nav .nav-link.collapsed {
+    color: black;
+    background: #fff;
+}
+
 </style>
