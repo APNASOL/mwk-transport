@@ -11,7 +11,21 @@ if (isset($_POST['month'])) {
 
  
     if ($c_id != "empty") {
-    $vehicle_details = mysqli_query($conn, "SELECT * FROM vehicle_details WHERE vehicle_id =  $c_id and YEAR(date) = '$year' AND MONTH(date) = '$month' group BY date");
+//   old code SELECT *, which selects all columns, but you're grouping only by date. This is not allowed in ONLY_FULL_GROUP_BY mode, because MySQL doesn’t know which row to return for the other columns.
+        // $vehicle_details = mysqli_query($conn, "SELECT * FROM vehicle_details WHERE vehicle_id =  $c_id and YEAR(date) = '$year' AND MONTH(date) = '$month' group BY date");
+            $vehicle_details = mysqli_query($conn, "
+            SELECT 
+                date, 
+                ANY_VALUE(vehicle_id) as vehicle_id, 
+                ANY_VALUE(status) as status,
+                -- Add any other fields you want
+                COUNT(*) as total
+            FROM vehicle_details 
+            WHERE vehicle_id = $c_id 
+                AND YEAR(date) = '$year' 
+                AND MONTH(date) = '$month' 
+            GROUP BY date
+            ");
 
   
     }

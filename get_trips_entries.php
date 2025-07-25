@@ -123,7 +123,7 @@ if (isset($_POST['number'])) {
                                                 </div>
 
                                                 <div class="col-sm-4">
-                                                   <input type="file" name="photo" id="photo" class="form-control">
+                                                   <input type="file" name="photo" id="photo" class="form-control" required>
                                                 </div>
                                                  
                                            </div>    

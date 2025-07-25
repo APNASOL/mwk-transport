@@ -26,9 +26,9 @@ if (isset($_FILES['photo']) && $_FILES['photo']['error'] === UPLOAD_ERR_OK) {
         echo "Sorry, only JPG, JPEG, PNG, & GIF files are allowed.";
     } 
     // Check if file already exists
-    elseif (file_exists($uploadFile)) {
-        echo "Sorry, file already exists.";
-    } 
+    // elseif (file_exists($uploadFile)) {
+    //     echo "Sorry, file already exists.";
+    // } 
     else {
         // Attempt to move the uploaded file to the designated directory
 

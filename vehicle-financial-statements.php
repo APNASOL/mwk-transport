@@ -3,6 +3,7 @@ $conn = OpenCon();
 session_start();
 $v_name = $_SESSION['current_vehicle_number'];
 ?>
+
 <body>
 
     <!-- ======= Header ======= -->
@@ -53,7 +54,7 @@ $current_month = date('m');
 
 ?>
 
-                <!-- <form action="Controllers/VehicleController.php" method="post">
+                    <!-- <form action="Controllers/VehicleController.php" method="post">
 
                     <div class="row">
                         
@@ -237,7 +238,18 @@ if (@$_GET['year'] || @$_GET['month']) {
                                                                 $all_profit = 0;
                                                                 $all_expense_of_trips = 0;
                                                                 $total_expenses_of_trips = 0;
-                                                                $trips = mysqli_query($conn, "SELECT count(id) as val, date FROM vehicle_income_operations where vehicle_id = '$current_vehicle_id';");
+                                                                // older code 
+                                                                // $trips = mysqli_query($conn, "SELECT count(id) as val, date FROM vehicle_income_operations where vehicle_id = '$current_vehicle_id';");
+                                                                $trips = mysqli_query($conn, " SELECT 
+    COUNT(id) AS val, 
+    date,
+    ANY_VALUE(vehicle_id) AS vehicle_id
+  FROM vehicle_income_operations 
+  WHERE vehicle_id = '$current_vehicle_id' 
+  GROUP BY date
+  ORDER BY date ASC
+");
+
                                                                 while ($trip = mysqli_fetch_array($trips)) {
                                                                     $date = $trip['date'];
                                                                 
@@ -362,17 +374,17 @@ if (@$_GET['year'] || @$_GET['month']) {
                                 <td> <?=$total_balances?></td>
                                 <td> Fuel Payable </td>
                                 <td> <?=$fuel_due;?></td>
-                                
+
                             </tr>
                             <tr>
                                 <td>Customer Dues </td>
                                 <td> <?=$dues?></td>
-                                
-                                <td>  </td>
+
                                 <td> </td>
-                                
+                                <td> </td>
+
                             </tr>
-                             <!--<tr>
+                            <!--<tr>
                                 <td>Profit widhdrawn</td>
                                 <td> <?=$profit_shared?></td>
                                 <td> </td>
@@ -395,15 +407,15 @@ if (@$_GET['year'] || @$_GET['month']) {
                                 <td> </td>
                                 
                             </tr>-->
-                             
-                             <tr>
-                                <td>Total  </td>
+
+                            <tr>
+                                <td>Total </td>
                                 <td> <?=$total_assets?></td>
-                                <td>Total  </td>
+                                <td>Total </td>
                                 <td> <?=$total_lib?></td>
-                                
-                            </tr> 
-                            
+
+                            </tr>
+
 
 
 
@@ -435,11 +447,10 @@ if (@$_GET['year'] || @$_GET['month']) {
         </style>
 </body>
 <script>
-
-var today = new Date();
-var month =document.getElementById("m_name").value;
-var year =document.getElementById("y_name").value;
- var vehicle =document.getElementById("v_name").value; 
+    var today = new Date();
+    var month = document.getElementById("m_name").value;
+    var year = document.getElementById("y_name").value;
+    var vehicle = document.getElementById("v_name").value;
 
     $(document).ready(function () {
 
@@ -488,47 +499,46 @@ var year =document.getElementById("y_name").value;
     });
 
     $('#incomeStatment').DataTable({
-            searching: false,
-            "paging": false,
-            "info": false,
-            order: [],
+        searching: false,
+        "paging": false,
+        "info": false,
+        order: [],
 
-            dom: 'Bfrtip',
-            buttons: [{
-                className: 'btn btn-dark',
-                extend: 'pdfHtml5',
-                text: 'Download details',
-                title: 'Monthly Income statement \n Vehicle:  '+vehicle+'  ('+month+','+year+')',
-                messageTop: 'Print Date:'+today,
-                init: function(api, node, config) {
-                    $(node).removeClass('btn-primary');
-                    $(node).on('click', function() {
-                        $(this).addClass('btn-success');
-                    });
-                },
+        dom: 'Bfrtip',
+        buttons: [{
+            className: 'btn btn-dark',
+            extend: 'pdfHtml5',
+            text: 'Download details',
+            title: 'Monthly Income statement \n Vehicle:  ' + vehicle + '  (' + month + ',' + year +
+                ')',
+            messageTop: 'Print Date:' + today,
+            init: function (api, node, config) {
+                $(node).removeClass('btn-primary');
+                $(node).on('click', function () {
+                    $(this).addClass('btn-success');
+                });
+            },
 
-                exportOptions: {
-                    columns: [0, 1, 2, 3, 4, 5, 6,7] // export only columns
-                },
-                customize: function (doc) {
-                    // Add a header to the PDF document
-                
-
-                    // Add a style for the header text
-                    doc.styles.header = {
-                        fontSize: 18,
-                        bold: true,
-                        margin: [0, 0, 0, 10]
-                    };
-
-                },
-
-                orientation: 'portrait',
-                pageSize: 'A4'
-            }]
-        });
+            exportOptions: {
+                columns: [0, 1, 2, 3, 4, 5, 6, 7] // export only columns
+            },
+            customize: function (doc) {
+                // Add a header to the PDF document
 
 
+                // Add a style for the header text
+                doc.styles.header = {
+                    fontSize: 18,
+                    bold: true,
+                    margin: [0, 0, 0, 10]
+                };
+
+            },
+
+            orientation: 'portrait',
+            pageSize: 'A4'
+        }]
+    });
 </script>
 
 
