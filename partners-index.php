@@ -1,5 +1,5 @@
 <?php include 'Master/head.php';
-session_start();
+// session_start();
 $conn = OpenCon();
 $current_vehicle_id = $_SESSION['current_vehicle_id'];
 $partners_totals = mysqli_query($conn, "SELECT COUNT(id) AS total_customer,SUM(percentage) AS value_sum FROM partners where v_id = '$current_vehicle_id'");

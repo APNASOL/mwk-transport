@@ -1,7 +1,7 @@
 <?php include 'Master/head.php';
 $conn = OpenCon();
 
-session_start();
+// session_start();
 $v_name = $_SESSION['current_vehicle_number'];
 
 $date = date("Y-m-d");

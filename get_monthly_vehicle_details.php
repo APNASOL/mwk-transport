@@ -10,25 +10,33 @@ if (isset($_POST['month'])) {
     $v_name = $_SESSION['current_vehicle_number'];
 
  
-    if ($c_id != "empty") {
-//   old code SELECT *, which selects all columns, but you're grouping only by date. This is not allowed in ONLY_FULL_GROUP_BY mode, because MySQL doesn’t know which row to return for the other columns.
-        // $vehicle_details = mysqli_query($conn, "SELECT * FROM vehicle_details WHERE vehicle_id =  $c_id and YEAR(date) = '$year' AND MONTH(date) = '$month' group BY date");
-            $vehicle_details = mysqli_query($conn, "
-            SELECT 
-                date, 
-                ANY_VALUE(vehicle_id) as vehicle_id, 
-                ANY_VALUE(status) as status,
-                -- Add any other fields you want
-                COUNT(*) as total
-            FROM vehicle_details 
-            WHERE vehicle_id = $c_id 
-                AND YEAR(date) = '$year' 
-                AND MONTH(date) = '$month' 
-            GROUP BY date
-            ");
+  if (isset($_POST['month'])) {
+    $year = $_POST['year'];
+    $month = $_POST['month'];
+    $c_id = $_SESSION['current_vehicle_id'];
+    $v_name = $_SESSION['current_vehicle_number'];
 
-  
+    if (!empty($c_id)) {
+        $stmt = $conn->prepare("
+            SELECT 
+                date,
+                MIN(vehicle_id) AS vehicle_id,
+                MIN(status) AS status,
+                COUNT(*) AS total_entries
+            FROM vehicle_details 
+            WHERE vehicle_id = ?
+              AND YEAR(date) = ?
+              AND MONTH(date) = ?
+            GROUP BY date
+        ");
+
+        // Adjust binding type based on your data
+        $stmt->bind_param("iii", $c_id, $year, $month); // all integers
+        $stmt->execute();
+        $vehicle_details = $stmt->get_result();
     }
+}
+
 
     if ($month != "" && $year != "") {
 

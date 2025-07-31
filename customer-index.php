@@ -1,5 +1,5 @@
 <?php include 'Master/head.php';
-session_start();
+// session_start();
 $v_name = $_SESSION['current_vehicle_number'];
 ?>
 

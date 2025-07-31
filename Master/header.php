@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+// session_start();
 $current_vehicle_id = $_SESSION['current_vehicle_id'];
 $current_vehicle_number = $_SESSION['current_vehicle_number'];
 if (!isset($_SESSION['user_name']) && !isset($_SESSION['name']) && !isset($_SESSION['id'])) {
