@@ -13,18 +13,18 @@ if (isset($_POST['month'])) {
  
     if ($c_id != "empty") {
     // Older code
-    // $vehicle_details = mysqli_query($conn, "SELECT * FROM vehicle_details WHERE vehicle_id =  $c_id and YEAR(date) = '$year' AND MONTH(date) = '$month' group BY date");
-$vehicle_details = mysqli_query($conn, "SELECT 
-    date,
-    ANY_VALUE(id) AS id,
-    ANY_VALUE(vehicle_id) AS vehicle_id,
-    ANY_VALUE(status) AS status
-  FROM vehicle_details 
-  WHERE vehicle_id = $c_id 
-    AND YEAR(date) = '$year' 
-    AND MONTH(date) = '$month' 
-  GROUP BY date
-");
+    $vehicle_details = mysqli_query($conn, "SELECT * FROM vehicle_details WHERE vehicle_id =  $c_id and YEAR(date) = '$year' AND MONTH(date) = '$month' group BY date");
+// $vehicle_details = mysqli_query($conn, "SELECT 
+//     date,
+//     ANY_VALUE(id) AS id,
+//     ANY_VALUE(vehicle_id) AS vehicle_id,
+//     ANY_VALUE(status) AS status
+//   FROM vehicle_details 
+//   WHERE vehicle_id = $c_id 
+//     AND YEAR(date) = '$year' 
+//     AND MONTH(date) = '$month' 
+//   GROUP BY date
+// ");
 
   
     }
