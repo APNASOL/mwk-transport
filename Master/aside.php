@@ -48,7 +48,7 @@ $current_vehicle_id = $_SESSION['current_vehicle_id'];
     <!-- Financial Statement -->
     <li class="nav-item">
       <a class="nav-link d-flex align-items-center gap-2 <?= $activePage === 'vehicle-finacial-statements' ? 'active' : 'text-dark'; ?>"
-        href="Controllers/VehicleController.php?vehicle_id=<?= $current_vehicle_id ?>&process=vehicle-financial-statements">
+        href="Controllers/VehicleController.php?vehicle_id=<?= $current_vehicle_id ?>&process=vehicle-financial-statement">
         <i class="bi bi-layout-text-window-reverse"></i>
         <span>Financial Statement</span>
       </a>
