@@ -12,6 +12,10 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 
     $username = validate($_POST['username']);
     $pass = validate($_POST['password']);
+
+    // $sql = "SELECT * FROM users WHERE email = ?";
+    //     $stmt = mysqli_prepare($conn, $sql);
+    //     print_r($stmt);
     // $passwzord = 'mwk@0090';
 // $hashedPassword = password_hash($pass, PASSWORD_DEFAULT);
 
@@ -34,8 +38,8 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 
         if ($row = mysqli_fetch_assoc($result)) {
             // Use password_verify to check hashed password
-            // if (password_verify($pass, $row['password'])) {
-            if ($pass == $row['password']) {
+            if (password_verify($pass, $row['password'])) {
+            // if ($pass == $row['password']) {
 
                 // Load vehicle info
                 $vehicle = "SELECT * FROM vehicles LIMIT 1";
