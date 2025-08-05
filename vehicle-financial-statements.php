@@ -239,16 +239,16 @@ if (@$_GET['year'] || @$_GET['month']) {
                                                                 $all_expense_of_trips = 0;
                                                                 $total_expenses_of_trips = 0;
                                                                 // older code 
-                                                                // $trips = mysqli_query($conn, "SELECT count(id) as val, date FROM vehicle_income_operations where vehicle_id = '$current_vehicle_id';");
-                                                                $trips = mysqli_query($conn, " SELECT 
-    COUNT(id) AS val, 
-    date,
-    ANY_VALUE(vehicle_id) AS vehicle_id
-  FROM vehicle_income_operations 
-  WHERE vehicle_id = '$current_vehicle_id' 
-  GROUP BY date
-  ORDER BY date ASC
-");
+                                                                $trips = mysqli_query($conn, "SELECT count(id) as val, date FROM vehicle_income_operations where vehicle_id = '$current_vehicle_id';");
+//                                                                 $trips = mysqli_query($conn, " SELECT 
+//     COUNT(id) AS val, 
+//     date,
+//     ANY_VALUE(vehicle_id) AS vehicle_id
+//   FROM vehicle_income_operations 
+//   WHERE vehicle_id = '$current_vehicle_id' 
+//   GROUP BY date
+//   ORDER BY date ASC
+// ");
 
                                                                 while ($trip = mysqli_fetch_array($trips)) {
                                                                     $date = $trip['date'];
