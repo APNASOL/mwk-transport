@@ -245,7 +245,12 @@ $(document).ready(function() {
         pageSize: 'A4'
     }]
     });
+
+    $("input[type='search']").wrap("<form>");
+        $("input[type='search']").closest("form").attr("autocomplete","off");
 });
+
+
 
   </script>
 

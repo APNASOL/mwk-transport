@@ -302,8 +302,8 @@ if (isset($_POST['profit_withdraw']) && $_POST['profit_withdraw'] == "profit_wit
     // Set autocommit to false to start the transaction
     mysqli_autocommit($conn, false);
 
-    $queryFired = mysqli_query($conn, "INSERT INTO cashbook (consume_id, operation_for,vehicle_id,cash_in, cash_out, date, notes, status) 
-    VALUES ('$vehicle_id','Vehicle profit','$vehicle_id','$cash_in','$cash_out','$date','$notes','$status')");
+    $queryFired = mysqli_query($conn, "INSERT INTO cashbook (consume_id, operation_for,vehicle_id,message ,cash_in, cash_out, date, notes, status) 
+    VALUES ('$vehicle_id','Vehicle profit','$vehicle_id','$notes','$cash_in','$cash_out','$date','$notes','$status')");
 
     $profit_id = mysqli_insert_id($conn); 
 
@@ -313,10 +313,10 @@ if (isset($_POST['profit_withdraw']) && $_POST['profit_withdraw'] == "profit_wit
 
     if ($queryFired && $queryFiredProfit ) {
         mysqli_commit($conn);
-        header('location:../account-cashbook.php?successMessage=Customer payment added');
+        header('location:../account-cashbook.php?successMessage=Owner Profit payment added');
     } else {
         mysqli_rollback($conn);
-        header('location:../account-cashbook.php?errorMessage=Customer payment adding error');
+        header('location:../account-cashbook.php?errorMessage=Owner Profit payment adding error');
     }
     // Set autocommit back to true
     mysqli_autocommit($conn, true);

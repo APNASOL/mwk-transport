@@ -99,6 +99,15 @@ $current_vehicle_id = $_SESSION['current_vehicle_id'];
       </a>
     </li>
 
+    <!-- Fuels -->
+    <li class="nav-item">
+      <a class="nav-link d-flex align-items-center gap-2 <?= $activePage === 'profit-index' ? 'active' : 'text-dark'; ?>"
+        href="profit-index.php">
+        <i class="bi bi-book"></i>
+        <span>ProfitBook</span>
+      </a>
+    </li>
+
     <!-- Partners -->
     <li class="nav-item">
       <a class="nav-link d-flex align-items-center gap-2 <?= $activePage === 'partners-index' ? 'active' : 'text-dark'; ?>"

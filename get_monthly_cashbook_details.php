@@ -262,7 +262,7 @@ $vehicle_details = mysqli_query($conn, "SELECT * FROM vehicle_details WHERE vehi
                     <td >'.$cashbook['cash_in'].'</td>
                     <td >'.$cashbook['cash_out'].'</td>
                     <td >'.$balance.'</td>
-                    <td >'.$cashbook['notes'].'</td>
+                    <td >'.$cashbook['message'].'</td>
                     <td class="text-center">
                     <a href="Controllers/CashBookController.php?cashbook_id='.$cashbook['id'].'&process=edit"> <i class="bi bi-pencil-square"></i></a>
                     </td>

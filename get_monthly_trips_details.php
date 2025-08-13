@@ -28,8 +28,7 @@ if (isset($_POST['month'])) {
                                     <th scope="col">#</th>
                                     <th scope="col">Customer</th> 
                                     <th scope="col">Type</th>
-                                    <th scope="col">Start date</th>
-                                    <th scope="col">End date</th>
+                                    <th scope="col">date</th>
                                     <th scope="col">Total Bill</th>  
                                     <th scope="col">Action</th> 
                                 </tr>
@@ -70,6 +69,11 @@ if (isset($_POST['month'])) {
                 );
     
                 $date = $trip['start_date'];
+
+                $fromAddress = $trip['from_address'];
+                $toAddress = $trip['to_address'];
+
+
                 $currentdate = explode("-", $date);
     
                 $dat = $currentdate[2];
@@ -94,10 +98,9 @@ if (isset($_POST['month'])) {
                <input type="hidden" id="y_name" value='.$year.'> 
                <input type="hidden" id="v_name" value='.$v_name.'>
                     <td scope="row">'.$i++.'</td>
-                    <td >'. $customer_array['name'].'</td>
+                    <td >'. $customer_array['name'].' ('.$fromAddress.' to '.$toAddress.')</td>
                     <td >'.$trip['load_type'].'</td>
                     <td >'. $res.'</td>
-                    <td >'.$res1.'</td>
                     <td >'.$trip['total_bill'].'</td>
                     <td class="text-center">
                     <a href="Controllers/TripsController.php?trip_id='.$trip['id'].'&process=edit"> <i class="bi bi-pencil-square"></i></a>

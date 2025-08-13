@@ -20,10 +20,12 @@ if (isset($_POST['number'])) {
                    <tr>
                    <th>S#</th>
                    <th>Customer</th>
+                   <th>From</th>
+                   <th>To</th>
                    <th>Type</th>
-                   <th>Truck Weight</th>
-                   <th>Price per ton</th>
+                   <th>Weight</th>
                    <th>Price</th>
+                   <th>Bill</th>
                    <th>Expense</th>
                    <th>Total</th>
                    <th>Payment</th>
@@ -43,7 +45,12 @@ if (isset($_POST['number'])) {
                 }
                 $table_result .= '
                 </select></td>
-            <td><select class="form-control chosen target c_load_type" placeholder="Choose an load type" name="load_type[]" id="load_type' . $i . '" data-id="' . $i . '">
+           
+            <td ><input type="text"  class="form-control from_address" id="from_address' . $i . '" name="from_address[]" data-id="' . $i . '" placeholder="From"></td>
+            <td ><input type="text"  class="form-control to_address" id="to_address' . $i . '" name="to_address[]" data-id="' . $i . '" placeholder="From"></td>
+
+
+             <td><select class="form-control chosen target c_load_type" placeholder="Choose an load type" name="load_type[]" id="load_type' . $i . '" data-id="' . $i . '">
 
                     <option Selected hidden>
                         Please select load type
@@ -114,6 +121,33 @@ if (isset($_POST['number'])) {
                                             </div>
 
                                         </div>
+
+
+                                        <div class="row form-group">
+                                            <div class="col-sm-4">
+                                            
+                                            </div>
+
+                                            <div class="col-sm-5">
+                                                <div class="form-floating mb-3">
+                                                    <input type="text" class="form-control" id="custom_pump_name" name="custom_pump_name" placeholder="Total bill">
+                                                    
+                                                    <label for="vehicle">Pump Name</label>
+                                                </div>
+                                            </div> 
+
+                                            <div class="col-sm-3">
+ 
+                                                
+                                                <div class="form-floating">
+                                                <input type="text" class="form-control" id="custom_pump_bill" name="custom_pump_bill" placeholder="Total bill">
+                                                    <label for="balnce">Cash bill</label>
+                                                </div>
+                                                 
+                                            </div>
+
+                                        </div>
+
                                         <hr>
                                           
                                            <div class="row form-group">
@@ -123,7 +157,7 @@ if (isset($_POST['number'])) {
                                                 </div>
 
                                                 <div class="col-sm-4">
-                                                   <input type="file" name="photo" id="photo" class="form-control" required>
+                                                   <input type="file" name="photo" id="photo" class="form-control" >
                                                 </div>
                                                  
                                            </div>    

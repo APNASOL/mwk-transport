@@ -94,10 +94,16 @@ while ($vehicle = mysqli_fetch_array($vehicles)) {?>
                             <span>All Customer</span>
                         </a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a class="dropdown-item d-flex align-items-center" href="cashflow-index.php">
                             <i class="bi bi-cash-coin"></i>
                             <span>Cash Flow</span>
+                        </a>
+                    </li> -->
+                    <li>
+                        <a class="dropdown-item d-flex align-items-center" href="stock-index.php">
+                            <i class="bi bi-cash-coin"></i>
+                            <span>Stock</span>
                         </a>
                     </li>
 
