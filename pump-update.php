@@ -11,12 +11,12 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>Update pump</h1>
+            <h1><?= __t('Update pump')?></h1>
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item">Pump</li>
-                    <li class="breadcrumb-item active">Update pump</li>
+                    <li class="breadcrumb-item"><a href="index.html"><?= __t('home')?></a></li>
+                    <li class="breadcrumb-item"><?= __t('Pump')?></li>
+                    <li class="breadcrumb-item active"> <?= __t('Update pump')?></li>
                 </ol>
             </nav>
             <div class="d-flex justify-content-end">
@@ -52,7 +52,7 @@
     ?>
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Update pump</h5>
+                    <h5 class="card-title"><?= __t('Update pump')?></h5>
 
                     <!-- Floating Labels Form --> 
                     <form class="row g-3" action="Controllers/PumpController.php" method="post" onsubmit="handleSubmit(event, this)">
@@ -62,14 +62,14 @@
                             <div class="form-floating">
                                 <input type="text" class="form-control" id="pump_name" name="pump_name"
                                     required placeholder="Pump name" value="<?php echo $pump['name']; ?>">
-                                <label for="pump_name">Pump name</label>
+                                <label for="pump_name"><?= __t('Pump name')?></label>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-floating">
                                 <input type="text" readonly class="form-control" id="balance" name="balance"
                                     required placeholder="Pump name" value="<?php echo $pump['balance']; ?>">
-                                <label for="pump_name">Current Balance</label>
+                                <label for="pump_name"><?= __t('Current Balance')?></label>
                             </div>
                         </div>
 
@@ -77,7 +77,7 @@
                             <div class="form-floating">
                                 <input type="text" class="form-control" id="address" name="address"
                                     required placeholder="Pump address" value="<?php echo $pump['address']; ?>">
-                                <label for="address">Pump address</label>
+                                <label for="address"><?= __t('Pump address')?></label>
                             </div>
                         </div>
 
@@ -89,21 +89,21 @@
                                   value="<?php echo $pump_details_current_recod_id; ?>">
                                 <input type="text" class="form-control" id="new_balance" name="new_balance"
                                     required placeholder="Balance" value="<?php echo $pump_details_debit; ?>">
-                                <label for="balnce">Old Balance</label>
+                                <label for="balnce"><?= __t('Old Balance')?></label>
                             </div>
                         </div>
 
                         <div class="col-md-6">
                             <div class="form-floating">
                                 <input type="date" class="form-control" id="date" name="date" required placeholder="Date" value="<?php echo $pump['date']; ?>">
-                                <label for="name">Date</label>
+                                <label for="name"><?= __t('Date')?></label>
                             </div>
                             </div>
 
                         <div class="text-center">
                             <input type="hidden" name="update" value="1">
-                            <button type="submit" class="btn btn-dark">Submit</button>
-                            <button type="reset" class="btn btn-secondary">Reset</button>
+                            <button type="submit" class="btn btn-dark"><?= __t('Submit')?></button>
+                            <button type="reset" class="btn btn-secondary"><?= __t('Reset')?></button>
                         </div>
                     </form><!-- End floating Labels Form -->
                     <!-- End floating Labels Form -->

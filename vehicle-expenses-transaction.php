@@ -12,16 +12,16 @@
 
         <div class="pagetitle">
 
-            <h1>Vehicles Expenses Transactions</h1>
+            <h1><?= __t('Vehicles Expenses Transactions')?></h1>
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item">Expenses transactions</li>
-                    <li class="breadcrumb-item active">Index</li>
+                    <li class="breadcrumb-item"><a href="index.html"><?= __t('home')?></a></li>
+                    <li class="breadcrumb-item"><?= __t('Expenses transactions')?></li>
+                    <li class="breadcrumb-item active"><?= __t('Index')?></li>
                 </ol>
             </nav>
             <div class="d-flex justify-content-end">
-                <a class="btn btn-dark" href="vehicle-create.php"><i class="bi bi-plus-lg"></i> Add new vehicle
+                <a class="btn btn-dark" href="vehicle-create.php"><i class="bi bi-plus-lg"></i> <?= __t('Add new vehicle')?>
                 </a>
             </div>
         </div><!-- End Page Title -->
@@ -41,7 +41,7 @@ if (@$_GET['successMessage']) {
 ?>
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Vehicle Expenses Transaction</h5>
+                    <h5 class="card-title"><?= __t('Vehicles Expenses Transactions')?></h5>
                     <hr>
                     <!-- Floating Labels Form -->
                     
@@ -49,7 +49,7 @@ if (@$_GET['successMessage']) {
                             <input type="hidden" name="vehicle_id" value="<?php echo $current_vehicle_id;?>">
                       <div class="row">
                         <div class="col-md-3" id="expense_default_section">
-                            <label for="expense_name">Common Expenses</label>
+                            <label for="expense_name"><?= __t('Common Expenses')?></label>
                             <select name="default_expense_name" class="form-control" id="default_expense_name">
                                 <?php 
                                             $common_expenses = mysqli_query($conn,"SELECT * FROM common_expenses_types");
@@ -59,24 +59,24 @@ if (@$_GET['successMessage']) {
                                 <option value="<?php echo $expense['name'];?>"><?php echo $expense['name'];?>
                                 </option>
                                 <?php }?>
-                                <option value="" selected hidden> Please select expense </option>
+                                <option value="" selected hidden> <?= __t('Please select expense')?> </option>
                             </select>
                         </div>
                         <div class="col-md-3" id="expense_custom_section">
-                            <label for="expense_name">Custom Expense name</label>
+                            <label for="expense_name"><?= __t('Custom Expense name')?></label>
                             <input type="text" class="form-control" id="expense_name" name="expense_name"
                                 placeholder="Expense expense name" >
                         </div>
                         <div class="col-md-3">
-                            <label for="amount">Amount</label>
+                            <label for="amount"><?= __t('Amount')?></label>
                             <input type="text" required class="form-control" id="amount" name="amount"
                                 placeholder="Amount">
                         </div>
                         <div class="col-md-2 text-center mt-4">
                             <button type="submit" name="temprory_vehicle_expense_storing"
-                                class="btn btn-dark btn-sm">Add</button>
+                                class="btn btn-dark btn-sm"><?= __t('Add')?></button>
 
-                                <button type="reset" id="reset_id" class="btn btn-warning  btn-sm">Change</button>
+                                <button type="reset" id="reset_id" class="btn btn-warning  btn-sm"><?= __t('Change')?></button>
 
                         </div>
                          
@@ -97,9 +97,9 @@ if (@$_GET['successMessage']) {
 
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Amount</th>
-                            <th scope="col">Action</th>
+                            <th scope="col"> <?= __t('Name')?></th>
+                            <th scope="col"> <?= __t('Amount')?></th>
+                            <th scope="col"> <?= __t('Action')?></th>
                         </tr>
 
                     </thead>
@@ -138,7 +138,7 @@ while ($expense = mysqli_fetch_array($expenses)) {
                                     <input type="date" required class="form-control" name="date">
                                     <input type="hidden" value="<?php echo $current_vehicle_id;?>" name="vehicle_id">
                                 </td>
-                                <td>Total</td>
+                                <td><?= __t('Total')?></td>
                                 <td>
                                     <input type="hidden" name="total" value="<?php echo $total; ?>">
                                     <?php echo $total;?>
@@ -147,7 +147,7 @@ while ($expense = mysqli_fetch_array($expenses)) {
 
                                 <td>
                                     <button type="submit" name="vehicle_expense_transaction"
-                                        class="btn btn-dark btn-sm">Save</button>
+                                        class="btn btn-dark btn-sm"><?= __t('Save')?></button>
                                 </td>
 
                             </tr>

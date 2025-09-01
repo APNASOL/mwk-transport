@@ -98,12 +98,12 @@ function keep_qs($extra = []) {
   <div class="pagetitle">
     <div class="d-flex align-items-center justify-content-between">
       <div>
-        <h1>Stock Out</h1>
+        <h1><?= __t('Stock Out')?></h1>
         <nav>
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-            <li class="breadcrumb-item">Stock</li>
-            <li class="breadcrumb-item active">Stock Out List</li>
+            <li class="breadcrumb-item"><a href="index.php"><?= __t('Home')?></a></li>
+            <li class="breadcrumb-item"><?= __t('Stock')?></li>
+            <li class="breadcrumb-item active"><?= __t('Stock Out List')?></li>
           </ol>
         </nav>
       </div>
@@ -137,33 +137,33 @@ function keep_qs($extra = []) {
 
     <div class="card shadow-sm rounded-4">
       <div class="card-body">
-        <h5 class="card-title">Filter</h5>
+        <h5 class="card-title"><?= __t('Filter')?></h5>
 
         <form class="row g-3 mb-3" method="get" action="stock-out-index.php">
           <div class="col-md-3">
             <div class="form-floating">
               <select class="form-select" id="s_id" name="s_id">
-                <option value="0">All Items</option>
+                <option value="0"><?= __t('All Items')?></option>
                 <?php foreach ($items as $it): ?>
                   <option value="<?php echo (int)$it['id']; ?>" <?php echo $s_id==(int)$it['id']?'selected':''; ?>>
                     <?php echo h($it['title']); ?>
                   </option>
                 <?php endforeach; ?>
               </select>
-              <label for="s_id">Item</label>
+              <label for="s_id"><?= __t('Item')?></label>
             </div>
           </div>
 
           <div class="col-md-3">
             <div class="form-floating">
               <input type="date" class="form-control" id="date_from" name="date_from" value="<?php echo h($valid_from); ?>">
-              <label for="date_from">From</label>
+              <label for="date_from"><?= __t('From')?></label>
             </div>
           </div>
           <div class="col-md-3">
             <div class="form-floating">
               <input type="date" class="form-control" id="date_to" name="date_to" value="<?php echo h($valid_to); ?>">
-              <label for="date_to">To</label>
+              <label for="date_to"><?= __t('To')?></label>
             </div>
           </div>
 
@@ -176,15 +176,15 @@ function keep_qs($extra = []) {
                   </option>
                 <?php endforeach; ?>
               </select>
-              <label for="per_page">Page Size</label>
+              <label for="per_page"><?= __t('Page Size')?></label>
             </div>
           </div>
 
           <div class="col-12 d-flex justify-content-end gap-2">
             <button type="submit" class="btn btn-primary rounded-pill shadow-sm">
-              <i class="bi bi-funnel"></i> Apply
+              <i class="bi bi-funnel"></i> <?= __t('Apply')?>
             </button>
-            <a href="stock-out-index.php" class="btn btn-outline-secondary rounded-pill shadow-sm">Reset</a>
+            <a href="stock-out-index.php" class="btn btn-outline-secondary rounded-pill shadow-sm"><?= __t('Reset')?></a>
           </div>
         </form>
 
@@ -228,12 +228,12 @@ function keep_qs($extra = []) {
             <thead class="table-primary">
               <tr>
                 <th style="width:70px;">#</th>
-                <th>Date</th>
-                <th>Item</th>
-                <th>Vehicle</th>
-                <th class="text-end">Qty</th>
-                <th class="text-end">Unit Price</th>
-                <th class="text-end">Total</th>
+                <th> <?= __t('Date')?></th>
+                <th> <?= __t('Item')?></th>
+                <th> <?= __t('Vehicle')?></th>
+                <th class="text-end"> <?= __t('Qty')?></th>
+                <th class="text-end"> <?= __t('Unit Price')?></th>
+                <th class="text-end"> <?= __t('Total')?></th>
                 <th>Note</th>
                 <th>Status</th>
               </tr>

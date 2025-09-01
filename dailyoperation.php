@@ -18,11 +18,11 @@ echo $currentDate;
      <main id="main" class="main">
 
          <div class="pagetitle">
-             <h1>Order Entry</h1>
+             <h1><?= __t('Order Entry')?></h1>
              <nav>
                  <ol class="breadcrumb">
-                     <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                     <li class="breadcrumb-item active">Order Entry</li>
+                     <li class="breadcrumb-item"><a href="index.php"><?= __t('home')?></a></li>
+                     <li class="breadcrumb-item active"><?= __t('Order Entry')?></li>
                  </ol>
              </nav>
          </div><!-- End Page Title -->
@@ -42,18 +42,18 @@ echo $currentDate;
                                              <div class="row form-group">
                                                  <div class="col-sm-5">
 
-                                                     <font class="card-title">Daily Operation </font>
+                                                     <font class="card-title"><?= __t('Daily Operation')?> </font>
                                                  </div>
 
                                                   
                                                  <div class="col-sm-2">
-                                                    <label for="No's of Entry">No's of Trips</label>
+                                                    <label for="No's of Entry"><?= __t('Numbers of Trips')?></label>
                                                      <input type="number" class="form-control" id="number"
                                                          name="number">
                                                  </div>
  
                                                  <div class="col-sm-3">
-                                                 <label for="Date">Date</label>             
+                                                 <label for="Date"><?= __t('Date')?></label>             
                                                      <input type="date" class="form-control" id="dateInput" name="date" max="<?php echo $currentDate; ?>" required>
                                                  </div>
                                                  <div class="col-sm-2 mt-4">
@@ -68,17 +68,17 @@ echo $currentDate;
                                                          <table id="example3" class="table table-bordered">
                                                              <thead>
                                                                  <tr>
-                                                                     <th>Customer</th>
-                                                                     <th>Mine</th>
-                                                                     <th>Vehicle</th>
-                                                                     <th>Truck Weight</th>
-                                                                     <th>Price per ton</th>
-                                                                     <th>Truck Amount</th>
+                                                                     <th> <?= __t('Customer')?></th>
+                                                                     <th> <?= __t('Mine')?></th>
+                                                                     <th> <?= __t('Vehicle')?></th>
+                                                                     <th> <?= __t('Truck Weight')?></th>
+                                                                     <th> <?= __t('Price per ton')?></th>
+                                                                     <th> <?= __t('Truck Amount')?></th>
                                                                  </tr>
                                                              </thead>
                                                              <tr>
-                                                                 <td colspan="6" align="center"> Please select data and
-                                                                     numbers of trips entries </td>
+                                                                 <td colspan="6" align="center"> <?= __t('Please select data and
+                                                                     numbers of trips entries')?> </td>
                                                              </tr>
                                                          </table>
                                                      </div>

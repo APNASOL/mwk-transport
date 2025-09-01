@@ -22,11 +22,11 @@ $remained = 100 - $t_percentage;
      <main id="main" class="main">
 
          <div class="pagetitle">
-             <h1>Partners</h1>
+             <h1><?= __t('Partners')?></h1>
              <nav>
                  <ol class="breadcrumb">
-                     <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                     <li class="breadcrumb-item active">Partners</li>
+                     <li class="breadcrumb-item"><a href="index.php"><?= __t('home')?></a></li>
+                     <li class="breadcrumb-item active"><?= __t('Partners')?></li>
                  </ol>
              </nav>
          </div><!-- End Page Title -->
@@ -60,11 +60,11 @@ $remained = 100 - $t_percentage;
                                          <div class="row mt-3">
                          <div class="col-md-7"></div>
                                          <div class="col-md-2">
-                                         <h4 class="card-title d-flex justify-content-end"><a  class="btn btn-dark btn-block" href="profit-create.php">Add Profit</a></h4>
+                                         <h4 class="card-title d-flex justify-content-end"><a  class="btn btn-dark btn-block" href="profit-create.php"><?= __t('Add Profit')?></a></h4>
 
                           </div><div class="col-md-3">
                                          <h4 class="card-title new_partner d-flex justify-content-end me-2"><a href=""
-                                                 class="btn btn-dark"><i class="bi bi-plus-lg"></i> Add New Partner</a>
+                                                 class="btn btn-dark"><i class="bi bi-plus-lg"></i> <?= __t('Add New Partner')?></a>
                                          </h4>
                                          </div>
                                      </div>
@@ -109,7 +109,7 @@ $remained = 100 - $t_percentage;
 
 
                                                 <div class="card-body">
-                                                    <h5 class="card-title">Partners</h5>
+                                                    <h5 class="card-title"><?= __t('Partners')?></h5>
 
                                                     <div class="d-flex align-items-center">
 
@@ -131,7 +131,7 @@ $remained = 100 - $t_percentage;
                                             <div class="card info-card revenue-card">
 
                                                 <div class="card-body">
-                                                    <h5 class="card-title">Total</h5>
+                                                    <h5 class="card-title"><?= __t('Total')?></h5>
 
                                                     <div class="d-flex align-items-center">
 
@@ -156,11 +156,11 @@ $remained = 100 - $t_percentage;
                                                      <thead>
                                                          <tr>
                                                              <th>#</th>
-                                                             <th>Username</th>
-                                                             <th>Vehicle</th>
-                                                             <th>Percentage %</th>
-                                                             <th>Profit</th>
-                                                             <th class="text-center">Action</th>
+                                                             <th> <?= __t('Username')?></th>
+                                                             <th> <?= __t('Vehicle')?></th>
+                                                             <th> <?= __t('Percentage %')?></th>
+                                                             <th> <?= __t('Profit')?></th>
+                                                             <th class="text-center"><?= __t('Action')?></th>
 
                                                          </tr>
                                                      </thead>
@@ -236,17 +236,17 @@ $stmtpatient = mysqli_query($conn, "SELECT * FROM partners WHERE v_id='$current_
                  <div class="modal-dialog ">
                      <div class="modal-content">
                          <div class="modal-header">
-                             <h4 class="modal-title card-title">Add New Partner ( <?=$t_percentage;?>% / 100 %)</h4>
+                             <h4 class="modal-title card-title"><?= __t('Add New Partner')?> ( <?=$t_percentage;?>% / 100 %)</h4>
                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 
                          </div>
-                         <h6 style="color: red;" class="m-2">Only this Percentage <?=$remained;?>% Remained</h6>
+                         <h6 style="color: red;" class="m-2"><?= __t('Only this Percentage')?> <?=$remained;?>% <?= __t('Remained')?></h6>
                          <form class="form-horizontal" method="POST" action="Controllers/PartnersController.php">
                            <div class="modal-body">
                             
                                  <div class="row">
                                      <div class="col-md-6">
-                                         <label>User Name</label>
+                                         <label><?= __t('User Name')?></label>
                                          <input type="hidden" class="form-control" id="remained" name="remained"
                                                  value="<?=$remained; ?>">
                                          <div>
@@ -255,7 +255,7 @@ $stmtpatient = mysqli_query($conn, "SELECT * FROM partners WHERE v_id='$current_
                                          </div>
                                      </div>
                                      <div class="col-md-6">
-                                         <label>Contact</label>
+                                         <label><?= __t('Contact')?></label>
                                          <div>
                                              <input type="number" class="form-control" name="contact"
                                                  placeholder="Contact number" required>
@@ -267,7 +267,7 @@ $stmtpatient = mysqli_query($conn, "SELECT * FROM partners WHERE v_id='$current_
                                  <div class="row">
 
                                     <div class="col-md-4">
-                                            <label>Old Amount</label>
+                                            <label><?= __t('Old Amount')?></label>
                                             <div>
                                                 <input type="number" class="form-control" name="amount"
                                                     placeholder="Partner Old Amount" required>
@@ -276,7 +276,7 @@ $stmtpatient = mysqli_query($conn, "SELECT * FROM partners WHERE v_id='$current_
                                     </div>
                                      
                                      <div class="col-md-4">
-                                         <label>Percentage</label>
+                                         <label><?= __t('Percentage')?></label>
                                          <div>
                                              <input type="number" step="0.0001" class="form-control" name="percentage" id="percentage"
                                                  placeholder="Enter partner percentage" required oninput="checkPercentage()">
@@ -284,7 +284,7 @@ $stmtpatient = mysqli_query($conn, "SELECT * FROM partners WHERE v_id='$current_
                                      </div>
                                      
                                      <div class="col-md-4">
-                                         <label>Date</label>
+                                         <label><?= __t('Date')?></label>
                                          <div>
                                              <input type="date" class="form-control" name="date"
                                                  placeholder="Enter date" required>

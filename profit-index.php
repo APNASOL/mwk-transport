@@ -23,12 +23,12 @@ $year = $currentdate[0];
 
     <div class="pagetitle">
 
-      <h1>ProfitBook</h1>
+      <h1><?= __t('ProfitBook')?></h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item">ProfitBook</li>
-          <li class="breadcrumb-item active">Index</li>
+          <li class="breadcrumb-item"><a href="index.html"><?= __t('home')?></a></li>
+          <li class="breadcrumb-item"><?= __t('ProfitBook')?></li>
+          <li class="breadcrumb-item active"><?= __t('Index')?></li>
         </ol>
       </nav>
       <div class="d-flex justify-content-end">
@@ -124,11 +124,11 @@ $year = $currentdate[0];
 
             <tr>
               <th scope="col">#</th>
-              <th scope="col">Date</th>
-              <th scope="col">Month</th>
-              <th scope="col">Note</th>
-              <th scope="col">Amount</th>
-              <th scope="col">Balance</th>
+              <th scope="col"> <?= __t('Date')?></th>
+              <th scope="col"> <?= __t('Month')?></th>
+              <th scope="col"> <?= __t('Note')?></th>
+              <th scope="col"> <?= __t('Amount')?></th>
+              <th scope="col"> <?= __t('Balance')?></th>
             </tr>
 
           </thead>

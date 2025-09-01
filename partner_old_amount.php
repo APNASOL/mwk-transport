@@ -77,11 +77,11 @@ $res=$dat.' '.$month_name.' , '.$year;
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Partner</h1>
+      <h1><?= __t('Partner')?></h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-          <li class="breadcrumb-item active">Update</li>
+          <li class="breadcrumb-item"><a href="index.php"><?= __t('Home')?></a></li>
+          <li class="breadcrumb-item active"><?= __t('Update')?></li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -100,7 +100,7 @@ $res=$dat.' '.$month_name.' , '.$year;
                                             <div class="row form-group">
                                             
                                                 <div class="col">
-                                                    <p>Partner</p> 
+                                                    <p><?= __t('Partner')?></p> 
                                                     <input type="hidden" class="form-control" id="id" name="t_id" value="<?php echo $t_id;?>" readonly>
                                                     <input type="hidden" class="form-control" id="id" name="type" value="<?php echo $type;?>" readonly>
                                                     <input type="hidden" class="form-control" id="id" name="id" value="<?php echo $sale_id;?>" readonly>
@@ -109,7 +109,7 @@ $res=$dat.' '.$month_name.' , '.$year;
                                                 
                                                 </div>
                                                 <div class="col">
-                                                    <p>Message</p>
+                                                    <p><?= __t('Message')?></p>
                                                     <input type="text" class="form-control" id="note" name="note" value="<?php echo $note;?>" >
                                                 
                                                 </div>
@@ -119,21 +119,21 @@ $res=$dat.' '.$month_name.' , '.$year;
                                             <div class="row form-group">
 
                                                 <div class="col">
-                                                    <p>Debit Amount</p>
+                                                    <p><?= __t('Debit Amount')?></p>
                                                     
                                                     <input type="text" class="form-control" id="cash_in" name="cash_in" value="<?php echo $amount_in;?>">
                                                 </div>
                                             
                                             
                                                 <div class="col">
-                                                    <p>Credit Amount</p>
+                                                    <p><?= __t('Credit Amount')?></p>
                                                     
                                                     <input type="text" class="form-control" id="cash_out" name="cash_out" value="<?php echo $amount_out;?>">
                                                 </div>
                                             
                                                 <div class="col">
                                                     <input type="hidden" class="form-control" id="o_date" name="o_date" value="<?php echo $date;?>">
-                                                    <p>Date</p>
+                                                    <p><?= __t('Date')?></p>
                                                     <input type="date" class="form-control" id="n_date" name="date" value="<?php echo $date; ?>" required>
                                                 </div>
                                             
@@ -146,11 +146,11 @@ $res=$dat.' '.$month_name.' , '.$year;
                                                 </div>
                                                 <div class="col-sm-3 mt-3">
                                                     
-                                                    <button type="submit" name="btn_edit_old" class=" form-control btn btn-dark">Update</button>
+                                                    <button type="submit" name="btn_edit_old" class=" form-control btn btn-dark"><?= __t('Update')?></button>
                                                 </div>
                                                 <div class="col-sm-3 mt-3">
                                                     
-                                                    <button type="submit" name="btn_p_delete" class=" form-control btn btn-danger">Delete</button>
+                                                    <button type="submit" name="btn_p_delete" class=" form-control btn btn-danger"><?= __t('Delete')?></button>
                                                 </div>
                                                 <br>
                                             </div>
@@ -163,19 +163,19 @@ $res=$dat.' '.$month_name.' , '.$year;
                                         <div class="row form-group">
                                             
                                             <div class="col-md-3">
-                                                <p>Partner</p>
+                                                <p><?= __t('Partner')?></p>
                                                 <input type="hidden" class="form-control" id="id" name="id" value="<?php echo $sale_id;?>" readonly>
                                                 <input type="hidden" class="form-control" id="old_partner" name="profit_id" value="<?php echo $partnerProfitRow['id'];?>" readonly>
                                                 <input type="text" class="form-control" id="note" name="u_name" value="<?php echo $username;?>" readonly>
                                             
                                             </div>
                                             <div class="col">
-                                                <p>Profit Message</p>
+                                                <p><?= __t('Profit Message')?></p>
                                                 <input type="text" class="form-control" id="note" name="note" value="<?php echo $partnerProfitRow["profit_note"];?>">
                                             
                                             </div>
                                             <div class="col">
-                                                <p>Expanse Message</p>
+                                                <p><?= __t('Expanse Message')?></p>
                                                 <input type="text" class="form-control" id="note" name="expanse_note" value="<?php echo $partnerProfitRow["expanse_note"];?>">
                                             </div>
 
@@ -184,30 +184,30 @@ $res=$dat.' '.$month_name.' , '.$year;
                                         <div class="row form-group mt-2">
 
                                             <div class="col">
-                                                <p>Gross Profit</p>
+                                                <p><?= __t('Gross Profit')?></p>
                                                 <input type="text" class="form-control" id="profit" name="profit" value="<?php echo $partnerProfitRow["gross_profit"];?>" oninput="calculateDistributedAmounts()">
                                             </div>
                                         
                                         
                                             <div class="col">
-                                                <p>Expanse</p>
+                                                <p><?= __t('Expanse')?></p>
                                                 <input type="text" class="form-control" id="expanse" name="expanse" value="<?php echo $partnerProfitRow["expanse"];?>" oninput="calculateDistributedAmounts()">
                                             </div>
 
                                             <div class="col">
-                                                <p>Net Profit</p>
+                                                <p><?= __t('Net Profit')?></p>
                                                 <input type="text" class="form-control" id="net_profit" name="net_profit" readonly>
                                             </div>
 
                                             <div class="col">
                                                 <input type="hidden" class="form-control" id="o_date" name="o_date" value="<?php echo $date;?>">
-                                                <p>Month</p>
+                                                <p><?= __t('Month')?></p>
                                                 <input type="text" class="form-control" id="n_date" name="month" value="<?php echo $partnerProfitRow["month"]; ?>" >
                                             </div>
                                         
                                             <div class="col">
                                                 <input type="hidden" class="form-control" id="o_date" name="o_date" value="<?php echo $date;?>">
-                                                <p>Date</p>
+                                                <p><?= __t('Date')?></p>
                                                 <input type="date" class="form-control" id="n_date" name="date" value="<?php echo $date; ?>" >
                                             </div>
                                         
@@ -220,11 +220,11 @@ $res=$dat.' '.$month_name.' , '.$year;
                                                 </div>
                                                 <div class="col-sm-3 mt-3">
                                                     
-                                                    <button type="submit" name="btn_edit_profit" class=" form-control btn btn-dark">Update</button>
+                                                    <button type="submit" name="btn_edit_profit" class=" form-control btn btn-dark"><?= __t('Update')?></button>
                                                 </div>
                                                 <div class="col-sm-3 mt-3">
                                                     
-                                                    <button type="submit" name="btn_delete_profit" class=" form-control btn btn-danger">Delete</button>
+                                                    <button type="submit" name="btn_delete_profit" class=" form-control btn btn-danger"><?= __t('Delete')?></button>
                                                 </div>
                                                 <br>
                                             </div>

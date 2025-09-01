@@ -12,12 +12,12 @@
 
         <div class="pagetitle">
 
-            <h1>Update record</h1>
+            <h1><?= __t('Update record')?></h1>
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="index.html"><?= __t('home')?></a></li>
 
-                    <li class="breadcrumb-item active">Vehicle Cash Record Update</li>
+                    <li class="breadcrumb-item active"><?= __t('Vehicle Cash Record Update')?></li>
                 </ol>
             </nav>
 
@@ -57,7 +57,7 @@ $notes = $record['note'];
                                 
                                 <input type="hidden" class="form-control" name="consume_id" required
                                     value="<?php echo $consume_id; ?>">
-                                <label for="amount">Consumer</label>
+                                <label for="amount"><?= __t('Consumer')?></label>
 
                             </div>
                         </div>
@@ -66,7 +66,7 @@ $notes = $record['note'];
                             <div class="form-floating">
                                 <input type="text" readonly class="form-control" id="operation_for" name="operation_for" 
                                     value="<?php echo $operation_for; ?>">
-                                <label for="amount">Operation for</label>
+                                <label for="amount"><?= __t('Operation for')?></label>
                             </div>
                         </div>
 
@@ -74,7 +74,7 @@ $notes = $record['note'];
                             <div class="form-floating">
                                 <input type="date" class="form-control" id="date" name="date" required
                                     value="<?php echo $date; ?>">
-                                <label for="amount">Date</label>
+                                <label for="amount"><?= __t('Date')?></label>
                             </div>
                         </div>
 
@@ -85,12 +85,12 @@ $notes = $record['note'];
                                 <?php if ($notes != 'Cash payment received by vehicle') {?>
                                 <input type="number" readonly class="form-control" id="cash_in" name="cash_in" required
                                     value="<?php echo $cash_in; ?>">
-                                <label for="amount">Cash in</label>
+                                <label for="amount"><?= __t('Cash in')?></label>
                             </div>
                             <?php } else {?>
                             <input type="number" class="form-control" id="cash_in" name="cash_in"
                                 value="<?php echo $cash_in; ?>" required>
-                            <label for="amount">Cash in</label>
+                            <label for="amount"><?= __t('Cash in')?></label>
                         </div>
                         <?php }?>
                 </div>
@@ -105,7 +105,7 @@ $notes = $record['note'];
                         <input type="number" readonly class="form-control" id="cash_out" name="cash_out"
                             value="<?php echo $cash_out; ?>">
                         <?php }?>
-                        <label for="amount">Cash out</label>
+                        <label for="amount"><?= __t('Cash out')?></label>
                     </div>
                 </div>
 
@@ -113,7 +113,7 @@ $notes = $record['note'];
                     <div class="form-floating">
                         <input type="text" readonly class="form-control" id="notes" name="notes" required
                             value="<?php echo $notes; ?>">
-                        <label for="amount">Notes</label>
+                        <label for="amount"><?= __t('Notes')?></label>
                     </div>
                 </div>
 
@@ -122,7 +122,7 @@ $notes = $record['note'];
                     <div class="text-center">
                         <input type="hidden" name="vehicle_cash_update"
                             value="Update">
-                        <button type="submit" class="btn btn-dark btn-block form-control">Update</button>
+                        <button type="submit" class="btn btn-dark btn-block form-control"><?= __t('Update')?></button>
                         
                         
                     </div>
@@ -143,7 +143,7 @@ $notes = $record['note'];
                     <div class="col-md-9"></div>
                     <div class="col-md-3">
                           <input  type="hidden" name="vehicle_cash_delete" value="Delete">
-                          <button type="submit" class="btn btn-danger btn-block form-control" onclick="return confirmDelete()">Delete</button> 
+                          <button type="submit" class="btn btn-danger btn-block form-control" onclick="return confirmDelete()"><?= __t('Delete')?></button> 
                     </div>
                             
                 </form>
@@ -162,16 +162,16 @@ $notes = $record['note'];
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Delete Cash Record</h5>
+                        <h5 class="modal-title"><?= __t('Delete Cash Record')?></h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         
-                        <p>Are you sure you want to delete this record?</p>
+                        <p><?= __t('Are you sure you want to delete this record?')?></p>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                        <button type="button" class="btn btn-danger " id="confirmDelete">Yes</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?= __t('No')?></button>
+                        <button type="button" class="btn btn-danger " id="confirmDelete"><?= __t('Yes')?></button>
                     </div>
                 </div>
             </div>

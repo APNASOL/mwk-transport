@@ -12,16 +12,16 @@
 
     <div class="pagetitle">
 
-      <h1>Pumps</h1>
+      <h1><?= __t('Pumps')?></h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item">Pumps</li>
-          <li class="breadcrumb-item active">Index</li>
+          <li class="breadcrumb-item"><a href="index.html"><?= __t('home')?></a></li>
+          <li class="breadcrumb-item"><?= __t('Pumps')?></li>
+          <li class="breadcrumb-item active"><?= __t('Index')?></li>
         </ol>
       </nav>
       <div class="d-flex justify-content-end">
-        <a class="btn btn-dark" href="pump-create.php"><i class="bi bi-plus-lg"></i> Add new pump
+        <a class="btn btn-dark" href="pump-create.php"><i class="bi bi-plus-lg"></i> <?= __t('Add new pump')?>
         </a>
       </div>
     </div><!-- End Page Title -->
@@ -40,7 +40,7 @@ if (@$_GET['successMessage']) {
 ?>
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title">Pumps</h5>
+          <h5 class="card-title"><?= __t('Pumps')?></h5>
           
           <div class="row text-center ">
         <?php
@@ -79,7 +79,7 @@ $customers_totals = mysqli_query($conn, "SELECT COUNT(id) AS total_customer,SUM(
                 <div class="card bg-white text-warning mb-3" style="">
 
                 <div class="card-body p-3">
-                <h5><b class="card-title text-dark text-left">Total</b></h5><hr>
+                <h5><b class="card-title text-dark text-left"><?= __t('Total')?></b></h5><hr>
                 <h3 class="card-title"><?php echo $total_customer; ?></h3>
 
                 </div>
@@ -90,7 +90,7 @@ $customers_totals = mysqli_query($conn, "SELECT COUNT(id) AS total_customer,SUM(
                 <div class="card bg-white text-warning mb-3" style="">
 
                 <div class="card-body p-3">
-                <h5><b class="card-title text-dark text-left">Total Dues</b></h5><hr>
+                <h5><b class="card-title text-dark text-left"><?= __t('Total Dues')?></b></h5><hr>
                 <h3 class="card-title"><b><?php echo $total_due; ?></b></h3>
                 </div>
                 </div>
@@ -107,10 +107,10 @@ $pumps = mysqli_query($conn, "SELECT * FROM pumps where vehicle_id = '$current_v
 
               <tr>
                 <th scope="col">#</th>
-                <th scope="col">Name</th>
-                <th scope="col">Dues</th>
-                <th scope="col">Address</th>
-                <th scope="col">Action</th>
+                <th scope="col"> <?= __t('Name')?></th>
+                <th scope="col"> <?= __t('Dues')?></th>
+                <th scope="col"> <?= __t('Address')?></th>
+                <th scope="col"> <?= __t('Action')?></th>
               </tr>
 
             </thead>
@@ -179,18 +179,18 @@ while ($pump = mysqli_fetch_array($pumps)) {
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="confirmDeleteModalLabel">Confirm Deletion</h5>
+        <h5 class="modal-title" id="confirmDeleteModalLabel"><?= __t('Confirm Deletion')?></h5>
         <button type="button" class="close" data-bs-dismiss="modal"  aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <p>Please enter your password to confirm deletion:</p>
+        <p><?= __t('Please enter your password to confirm deletion:')?></p>
         <input type="password" id="deletePassword" class="form-control" placeholder="Your Password">
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-danger" onclick="confirmDelete()">Delete</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?= __t('Cancel')?></button>
+        <button type="button" class="btn btn-danger" onclick="confirmDelete()"><?= __t('Delete')?></button>
       </div>
     </div>
   </div>

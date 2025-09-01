@@ -12,12 +12,12 @@
 
         <div class="pagetitle">
 
-            <h1>Customers</h1>
+            <h1><?= __t('customers')?></h1>
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item">Customers</li>
-                    <li class="breadcrumb-item active">Details</li>
+                    <li class="breadcrumb-item"><a href="index.html"><?= __t('home')?></a></li>
+                    <li class="breadcrumb-item"><?= __t('customers')?></li>
+                    <li class="breadcrumb-item active"><?= __t('Details')?></li>
                 </ol>
             </nav>
             
@@ -38,7 +38,7 @@ if (@$_GET['successMessage']) {
 ?>
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Customers</h5>
+                    <h5 class="card-title"><?= __t('customers')?></h5>
 
                     <?php
 $conn = OpenCon();
@@ -68,12 +68,12 @@ $customer_details = mysqli_query($conn, "SELECT * FROM customer_details WHERE cu
 
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">Date</th>
-                                <th scope="col">Notes</th>
-                                <th scope="col">Type</th>
-                                <th scope="col">Credit</th>
-                                <th scope="col">Debit</th>
-                                <th scope="col">Balance</th>
+                                <th scope="col"> <?= __t('Date')?></th>
+                                <th scope="col"> <?= __t('Notes')?></th>
+                                <th scope="col"> <?= __t('Type')?></th>
+                                <th scope="col"> <?= __t('Credit')?></th>
+                                <th scope="col"> <?= __t('Debit')?></th>
+                                <th scope="col"> <?= __t('Balance')?></th>
                             </tr>
 
                         </thead>

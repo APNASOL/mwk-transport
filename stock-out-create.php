@@ -30,12 +30,12 @@ if ($stmt = mysqli_prepare($conn, "SELECT id, number FROM vehicles WHERE status 
 
 <main id="main" class="main">
   <div class="pagetitle">
-    <h1>Stock Out</h1>
+    <h1><?= __t('Stock Out')?></h1>
     <nav>
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-        <li class="breadcrumb-item">Stock</li>
-        <li class="breadcrumb-item active"> Stock Out</li>
+        <li class="breadcrumb-item"><a href="index.php"><?= __t('Home')?></a></li>
+        <li class="breadcrumb-item"><?= __t('Stock')?></li>
+        <li class="breadcrumb-item active"> <?= __t('Stock Out')?></li>
       </ol>
     </nav>
   </div>
@@ -57,7 +57,7 @@ if ($stmt = mysqli_prepare($conn, "SELECT id, number FROM vehicles WHERE status 
 
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">Create Stock Out</h5>
+        <h5 class="card-title"><?= __t('Create Stock Out')?></h5>
 
         <form class="row g-3" action="Controllers/StockController.php" method="post" id="stockOutForm">
           <!-- Stock Item -->
@@ -76,7 +76,7 @@ if ($stmt = mysqli_prepare($conn, "SELECT id, number FROM vehicles WHERE status 
                   </option>
                 <?php endforeach; ?>
               </select>
-              <label for="s_id">Item</label>
+              <label for="s_id"><?= __t('Item')?></label>
             </div>
             <div class="form-text mt-1">
               <span id="availableInfo" class="text-muted"></span>
@@ -87,14 +87,14 @@ if ($stmt = mysqli_prepare($conn, "SELECT id, number FROM vehicles WHERE status 
           <div class="col-md-6">
             <div class="form-floating">
               <select class="form-select" id="vehicle_id" name="vehicle_id" required>
-                <option value="">Select Vehicle</option>
+                <option value=""><?= __('Select Vehicle')?></option>
                 <?php foreach ($vehicles as $v): ?>
                   <option value="<?php echo (int)$v['id']; ?>">
                     <?php echo htmlspecialchars($v['number']); ?>
                   </option>
                 <?php endforeach; ?>
               </select>
-              <label for="vehicle_id">Vehicle</label>
+              <label for="vehicle_id"><?= __t('Vehicle')?></label>
             </div>
           </div>
 
@@ -102,7 +102,7 @@ if ($stmt = mysqli_prepare($conn, "SELECT id, number FROM vehicles WHERE status 
           <div class="col-md-4">
             <div class="form-floating">
               <input type="number" step="0.001" min="0.001" class="form-control" id="quantity" name="quantity" required placeholder="Quantity">
-              <label for="quantity">Quantity</label>
+              <label for="quantity"><?= __t('Quantity')?></label>
             </div>
           </div>
 
@@ -110,7 +110,7 @@ if ($stmt = mysqli_prepare($conn, "SELECT id, number FROM vehicles WHERE status 
           <div class="col-md-4">
             <div class="form-floating">
               <input type="text" class="form-control" id="unit_price" name="unit_price" placeholder="Unit Price" readonly>
-              <label for="unit_price">Unit Price</label>
+              <label for="unit_price"><?= __t('Unit Price')?></label>
             </div>
           </div>
 
@@ -118,7 +118,7 @@ if ($stmt = mysqli_prepare($conn, "SELECT id, number FROM vehicles WHERE status 
           <div class="col-md-4">
             <div class="form-floating">
               <input type="text" class="form-control" id="total" name="total" placeholder="Total" readonly>
-              <label for="total">Total</label>
+              <label for="total"><?= __t('Total')?></label>
             </div>
           </div>
 
@@ -126,7 +126,7 @@ if ($stmt = mysqli_prepare($conn, "SELECT id, number FROM vehicles WHERE status 
           <div class="col-md-6">
             <div class="form-floating">
               <input type="date" class="form-control" id="date" name="date" required placeholder="Date" value="<?php echo date('Y-m-d'); ?>">
-              <label for="date">Date</label>
+              <label for="date"><?= __t('Date')?></label>
             </div>
           </div>
 
@@ -134,13 +134,13 @@ if ($stmt = mysqli_prepare($conn, "SELECT id, number FROM vehicles WHERE status 
           <div class="col-md-6">
             <div class="form-floating">
               <input type="text" class="form-control" id="note" name="note" placeholder="Note about usage">
-              <label for="note">Note</label>
+              <label for="note"><?= __t('Note')?></label>
             </div>
           </div>
 
           <div class="text-center">
-            <button type="submit" name="stock_out_create" class="btn btn-dark" id="submitBtn">Save</button>
-            <a href="stock-out-index.php" class="btn btn-secondary">Cancel</a>
+            <button type="submit" name="stock_out_create" class="btn btn-dark" id="submitBtn"><?= __t('Save')?></button>
+            <a href="stock-out-index.php" class="btn btn-secondary"><?= __t('Cancel')?></a>
           </div>
         </form>
 

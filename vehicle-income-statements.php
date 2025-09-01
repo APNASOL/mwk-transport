@@ -15,12 +15,12 @@ $v_name = $_SESSION['current_vehicle_number'];
 
         <div class="pagetitle">
 
-            <h1>Vehicle Income statements</h1>
+            <h1><?= __t('Vehicle Income statements')?></h1>
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item">Vehicle</li>
-                    <li class="breadcrumb-item active">Income statements</li>
+                    <li class="breadcrumb-item"><a href="index.html"><?= __t('home')?></a></li>
+                    <li class="breadcrumb-item"><?= __t('Vehicle')?></li>
+                    <li class="breadcrumb-item active"><?= __t('Income statements')?></li>
                 </ol>
             </nav>
 
@@ -41,7 +41,7 @@ if (@$_GET['successMessage']) {
 ?>
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Income statement</h5>
+                    <h5 class="card-title"><?= __t('Income statements')?></h5>
                     <?php
 $yearsQuery = "SELECT * FROM years ORDER BY id";
 $years = mysqli_query($conn, $yearsQuery);
@@ -58,9 +58,9 @@ $current_month = date('m');
                     <div class="row">
                         
                             <div class="col-md-1"></div>
-                            <div class="col-md-5 card-title">Select year and month</div>
+                            <div class="col-md-5 card-title"><?= __t('Select year and month')?></div>
                             <div class="col-md-2">
-                                <label>Select year</label>
+                                <label><?= __t('Select year')?></label>
                                 <select name="year" class="form-control" required>
                                     <?php while ($year = mysqli_fetch_array($years)) {
     if ($_GET['year'] == $year['year'] || $current_year == $year['year']) {?>
@@ -73,7 +73,7 @@ $current_month = date('m');
                                 </select>
                             </div>
                             <div class="col-md-2">
-                                <label>Select month</label>
+                                <label><?= __t('Select month')?></label>
                                 <select name="month" class="form-control" required>
 
                                     <?php while ($month = mysqli_fetch_array($months)) {
@@ -90,7 +90,7 @@ $current_month = date('m');
                             <div class="col-md-2">
 
                                 <button type="submit" name="search_income_statement"
-                                    class="btn btn-dark mt-4 btn-md">Search</button>
+                                    class="btn btn-dark mt-4 btn-md"><?= __t('Search')?></button>
 
 
                             </div>
@@ -127,13 +127,13 @@ if (@$_GET['year'] || @$_GET['month']) {
 
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">Date</th>
-                                <th scope="col">Trips</th>
-                                <th scope="col">Total balance</th>
-                                <th scope="col">Trip Expenses</th>
-                                <th scope="col">Expenses</th>
-                                <th scope="col">Total Expenses</th>
-                                <th scope="col">Profit</th>
+                                <th scope="col"> <?= __t('Date')?></th>
+                                <th scope="col"> <?= __t('Trips')?></th>
+                                <th scope="col"> <?= __t('Total balance')?></th>
+                                <th scope="col"> <?= __t('Trip Expenses')?></th>
+                                <th scope="col"> <?= __t('Expenses')?></th>
+                                <th scope="col"> <?= __t('Total Expenses')?></th>
+                                <th scope="col"> <?= __t('Profit')?></th>
                             </tr>
 
                         </thead>
@@ -218,7 +218,7 @@ while ($trip = mysqli_fetch_array($trips)) {
 
                             <tr class="bg-info ">
                                 <td class=" text-white"> </td>
-                                <td class=" text-white"> Sub Total</tdcolspan=>
+                                <td class=" text-white"> <?= __t('Sub Total')?></tdcolspan=>
                                 <td class=" text-white"><?php echo $all_trips ?></td>
                                 <td class=" text-white"><?php echo $balance ?></td>
                                 <td class=" text-white"><?php echo $all_expense_of_trips ?> </td>
@@ -235,7 +235,7 @@ $total_fuel_bill = $fuel_row['total_bill'];
 ?>
                             <tr class="bg-danger text-white">
                                 <td></td>
-                                <td class="text-white"> Fuel Expense</td>
+                                <td class="text-white"> <?= __t('Fuel Expense')?></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -246,7 +246,7 @@ $total_fuel_bill = $fuel_row['total_bill'];
 
                             <tr class="bg-success text-white">
                                 <td></td>
-                                <td class="text-white">Total Profit</td>
+                                <td class="text-white"><?= __t('Total Profit')?></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>

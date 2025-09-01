@@ -30,6 +30,7 @@ if (isset($_POST['create_vehicle'])) {
 
     mysqli_begin_transaction($conn);
 
+    
     // Set autocommit to false to start the transaction
     mysqli_autocommit($conn, false);
 

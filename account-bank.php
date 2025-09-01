@@ -12,12 +12,12 @@
 
     <div class="pagetitle">
 
-      <h1>Bank Account</h1>
+      <h1><?= __t('Bank Account')?></h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="index.html"><?= __t('home')?></a></li>
 
-          <li class="breadcrumb-item active">Bank Account</li>
+          <li class="breadcrumb-item active"><?= __t('Bank Account')?></li>
         </ol>
       </nav>
 
@@ -39,9 +39,9 @@ $customers = mysqli_query($conn, "SELECT * FROM customers");
 while ($customer = mysqli_fetch_array($customers)) {?>
                             <option value="<?php echo $customer['id'] ?>"><?php echo $customer['name'] ?></option>
                             <?php }?>
-                            <option Selected hidden>Select Customer</option>
+                            <option Selected hidden><?= __t('Select Customer')?></option>
                          </select>
-                         <label for="vehicle">Customers</label>
+                         <label for="vehicle"><?= __t('Customers')?></label>
                      </div>
 
                 </div>
@@ -50,21 +50,21 @@ while ($customer = mysqli_fetch_array($customers)) {?>
                         <div class="form-floating">
                              <input type="text" class="form-control" id="amount"name="amount"
                                  placeholder="Amount">
-                            <label for="amount">Amount</label>
+                            <label for="amount"><?= __t('Amount')?></label>
                         </div>
                 </div>
 
                 <div class="col-md-3">
                 <div class="form-floating">
                   <input type="text" class="form-control" id="bank" name="bank" placeholder="Bank">
-                  <label for="bank">Bank</label>
+                  <label for="bank"><?= __t('Bank')?></label>
                 </div>
               </div>
 
                 <div class="col-md-3">
                 <div class="form-floating">
                   <input type="text" class="form-control" id="reference_no" name="reference_no" placeholder="Reference No.">
-                  <label for="reference_no">Reference no</label>
+                  <label for="reference_no"><?= __t('Reference no')?></label>
                 </div>
               </div>
 
@@ -74,14 +74,14 @@ while ($customer = mysqli_fetch_array($customers)) {?>
                         <div class="form-floating">
                              <input type="date" class="form-control" id="date"name="date"
                                  placeholder="date">
-                            <label for="date">Date</label>
+                            <label for="date"><?= __t('Date')?></label>
                         </div>
                 </div>
 
                 <div class="col-md-3">
 
                     <div class="text-center">
-                        <button type="submit" name="create_customer_transaction" class="btn btn-dark  btn-lg">Submit</button>
+                        <button type="submit" name="create_customer_transaction" class="btn btn-dark  btn-lg"><?= __t('Submit')?></button>
 
                     </div>
 
@@ -102,14 +102,14 @@ while ($customer = mysqli_fetch_array($customers)) {?>
 
                 <div class="col-md-3 d-grid gap-2">
                   <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#cashWithdrawal">
-                    Cash Withdrawal
+                    <?= __t('Cash Withdrawal')?>
                   </button>
                 </div>
 
 
                 <div class="col-md-3 d-grid gap-2">
                   <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#returnAmount">
-                    Return Amount
+                    <?= __t('Return Amount')?>
                   </button>
                 </div>
 
@@ -126,7 +126,7 @@ while ($customer = mysqli_fetch_array($customers)) {?>
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title">Cash Withdrawal</h5>
+                      <h5 class="modal-title"><?= __t('Cash Withdrawal')?></h5>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -136,7 +136,7 @@ while ($customer = mysqli_fetch_array($customers)) {?>
                     <div class="col-md-12">
                       <div class="form-floating">
                         <input type="text" class="form-control" id="amount" name="amount" placeholder="Amount">
-                        <label for="amount">Amount</label>
+                        <label for="amount"><?= __t('Amount')?></label>
                       </div>
                     </div>
 
@@ -145,7 +145,7 @@ while ($customer = mysqli_fetch_array($customers)) {?>
                     <div class="col-md-12">
                       <div class="form-floating">
                         <input type="date" class="form-control" id="date" name="date" placeholder="date">
-                        <label for="date">Date</label>
+                        <label for="date"><?= __t('Date')?></label>
                       </div>
                     </div>
 
@@ -153,20 +153,20 @@ while ($customer = mysqli_fetch_array($customers)) {?>
                     <div class="col-md-12">
                 <div class="form-floating">
                   <input type="text" class="form-control" id="bank" name="bank" placeholder="Bank">
-                  <label for="bank">Bank</label>
+                  <label for="bank"><?= __t('Bank')?></label>
                 </div>
               </div>
 
                 <div class="col-md-12">
                 <div class="form-floating">
                   <input type="text" class="form-control" id="reference_no" name="reference_no" placeholder="Reference No.">
-                  <label for="reference_no">Reference no</label>
+                  <label for="reference_no"><?= __t('Reference no')?></label>
                 </div>
               </div>
 
                     <div class="modal-footer">
                       <button type="submit" name="cash_withdrawal"
-                    class="btn btn-dark  btn-lg">Submit</button>
+                    class="btn btn-dark  btn-lg"><?= __t('Submit')?></button>
                     </div>
                     </form>
                     </div>
@@ -181,7 +181,7 @@ while ($customer = mysqli_fetch_array($customers)) {?>
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title">Return Cash</h5>
+                      <h5 class="modal-title"><?= __t('Return Cash')?></h5>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -196,9 +196,9 @@ while ($customer = mysqli_fetch_array($customers)) {?>
             <option value="<?php echo $customer['id'] ?>"><?php echo $customer['name'] ?>
             </option>
             <?php }?>
-            <option Selected hidden>Select Customer</option>
+            <option Selected hidden><?= __t('Select Customer')?></option>
         </select>
-        <label for="vehicle">Customers</label>
+        <label for="vehicle"><?= __t('Customers')?></label>
     </div>
 </div>
 
@@ -206,35 +206,35 @@ while ($customer = mysqli_fetch_array($customers)) {?>
     <div class="form-floating">
         <input type="text" class="form-control" id="amount" name="amount"
             placeholder="Amount">
-        <label for="amount">Amount</label>
+        <label for="amount"><?= __t('Amount')?></label>
     </div>
 </div>
 
 <div class="col-md-12">
     <div class="form-floating">
         <input type="date" class="form-control" id="date" name="date" placeholder="date">
-        <label for="date">Date</label>
+        <label for="date"><?= __t('Date')?></label>
     </div>
 </div>
 
 <div class="col-md-12">
                 <div class="form-floating">
                   <input type="text" class="form-control" id="bank" name="bank" placeholder="Bank">
-                  <label for="bank">Bank</label>
+                  <label for="bank"><?= __t('Bank')?></label>
                 </div>
               </div>
 
                 <div class="col-md-12">
                 <div class="form-floating">
                   <input type="text" class="form-control" id="reference_no" name="reference_no" placeholder="Reference No.">
-                  <label for="reference_no">Reference no</label>
+                  <label for="reference_no"><?= __t('Reference no')?></label>
                 </div>
               </div>
 <div class="col-md-12">
 
     <div class="text-center">
         <button type="submit" name="return_cash"
-            class="btn btn-dark  btn-lg">Submit</button>
+            class="btn btn-dark  btn-lg"><?= __t('Submit')?></button>
 
     </div>
 
@@ -281,15 +281,15 @@ $cashbooks = mysqli_query($conn, "SELECT * FROM bank_account");
                                 <thead>
                                     <tr>
                                         <th scope="col">#</th>
-                                        <th scope="col">Consume from</th>
-                                        <th scope="col">Operation for</th>
-                                        <th scope="col">Bank</th>
-                                        <th scope="col">Reference No.</th>
-                                        <th scope="col">Cash In</th>
-                                        <th scope="col">Cash Out</th>
-                                        <th scope="col">Date</th>
-                                        <th scope="col">Notes</th>
-                                        <th scope="col">Action</th>
+                                        <th scope="col"> <?= __t('Consume from')?></th>
+                                        <th scope="col"> <?= __t('Operation for')?></th>
+                                        <th scope="col"> <?= __t('Bank')?></th>
+                                        <th scope="col"> <?= __t('Reference No.')?></th>
+                                        <th scope="col"> <?= __t('Cash In')?></th>
+                                        <th scope="col"> <?= __t('Cash Out')?></th>
+                                        <th scope="col"> <?= __t('Date')?></th>
+                                        <th scope="col"> <?= __t('Notes')?></th>
+                                        <th scope="col"> <?= __t('Action')?></th>
                                     </tr>
                                 </thead>
                                 <tbody>

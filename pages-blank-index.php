@@ -12,16 +12,16 @@
 
     <div class="pagetitle">
 
-      <h1>MWK - Transport Transport Users</h1>
+      <h1><?= __t('MWK - Transport Users')?></h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item">Users</li>
-          <li class="breadcrumb-item active">Index</li>
+          <li class="breadcrumb-item"><a href="index.html"><?= __t('home')?></a></li>
+          <li class="breadcrumb-item"><?= __t('Users')?></li>
+          <li class="breadcrumb-item active"><?= __t('Index')?></li>
         </ol>
       </nav>
       <div class="d-flex justify-content-end">
-        <a class="btn btn-dark" href="pages-blank-create.php"><i class="bi bi-plus-lg"></i> Add new user
+        <a class="btn btn-dark" href="pages-blank-create.php"><i class="bi bi-plus-lg"></i> <?= __t('Add new user')?>
         </a>
       </div>
     </div><!-- End Page Title -->
@@ -45,7 +45,7 @@
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Records</h5>
+              <h5 class="card-title"><?= __t('Records')?></h5>
                
               <?php 
                 $conn = OpenCon();
@@ -56,10 +56,10 @@
                 <thead>
                   <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Image</th> 
-                    <th scope="col">Action</th>
+                    <th scope="col"> <?= __t('Name')?></th>
+                    <th scope="col"> <?= __t('Email')?></th>
+                    <th scope="col"> <?= __t('Image')?></th> 
+                    <th scope="col"> <?= __t('Action')?></th>
                   </tr>
                 </thead>
                 <tbody>

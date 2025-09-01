@@ -18,9 +18,9 @@ $result = mysqli_fetch_array($stmt);
              <h1><?=$result['name']?></h1>
              <nav>
                  <ol class="breadcrumb">
-                     <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                     <li class="breadcrumb-item"><a href="partners.php"> Partners </a> </li>
-                     <li class="breadcrumb-item active">Edit</li>
+                     <li class="breadcrumb-item"><a href="index.php"><?= __t('Home')?></a></li>
+                     <li class="breadcrumb-item"><a href="partners.php"> <?= __t('Partners')?> </a> </li>
+                     <li class="breadcrumb-item active"><?= __t('Edit')?></li>
                  </ol>
              </nav>
          </div><!-- End Page Title -->
@@ -53,7 +53,7 @@ $result = mysqli_fetch_array($stmt);
                                                      <input type="hidden" name="id" value="<?=$result['id']?>">
                                                      <div class="row">
                                                          <div class="col-md-4">
-                                                             <label>User Name</label>
+                                                             <label><?= __t('User Name')?></label>
                                                              <div>
                                                                  <input type="text" class="form-control"
                                                                      value="<?=$result['name']?>" name="user_name"
@@ -62,7 +62,7 @@ $result = mysqli_fetch_array($stmt);
                                                          </div>
 
                                                          <div class="col-md-4">
-                                                             <label>Contact</label>
+                                                             <label><?= __t('Contact')?></label>
                                                              <div>
                                                                  <input type="number" class="form-control"
                                                                      value="<?=$result['contact']?>" name="contact"
@@ -70,7 +70,7 @@ $result = mysqli_fetch_array($stmt);
                                                              </div>
                                                          </div>
                                                          <div class="col-md-4">
-                                                             <label>Percentage</label>
+                                                             <label><?= __t('Percentage')?></label>
                                                              <div>
                                                                  <input type="number" class="form-control"
                                                                      value="<?=$result['percentage']?>" name="percentage"

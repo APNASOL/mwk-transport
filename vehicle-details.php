@@ -12,12 +12,12 @@
 
         <div class="pagetitle">
 
-            <h1>Vehicles</h1>
+            <h1><?= __t('Vehicles')?></h1>
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item">Vehicles</li>
-                    <li class="breadcrumb-item active">Details</li>
+                    <li class="breadcrumb-item"><a href="index.html"><?= __t('home')?></a></li>
+                    <li class="breadcrumb-item"><?= __t('Vehicles')?></li>
+                    <li class="breadcrumb-item active"><?= __t('Details')?></li>
                 </ol>
             </nav>
             <div class="d-flex justify-content-end">
@@ -67,16 +67,16 @@ if ($vehicle_id != "empty") {
                   <div class="row">
 
                     <div class="col-md-9">
-                       <h5 class="card-title">Vehicle Name: <strong><?php echo $vehicle_no; ?></strong> Owner :  <strong><?php echo $owner_name; ?></strong>
+                       <h5 class="card-title"><?= __t('Vehicle Name:')?> <strong><?php echo $vehicle_no; ?></strong><?= __t('Owner :')?>   <strong><?php echo $owner_name; ?></strong>
                         
                        </h5>
                     </div>
 
                     <div class="col-md-3 mt-3">
 
-                        <button type="button" id="monthly" class="btn btn-dark form-control">Monthly Details</button>
+                        <button type="button" id="monthly" class="btn btn-dark form-control"><?= __t('Monthly Details')?></button>
 
-                        <button type="button" id="single" class="btn btn-dark form-control">Single Date</button>
+                        <button type="button" id="single" class="btn btn-dark form-control"><?= __t('Single Date')?></button>
 
                     </div>
 
@@ -89,12 +89,12 @@ if ($vehicle_id != "empty") {
                         <div class="row">
                             
                             <div class="col-md-7 mt-3">
-                                <h5 class="card-title">Select year and month </h5>
+                                <h5 class="card-title"><?= __t('Select year and month')?> </h5>
                             </div>
 
                             <div class="col-md-2">
                                 <input type="hidden" value="' . $_SESSION['current_vehicle_id'] .'" name="m_c_id" id="m_v_id" />
-                                <label>Year</label>
+                                <label><?= __t('Year')?></label>
                                 <select class="form-control chosen" placeholder="" name="year" id="selected_year_v">
                                     <?php
                                         $selectuserquery = "SELECT * FROM years ORDER BY id";
@@ -148,7 +148,7 @@ if ($vehicle_id != "empty") {
                         <div class="row">
                             
                             <div class="col-md-8 ps-4">
-                                <h5 class="card-title">Select Date </h5>
+                                <h5 class="card-title"><?= __t('Select Date')?> </h5>
                             </div>
 
                             <div class="col-md-3">
@@ -176,7 +176,7 @@ if ($vehicle_id != "empty") {
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Details</h5>
+                        <h5 class="modal-title"><?= __t('Details')?></h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body" id="details_modal">

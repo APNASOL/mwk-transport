@@ -11,16 +11,16 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>New pump</h1>
+            <h1><?= __t('New pump')?></h1>
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item">Pump</li>
-                    <li class="breadcrumb-item active">New pump create</li>
+                    <li class="breadcrumb-item"><a href="index.html"><?= __t('home')?></a></li>
+                    <li class="breadcrumb-item"><?= __t('Pump')?></li>
+                    <li class="breadcrumb-item active"><?= __t('New pump create')?></li>
                 </ol>
             </nav>
             <div class="d-flex justify-content-end">
-                <a class="btn btn-dark" href="pump-index.php"><i class="bi bi-back"></i> Go to all pumps
+                <a class="btn btn-dark" href="pump-index.php"><i class="bi bi-back"></i> <?= __t('Go to all pumps')?>
                 </a>
             </div>
         </div><!-- End Page Title -->
@@ -41,7 +41,7 @@
     ?>
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">New pump</h5>
+                    <h5 class="card-title"><?= __t('New pump')?></h5>
 
                     <!-- Floating Labels Form -->
                     <form class="row g-3" action="Controllers/PumpController.php" method="post" onsubmit="handleSubmit(event, this)">
@@ -50,7 +50,7 @@
                             <div class="form-floating">
                                 <input type="text" class="form-control" id="pump_name" name="pump_name"
                                     required required placeholder="Pump Name">
-                                <label for="pump_name">Pump name</label>
+                                <label for="pump_name"><?= __t('Pump name')?></label>
                             </div>
                         </div>
 
@@ -58,7 +58,7 @@
                             <div class="form-floating">
                                 <input type="text" class="form-control" id="address" name="address"
                                     required required placeholder="Pump address">
-                                <label for="address">Pump address</label>
+                                <label for="address"><?= __t('Pump address')?></label>
                             </div>
                         </div>
 
@@ -66,21 +66,21 @@
                             <div class="form-floating">
                                 <input type="text" class="form-control" id="balance" name="balance"
                                     required required placeholder="Balance">
-                                <label for="balnce">Balance</label>
+                                <label for="balnce"><?= __t('Balance')?></label>
                             </div>
                         </div>
                         
                         <div class="col-md-6">
                             <div class="form-floating">
                                 <input type="date" class="form-control" id="date" name="date" required required placeholder="Date">
-                                <label for="name">Date</label>
+                                <label for="name"><?= __t('Date')?></label>
                             </div>
                             </div>
 
                         <div class="text-center">
                             <input type="hidden" name="create" value="1">
-                            <button type="submit" class="btn btn-dark">Submit</button>
-                            <button type="reset" class="btn btn-secondary">Reset</button>
+                            <button type="submit" class="btn btn-dark"><?= __t('Submit')?></button>
+                            <button type="reset" class="btn btn-secondary"><?= __t('Reset')?></button>
                         </div>
                     </form><!-- End floating Labels Form -->
 

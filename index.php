@@ -1,5 +1,7 @@
 <?php include('Master/head.php');
 
+
+
 $conn = OpenCon();
  
 
@@ -16,11 +18,11 @@ $conn = OpenCon();
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>Dashboard</h1>
+            <h1><?= __t('dashboard')?></h1>
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active">Dashboard</li>
+                    <li class="breadcrumb-item"><a href="index.html"><?= __t('home')?></a></li>
+                    <li class="breadcrumb-item active"><?= __t('dashboard')?></li>
                 </ol>
             </nav>
         </div><!-- End Page Title -->
@@ -75,7 +77,7 @@ $conn = OpenCon();
 
 
                                 <div class="card-body">
-                                    <h5 class="card-title">Revenue <span>| This Month</span></h5>
+                                    <h5 class="card-title"><?= __t('Revenue')?> <span><?= __t('| This Month')?> </span></h5>
 
                                     <div class="d-flex align-items-center">
                                         <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -109,7 +111,7 @@ $trips_all_expenses_current_month = $trips_expenses['total_expenses'];
                             <div class="card info-card revenue-card">
 
                                 <div class="card-body">
-                                    <h5 class="card-title">Expenses <span>| This Month</span></h5>
+                                    <h5 class="card-title"><?= __t('Expenses')?> <span><?= __t('| This Month')?></span></h5>
 
                                     <div class="d-flex align-items-center">
                                         <div
@@ -139,7 +141,7 @@ $trips_all_expenses_current_month = $trips_expenses['total_expenses'];
                             <div class="card info-card revenue-card">
 
                                 <div class="card-body">
-                                    <h5 class="card-title">Fuel Expense <span>| This Month</span></h5>
+                                    <h5 class="card-title"><?= __t('Fuel Expense')?> <span><?= __t('| This Month')?></span></h5>
 
                                     <div class="d-flex align-items-center ">
                                         <div
@@ -161,7 +163,7 @@ $trips_all_expenses_current_month = $trips_expenses['total_expenses'];
                             <div class="card info-card sales-card">
 
                                 <div class="card-body">
-                                    <h5 class="card-title">Trips <span>| This Month</span></h5>
+                                    <h5 class="card-title"><?= __t('Trips')?> <span><?= __t('| This Month')?></span></h5>
 
                                     <div class="d-flex align-items-center">
                                         <div
@@ -185,7 +187,7 @@ $trips_all_expenses_current_month = $trips_expenses['total_expenses'];
                             <div class="card info-card revenue-card">
 
                                 <div class="card-body">
-                                    <h5 class="card-title">Profit <span>| This Month</span></h5>
+                                    <h5 class="card-title"><?= __t('Profit')?> <span><?= __t('| This Month')?></span></h5>
 
                                     <div class="d-flex align-items-center">
                                         <div
@@ -214,7 +216,7 @@ $trips_all_expenses_current_month = $trips_expenses['total_expenses'];
                             <div class="card info-card customers-card">
 
                                 <div class="card-body">
-                                    <h5 class="card-title">Customers </h5>
+                                    <h5 class="card-title"><?= __t('customers')?> </h5>
 
                                     <div class="d-flex align-items-center">
                                         <div
@@ -244,7 +246,7 @@ $trips_all_expenses_current_month = $trips_expenses['total_expenses'];
                             <div class="card info-card customers-card">
 
                                 <div class="card-body">
-                                    <h5 class="card-title">Pumps </h5>
+                                    <h5 class="card-title"><?= __t('Pumps')?> </h5>
 
                                     <div class="d-flex align-items-center">
                                         <div
@@ -295,7 +297,7 @@ $trips_all_expenses_current_month = $trips_expenses['total_expenses'];
 
 
                                             <div class="card-body">
-                                                <h5 class="card-title">Cash in</h5>
+                                                <h5 class="card-title"><?= __t('Cash in')?></h5>
 
                                                 <div class="d-flex align-items-center">
 
@@ -317,7 +319,7 @@ $trips_all_expenses_current_month = $trips_expenses['total_expenses'];
                                         <div class="card info-card revenue-card">
 
                                             <div class="card-body">
-                                                <h5 class="card-title">Cash out</h5>
+                                                <h5 class="card-title"><?= __t('Cash out')?></h5>
 
                                                 <div class="d-flex align-items-center">
 
@@ -337,7 +339,7 @@ $trips_all_expenses_current_month = $trips_expenses['total_expenses'];
                                         <div class="card info-card revenue-card">
 
                                             <div class="card-body">
-                                                <h5 class="card-title">Balance </h5>
+                                                <h5 class="card-title"><?= __t('Balance')?> </h5>
 
                                                 <div class="d-flex align-items-center ">
 
@@ -367,17 +369,17 @@ $trips_all_expenses_current_month = $trips_expenses['total_expenses'];
             ?>
 
                                 <div class="card-body">
-                                    <h5 class="card-title">Recent Trips <span>| This Month</span></h5>
+                                    <h5 class="card-title"><?= __t('Recent Trips')?> <span><?= __t('| This Month')?></span></h5>
 
                                     <table class="table table-borderless datatable" id="example">
                                         <thead>
                                             <tr>
                                                 <th scope="col">#</th>
-                                                <th scope="col">Customer</th>
-                                                <th scope="col">Type</th>
-                                                <th scope="col">Start date</th>
-                                                <th scope="col">End date</th>
-                                                <th scope="col">Total Bill</th>
+                                                <th scope="col"><?= __t('Customer')?> </th>
+                                                <th scope="col"><?= __t('Type')?></th>
+                                                <th scope="col"><?= __t('Start date')?></th>
+                                                <th scope="col"><?= __t('End date')?></th>
+                                                <th scope="col"><?= __t('Total Bill')?></th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -429,8 +431,8 @@ $trips_all_expenses_current_month = $trips_expenses['total_expenses'];
             </div>
         </section>
         <?php }else{?>
-        <div class="card-title"> Please first add vehicle</div>
-        <a class="btn btn-dark" href="vehicle-create.php">Add vehicle</a>
+        <div class="card-title"> <?= __t('Please first add vehicle')?></div>
+        <a class="btn btn-dark" href="vehicle-create.php"><?= __t('Add vehicle')?></a>
         <?php }?>
     </main><!-- End #main -->
 

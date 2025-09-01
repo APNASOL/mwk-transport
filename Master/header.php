@@ -1,6 +1,10 @@
 <?php
 
 // session_start();
+
+require_once __DIR__ . '/../i18n/lang.php';
+
+
 $current_vehicle_id = $_SESSION['current_vehicle_id'];
 $current_vehicle_number = $_SESSION['current_vehicle_number'];
 if (!isset($_SESSION['user_name']) && !isset($_SESSION['name']) && !isset($_SESSION['id'])) {
@@ -15,9 +19,9 @@ if (!isset($_SESSION['user_name']) && !isset($_SESSION['name']) && !isset($_SESS
 <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
-        <a href="index.php" class="logo  ">
+        <a href="index.php" class="logo">
             
-            <span class="d-none d-lg-block text-black text-center">M W K - Transport </span>
+            <span class="d-none d-lg-block text-black text-center"><?= __t('app.name')?> </span>
         </a>
         <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
@@ -26,6 +30,11 @@ if (!isset($_SESSION['user_name']) && !isset($_SESSION['name']) && !isset($_SESS
 
     <nav class="header-nav ms-auto">
         <ul class="d-flex align-items-center">
+
+        <li class="nav-item d-flex align-items-center me-3">
+        <a href="?lang=en" class="<?= current_lang()==='en' ? 'fw-bold text-primary' : '' ?>"><?= __t('lang.english') ?></a> |
+        <a href="?lang=ur" class="<?= current_lang()==='ur' ? 'fw-bold text-primary' : '' ?>"><?= __t('lang.urdu') ?></a>
+      </li>
 
             <?php
 $conn = OpenCon();
@@ -37,7 +46,7 @@ $customers = mysqli_query($conn, "SELECT * FROM customers");
 
                 <select class="form-select" id="vehicle_dropdown" name="vehicle_id" aria-label="vehicles">
                     <?php
-while ($vehicle = mysqli_fetch_array($vehicles)) {?>
+                      while ($vehicle = mysqli_fetch_array($vehicles)) {?>
                     <?php if ($vehicle['id'] == $_SESSION['current_vehicle_id']) {?>
                     <option selected value="<?php echo $vehicle['id']; ?>">
                         <?php echo $vehicle['number']; ?>
@@ -49,7 +58,7 @@ while ($vehicle = mysqli_fetch_array($vehicles)) {?>
                     </option>
 
                     <?php }}?>
-                    <option hidden>Please vehicle from the list</option>
+                    <option hidden><?= __t('Please Select vehicle from the list')?></option>
                 </select>
 
 
@@ -85,13 +94,13 @@ while ($vehicle = mysqli_fetch_array($vehicles)) {?>
                     <li>
                         <a class="dropdown-item d-flex align-items-center" href="vehicle-index.php">
                             <i class="bi bi-plus-lg"></i>
-                            <span>All Vehicles</span>
+                            <span><?= __t('All Vehicles')?></span>
                         </a>
                     </li>
                     <li>
                         <a class="dropdown-item d-flex align-items-center" href="all-customer-index.php">
                             <i class="bi bi-people"></i>
-                            <span>All Customer</span>
+                            <span><?= __t('All Customer')?></span>
                         </a>
                     </li>
                     <!-- <li>
@@ -103,7 +112,7 @@ while ($vehicle = mysqli_fetch_array($vehicles)) {?>
                     <li>
                         <a class="dropdown-item d-flex align-items-center" href="stock-index.php">
                             <i class="bi bi-cash-coin"></i>
-                            <span>Stock</span>
+                            <span><?= __t('Stock')?></span>
                         </a>
                     </li>
 
@@ -111,7 +120,7 @@ while ($vehicle = mysqli_fetch_array($vehicles)) {?>
                         <a href="Controllers/HomeController.php?process=singOut"
                             class="dropdown-item d-flex align-items-center" href="#">
                             <i class="bi bi-box-arrow-right"></i>
-                            <span>Sign Out</span>
+                            <span><?= __t('Sign Out')?></span>
                         </a>
                     </li>
 

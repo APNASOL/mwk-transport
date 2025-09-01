@@ -11,17 +11,17 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>New User</h1>
+      <h1><?= __t('New User')?></h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item">Pages</li>
-          <li class="breadcrumb-item active">New User create</li>
+          <li class="breadcrumb-item"><a href="index.html"><?= __t('home')?></a></li>
+          <li class="breadcrumb-item"><?= __t('Pages')?></li>
+          <li class="breadcrumb-item active"><?= __t('New User create')?></li>
         </ol>
       </nav>
       <div class="d-flex justify-content-end">
             <a class="btn btn-dark" href="pages-blank-index.php"
-            ><i class="bi bi-back"></i> Go to all users
+            ><i class="bi bi-back"></i> <?= __t('Go to all users')?>
           </a>
         </div>
     </div><!-- End Page Title -->
@@ -41,32 +41,32 @@
     ?>
     <div class="card">
             <div class="card-body">
-              <h5 class="card-title">New User Form</h5>
+              <h5 class="card-title"><?= __t('New User Form')?></h5>
 
               <!-- Floating Labels Form -->
               <form class="row g-3" action="Controllers/UserController.php" method="post">
                 <div class="col-md-12">
                   <div class="form-floating">
                     <input type="text" class="form-control" id="floatingName" name="user_name" placeholder="Your Name">
-                    <label for="floatingName">User Name</label>
+                    <label for="floatingName"><?= __t('User Name')?></label>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-floating">
                     <input type="email" class="form-control" id="floatingEmail" name="user_email" placeholder="Your Email">
-                    <label for="floatingEmail">User Email</label>
+                    <label for="floatingEmail"><?= __t('User Email')?></label>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-floating">
                     <input type="password" class="form-control" id="floatingPassword" name="user_password" placeholder="Password">
-                    <label for="floatingPassword">Password</label>
+                    <label for="floatingPassword"><?= __t('Password')?></label>
                   </div>
                 </div>
                   
                 <div class="text-center">
-                  <button type="submit" name="create_user" class="btn btn-dark">Submit</button>
-                  <button type="reset" class="btn btn-secondary">Reset</button>
+                  <button type="submit" name="create_user" class="btn btn-dark"><?= __t('Submit')?></button>
+                  <button type="reset" class="btn btn-secondary"><?= __t('Reset')?></button>
                 </div>
               </form><!-- End floating Labels Form -->
 

@@ -19,12 +19,12 @@ echo $currentDate;
 
     <div class="pagetitle">
 
-      <h1>Cash Flow</h1>
+      <h1><?= __t('Cash Flow')?></h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item">Cash</li>
-          <li class="breadcrumb-item active">Entries</li>
+          <li class="breadcrumb-item"><a href="index.html"><?= __t('Home')?></a></li>
+          <li class="breadcrumb-item"><?= __t('Cash')?></li>
+          <li class="breadcrumb-item active"><?= __t('Entries')?></li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -50,13 +50,13 @@ echo $currentDate;
 
                                                   
                                                  <div class="col-sm-2">
-                                                    <label for="No's of Entry">No's of Entries</label>
+                                                    <label for="No's of Entry"><?= __t('No of Entries')?></label>
                                                      <input type="number" class="form-control" id="number"
                                                          name="number">
                                                  </div>
  
                                                  <div class="col-sm-3">
-                                                 <label for="Date">Date</label>             
+                                                 <label for="Date"><?= __t('Date')?></label>             
                                                      <input type="date" class="form-control" id="dateInput" name="date" max="<?php echo $currentDate; ?>" required>
                                                  </div>
                                                  <div class="col-sm-2 mt-4">
@@ -71,14 +71,14 @@ echo $currentDate;
                                                          <table id="example3" class="table table-bordered">
                                                              <thead>
                                                                  <tr>
-                                                                     <th>Consumer</th>
-                                                                     <th>Vehicle</th>
-                                                                     <th>Cash In</th>
+                                                                     <th> <?= __t('Consumer')?></th>
+                                                                     <th> <?= __t('Vehicle')?></th>
+                                                                     <th> <?= __t('Cash In')?></th>
                                                                  </tr>
                                                              </thead>
                                                              <tr>
-                                                                 <td colspan="6" align="center"> Please select data and
-                                                                     numbers of cash entries </td>
+                                                                 <td colspan="6" align="center"><?= __t(' Please select data and
+                                                                     numbers of cash entries')?> </td>
                                                              </tr>
                                                          </table>
                                                      </div>

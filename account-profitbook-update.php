@@ -23,12 +23,12 @@ $year = $currentdate[0];
 
         <div class="pagetitle">
 
-            <h1>Update record</h1>
+            <h1><?= __t('Update record')?></h1>
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="index.html"><?= __t('Home')?></a></li>
 
-                    <li class="breadcrumb-item active">Profit Book Record Update</li>
+                    <li class="breadcrumb-item active"><?= __t('Profit Book Record Update')?></li>
                 </ol>
             </nav>
 
@@ -88,7 +88,7 @@ $m = $record['month'];
                                 
                                 <input type="hidden" class="form-control" name="consume_id" required
                                     value="<?php echo $consume_id; ?>">
-                                <label for="amount">Consumer</label>
+                                <label for="amount"><?= __t('Consumer')?></label>
 
                             </div>
                         </div>
@@ -97,7 +97,7 @@ $m = $record['month'];
                             <div class="form-floating">
                                 <input type="date" class="form-control" id="date" name="date" required
                                     value="<?php echo $date; ?>">
-                                <label for="amount">Date</label>
+                                <label for="amount"><?= __t('Date')?></label>
                             </div>
                         </div>
 
@@ -108,12 +108,12 @@ $m = $record['month'];
                                 <?php if ($cash_in == '' || $cash_in == 0) {?>
                                 <input type="text" readonly class="form-control" id="cash_in" name="cash_in" required
                                     value="<?php echo $cash_in; ?>">
-                                <label for="amount">Cash in</label>
+                                <label for="amount"><?= __t('Cash in')?></label>
                                </div>
                             <?php } else {?>
                             <input type="text" class="form-control" id="cash_in" name="cash_in"
                                 value="<?php echo $cash_in; ?>" required>
-                            <label for="amount">Cash in</label>
+                            <label for="amount"><?= __t('Cash in')?></label>
                            </div>
                           <?php }?>
                         </div>
@@ -128,7 +128,7 @@ $m = $record['month'];
                                 <input type="text" readonly class="form-control" id="cash_out" name="cash_out"
                                     value="<?php echo $cash_out; ?>">
                                 <?php }?>
-                                <label for="amount">Cash out</label>
+                                <label for="amount"><?= __t('Cash out')?></label>
                             </div>
                         </div>
 
@@ -136,13 +136,13 @@ $m = $record['month'];
                             <div class="form-floating">
                                 <input type="text" readonly class="form-control" id="notes" name="notes" required
                                     value="<?php echo $notes; ?>">
-                                <label for="amount">Notes</label>
+                                <label for="amount"><?= __t('Notes')?></label>
                             </div>
                         </div>
 
                         <?php  if($type == "expanse") { 
                             ?>
-                               <p style="color:red;">This is entry can update or delete from profit entry</p>
+                               <p style="color:red;"><?= __t('This is entry can update or delete from profit entry')?></p>
                             <?php
                         }else{?>
                         <div class="col-md-9"></div>
@@ -152,7 +152,7 @@ $m = $record['month'];
                                     class="btn btn-dark" value="Update">
                                     
                                     <button type="submit" 
-                                    class="btn btn-dark btn-block form-control"> Update</button>
+                                    class="btn btn-dark btn-block form-control"> <?= __t('Update')?></button>
                         
             
                         </div>
@@ -171,7 +171,7 @@ $m = $record['month'];
                             <div class="col-md-9"></div>
                             <div class="col-md-3">
                                 <input  type="hidden" name="profitbook_enteries_delete" value="Delete">
-                                <button type="submit" class="btn btn-danger btn-block form-control" onclick="return confirmDelete()">Delete</button> 
+                                <button type="submit" class="btn btn-danger btn-block form-control" onclick="return confirmDelete()"><?= __t('Delete')?></button> 
                             </div>
                                 
                         </form>
@@ -194,14 +194,14 @@ $m = $record['month'];
 
                             <div class="form-floating">
                                 <input type="number" class="form-control" id="amount" name="amount" value="<?=$cash_in?>" required placeholder="Amount Note" oninput="calculateDistributedAmounts()">
-                                <label for="amount">Profit Amount</label>
+                                <label for="amount"><?= __t('Profit Amount')?></label>
                             </div>
                         </div>
 
                         <div class="col">
                             <div class="form-floating">
                                 <input type="text" class="form-control"  name="amount_note" value="<?=$notes?>" required placeholder="Profit Note" >
-                                <label for="expanse">Profit Message</label>
+                                <label for="expanse"><?= __t('Profit Message')?></label>
                             </div>
                         </div>
                     </div>
@@ -210,14 +210,14 @@ $m = $record['month'];
                         <div class="col-md-3">
                             <div class="form-floating">
                                 <input type="number" class="form-control" id="expanse" name="expanse" value="<?=$expanseAmount?>" required placeholder="Amount" oninput="calculateDistributedAmounts()">
-                                <label for="expanse">Extra Expanse</label>
+                                <label for="expanse"><?= __t('Extra Expanse')?></label>
                             </div>
                         </div>
 
                         <div class="col">
                             <div class="form-floating">
                                 <input type="text" class="form-control"  name="expanse_note" value="<?=$expanseNote?>" placeholder="Expanse Note" >
-                                <label for="expanse">Expanse Message</label>
+                                <label for="expanse"><?= __t('Expanse Message')?></label>
                             </div>
                         </div>
                     </div>
@@ -239,7 +239,7 @@ $m = $record['month'];
                                                 }
                                             }?>
                                         </select>
-                                <label for="date">Month</label>
+                                <label for="date"><?= __t('Month')?></label>
                             </div>
                         </div>
 
@@ -247,7 +247,7 @@ $m = $record['month'];
                             <div class="form-floating">
                                 <input type="hidden" name="vehicle" value="<?php echo $current_vehicle_id ?>">
                                 <input type="date" class="form-control" id="date" name="date" value="<?=$date?>" required placeholder="date">
-                                <label for="date">Date</label>
+                                <label for="date"><?= __t('Date')?></label>
                             </div>
                         </div>
 
@@ -272,7 +272,7 @@ $m = $record['month'];
             <div class="row p-2 mt-3"> 
             <div class="col-md-3 mt-2">
 
-                <h5><?=$username;?> Amount:</h5>
+                <h5><?=$username;?> <?= __t('Amount:')?></h5>
                 
             </div>
             <div class="col-md-2">
@@ -335,16 +335,16 @@ $m = $record['month'];
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Delete Cash Record</h5>
+                        <h5 class="modal-title"><?= __t('Delete Cash Record')?></h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         
-                        <p>Are you sure you want to delete this record?</p>
+                        <p><?= __t('Are you sure you want to delete this record?')?></p>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                        <button type="button" class="btn btn-danger " id="confirmDelete">Yes</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?= __t('No')?></button>
+                        <button type="button" class="btn btn-danger " id="confirmDelete"><?= __t('Yes')?></button>
                     </div>
                 </div>
             </div>

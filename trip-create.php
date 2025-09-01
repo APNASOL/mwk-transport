@@ -11,16 +11,16 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>New Trip entry</h1>
+            <h1><?= __t('New Trip entry')?></h1>
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item">Trip</li>
-                    <li class="breadcrumb-item active">Create new Trip</li>
+                    <li class="breadcrumb-item"><a href="index.html"><?= __t('Home')?></a></li>
+                    <li class="breadcrumb-item"><?= __t('Trip')?></li>
+                    <li class="breadcrumb-item active"><?= __t('Create new Trip')?></li>
                 </ol>
             </nav>
             <div class="d-flex justify-content-end">
-                <a class="btn btn-dark" href="trip-index.php"><i class="bi bi-back"></i> Go to all Trips list
+                <a class="btn btn-dark" href="trip-index.php"><i class="bi bi-back"></i> <?= __t('Go to all Trips list')?>
                 </a>
             </div>
         </div><!-- End Page Title -->
@@ -41,7 +41,7 @@ if (@$_GET['errorMessage']) {
 ?>
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Trip Information</h5>
+                    <h5 class="card-title"><?= __t('Trip Information')?></h5>
                     <?php
 $conn = OpenCon();
 
@@ -54,7 +54,7 @@ $customers = mysqli_query($conn, "SELECT * FROM customers where vehicle_id = '$c
                             <div class="form-floating mb-3">
                             <input type="text" readonly class="form-control" value="<?php echo $current_vehicle_number; ?>" >
                                      <input type="hidden" name="vehicle_id" value="<?php echo $current_vehicle_id; ?>">
-                                <label for="vehicle">Vehicle</label>
+                                <label for="vehicle"><?= __t('Vehicle')?></label>
                             </div>
                         </div>
 
@@ -65,9 +65,9 @@ $customers = mysqli_query($conn, "SELECT * FROM customers where vehicle_id = '$c
 while ($customer = mysqli_fetch_array($customers)) {?>
                                     <option value="<?php echo $customer['id'] ?>"><?php echo $customer['name'] ?></option>
                                     <?php }?>
-                                    <option Selected hidden>Please select customer from the list</option>
+                                    <option Selected hidden><?= __('Please select customer from the list')?></option>
                                 </select>
-                                <label for="vehicle">Customers</label>
+                                <label for="vehicle"><?= __t('Customers')?></label>
                             </div>
                         </div>
 
@@ -76,12 +76,12 @@ while ($customer = mysqli_fetch_array($customers)) {?>
                                 <select class="form-select" id="load_type" name="load_type" aria-label="vehicles">
 
                                     <option Selected hidden>
-                                        Please select load type
+                                        <?= __t('Please select load type')?>
                                     </option>
-                                    <option Selected value="custom">Custom</option>
-                                    <option Selected value="coal">Coal</option>
+                                    <option Selected value="custom"><?= __t('Custom')?></option>
+                                    <option Selected value="coal"><?= __t('Coal')?></option>
                                 </select>
-                                <label for="vehicle">Load type</label>
+                                <label for="vehicle"><?= __t('Load type')?></label>
                             </div>
                         </div>
 
@@ -90,7 +90,7 @@ while ($customer = mysqli_fetch_array($customers)) {?>
                             <div class="form-floating">
                                 <input type="text" class="form-control" id="custom_type" name="custom_type"
                                     placeholder="Custome type">
-                                <label for="balnce">Custom Type</label>
+                                <label for="balnce"><?= __t('Custom Type')?></label>
                             </div>
                         </div>
 
@@ -98,7 +98,7 @@ while ($customer = mysqli_fetch_array($customers)) {?>
                             <div class="form-floating">
                                 <input type="date" class="form-control" id="start_date" name="start_date"
                                     placeholder="Date">
-                                <label for="start_date">Start date</label>
+                                <label for="start_date"><?= __t('Start date')?></label>
                             </div>
                         </div>
 
@@ -106,7 +106,7 @@ while ($customer = mysqli_fetch_array($customers)) {?>
                             <div class="form-floating">
                                 <input type="date" class="form-control" id="end_date" name="end_date"
                                     placeholder="Date">
-                                <label for="end_date">End date</label>
+                                <label for="end_date"><?= __t('End date')?></label>
                             </div>
                         </div>
 
@@ -114,7 +114,7 @@ while ($customer = mysqli_fetch_array($customers)) {?>
                             <div class="form-floating">
                                 <input type="number" step="0.001" class="form-control" id="weight" name="weight"
                                     placeholder="Weight">
-                                <label for="balnce">Weight</label>
+                                <label for="balnce"><?= __t('Weight')?></label>
                             </div>
                         </div>
 
@@ -124,7 +124,7 @@ while ($customer = mysqli_fetch_array($customers)) {?>
                             <div class="form-floating">
                                 <input type="number" step="0.001" class="form-control" id="price_per_ton" name="price_per_ton"
                                     placeholder="Price per ton">
-                                <label for="balnce">Price per ton</label>
+                                <label for="balnce"><?= __t('Price per ton')?></label>
                             </div>
                         </div>
 
@@ -132,7 +132,7 @@ while ($customer = mysqli_fetch_array($customers)) {?>
                             <div class="form-floating">
                                 <input type="number" step="0.001" readonly class="form-control" id="price" name="price"
                                     placeholder="Price">
-                                <label for="balnce">Price</label>
+                                <label for="balnce"><?= __t('Price')?></label>
                             </div>
                         </div>
 
@@ -140,7 +140,7 @@ while ($customer = mysqli_fetch_array($customers)) {?>
                             <div class="form-floating">
                                 <input type="number" step="0.001" class="form-control" id="expense" name="expense"
                                     placeholder="Expense">
-                                <label for="balnce">Expense</label>
+                                <label for="balnce"><?= __t('Expense')?></label>
                             </div>
                         </div>
 
@@ -148,7 +148,7 @@ while ($customer = mysqli_fetch_array($customers)) {?>
                             <div class="form-floating">
                                 <input type="number" step="0.001" readonly class="form-control" id="total_bill" name="total_bill"
                                     placeholder="Total" required>
-                                <label for="total_bill">Total</label>
+                                <label for="total_bill"><?= __t('Total')?></label>
                             </div>
                         </div>
 
@@ -157,12 +157,12 @@ while ($customer = mysqli_fetch_array($customers)) {?>
                                 <select class="form-select" id="payment_status" name="payment_status" aria-label="payment_status">
 
                                     <option Selected hidden>
-                                        Select status
+                                        <?= __t('Select status')?>
                                     </option>
-                                    <option Selected value="received">Received</option>
-                                    <option Selected value="due">Due</option>
+                                    <option Selected value="received"><?= __t('Received')?></option>
+                                    <option Selected value="due"><?= __t('Due')?></option>
                                 </select>
-                                <label for="payment_status">Select Payment status</label>
+                                <label for="payment_status"><?= __t('Select Payment status')?></label>
                             </div>
                         </div>
 
@@ -170,8 +170,8 @@ while ($customer = mysqli_fetch_array($customers)) {?>
 
 
                         <div class="text-center">
-                            <button type="submit" name="create" class="btn btn-dark">Submit</button>
-                            <button type="reset" class="btn btn-secondary">Reset</button>
+                            <button type="submit" name="create" class="btn btn-dark"><?= __t('Submit')?></button>
+                            <button type="reset" class="btn btn-secondary"><?= __t('Reset')?></button>
                         </div>
                     </form><!-- End floating Labels Form -->
 

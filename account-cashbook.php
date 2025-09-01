@@ -19,12 +19,12 @@ $year = $currentdate[0];
 
         <div class="pagetitle">
 
-            <h1>Cash Book</h1>
+            <h1><?= __t('Cash Book')?></h1>
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="index.html"><?= __t('home')?></a></li>
 
-                    <li class="breadcrumb-item active">Cash Book</li>
+                    <li class="breadcrumb-item active"><?= __t('Cash Book')?></li>
                 </ol>
             </nav>
 
@@ -51,9 +51,9 @@ $year = $currentdate[0];
                                             <?php echo $customer['name'] ?>
                                         </option>
                                     <?php } ?>
-                                    <option hidden>Select Customer</option>
+                                    <option hidden><?= __t('Select Customer')?></option>
                                 </select>
-                                <label for="vehicle">Customers</label>
+                                <label for="vehicle"><?= __t('customers')?></label>
                             </div>
 
                         </div>
@@ -62,7 +62,7 @@ $year = $currentdate[0];
                             <div class="form-floating">
                                 <input type="number" class="form-control" id="amount" name="amount" required
                                     placeholder="Amount">
-                                <label for="amount">Amount</label>
+                                <label for="amount"><?= __t('Amount')?></label>
                             </div>
                         </div>
 
@@ -70,7 +70,7 @@ $year = $currentdate[0];
                             <div class="form-floating">
                                 <input type="date" class="form-control" id="date" name="date" required
                                     placeholder="date">
-                                <label for="date">Date</label>
+                                <label for="date"><?= __t('Date')?></label>
                             </div>
                         </div>
 
@@ -82,11 +82,11 @@ $year = $currentdate[0];
                                     <option value="<?php echo $current_vehicle_id ?>">
                                         <?php echo $current_vehicle_number ?>
                                     </option>
-                                    <option value="Company">Company</option>
+                                    <option value="Company"><?= __t('Company')?></option>
 
                                     <!-- <option  hidden>Please select vehicle from the list</option> -->
                                 </select>
-                                <label for="vehicle">Vehicle</label>
+                                <label for="vehicle"><?= __t('Vehicle')?></label>
                             </div>
                         </div>
 
@@ -99,7 +99,7 @@ $year = $currentdate[0];
                             <div class="form-floating">
                                 <input type="text" class="form-control" id="message" name="message"
                                     placeholder="Amount">
-                                <label for="amount">Message</label>
+                                <label for="amount"><?= __t('Message')?></label>
                             </div>
                         </div>
 
@@ -109,7 +109,7 @@ $year = $currentdate[0];
 
                             <div class="text-center">
                                 <input type="hidden" name="customer_transaction" value="customer_transaction">
-                                <button type="submit" class="btn btn-dark">Received</button>
+                                <button type="submit" class="btn btn-dark"><?= __t('Received')?></button>
 
                             </div>
 
@@ -130,35 +130,35 @@ $year = $currentdate[0];
                         <div class="col">
                             <button type="button" class="btn btn-block btn-success" data-bs-toggle="modal"
                                 data-bs-target="#RecieveFromVehicle">
-                                Recieve from Vehicle
+                                <?= __t('Recieve from Vehicle')?>
                             </button>
                         </div>
 
                         <div class="col">
                             <button type="button" class="btn btn-block btn-danger" data-bs-toggle="modal"
                                 data-bs-target="#giveToVehicle">
-                                Give to Vehicle
+                                <?= __t('Give to Vehicle')?>
                             </button>
                         </div>
 
                         <div class="col">
                             <button type="button" class="btn btn-block btn-info" data-bs-toggle="modal"
                                 data-bs-target="#payToPumps">
-                                Pay to Pump
+                                <?= __t('Pay to Pump')?>
                             </button>
                         </div>
 
                         <div class="col">
                             <button type="button" class="btn btn-block btn-warning" data-bs-toggle="modal"
                                 data-bs-target="#returnCash">
-                                Return
+                                <?= __t('Return')?>
                             </button>
                         </div>
 
                         <div class="col">
                            <button type="button" class="btn btn-block btn-success" data-bs-toggle="modal"
                                data-bs-target="#proditWithdraw">
-                               Withdraw
+                               <?= __t('Withdraw')?>
                             </button>
                         </div>
 
@@ -175,7 +175,7 @@ $year = $currentdate[0];
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Profit withdraw</h5>
+                        <h5 class="modal-title"><?= __t('Profit withdraw')?></h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -188,7 +188,7 @@ $year = $currentdate[0];
                                     <input type="text" readonly class="form-control"
                                         value="<?php echo $current_vehicle_number; ?>">
                                     <input type="hidden" name="vehicle_id" value="<?php echo $current_vehicle_id; ?>">
-                                    <label for="vehicle">Vehicle</label>
+                                    <label for="vehicle"><?= __t('Vehicle')?></label>
                                 </div>
                             </div>
 
@@ -212,7 +212,7 @@ $year = $currentdate[0];
                                             }
                                         } ?>
                                     </select>
-                                    <label for="date">Month</label>
+                                    <label for="date"><?= __t('Month')?></label>
                                 </div>
                             </div>
 
@@ -220,14 +220,14 @@ $year = $currentdate[0];
                                 <div class="form-floating">
                                     <input type="number" class="form-control" id="amount" name="amount" required
                                         placeholder="Amount">
-                                    <label for="amount">Amount</label>
+                                    <label for="amount"><?= __t('Amount')?></label>
                                 </div>
                             </div>
 
                             <div class="col-md-12">
                                 <div class="form-floating">
                                     <input type="text" class="form-control" id="note" name="note">
-                                    <label for="date">Note</label>
+                                    <label for="date"><?= __t('Note')?></label>
                                 </div>
                             </div>
 
@@ -235,7 +235,7 @@ $year = $currentdate[0];
                                 <div class="form-floating">
                                     <input type="date" class="form-control" id="date" name="date" required
                                         placeholder="date">
-                                    <label for="date">Date</label>
+                                    <label for="date"><?= __t('Date')?></label>
                                 </div>
                             </div>
 
@@ -245,7 +245,7 @@ $year = $currentdate[0];
                                     <input type="hidden" name="profit_withdraw" class="btn btn-dark"
                                         value="profit_withdraw">
 
-                                    <button type="submit" class="btn btn-dark">Submit</button>
+                                    <button type="submit" class="btn btn-dark"><?= __t('Submit')?></button>
 
                                 </div>
 
@@ -264,7 +264,7 @@ $year = $currentdate[0];
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Give To Vehicle</h5>
+                        <h5 class="modal-title"><?= __t('Give To Vehicle')?></h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -277,14 +277,14 @@ $year = $currentdate[0];
                                     <input type="text" readonly class="form-control"
                                         value="<?php echo $current_vehicle_number; ?>">
                                     <input type="hidden" name="vehicle_id" value="<?php echo $current_vehicle_id; ?>">
-                                    <label for="vehicle">Vehicle</label>
+                                    <label for="vehicle"><?= __t('Vehicle')?></label>
                                 </div>
                             </div>
 
                             <div class="col-md-12">
                                 <div class="form-floating">
                                     <input type="text" class="form-control" id="note" name="note">
-                                    <label for="date">Note</label>
+                                    <label for="date"><?= __t('Note')?></label>
                                 </div>
                             </div>
 
@@ -292,7 +292,7 @@ $year = $currentdate[0];
                                 <div class="form-floating">
                                     <input type="number" class="form-control" id="amount" name="amount" required
                                         placeholder="Amount">
-                                    <label for="amount">Amount</label>
+                                    <label for="amount"><?= __t('Amount')?></label>
                                 </div>
                             </div>
 
@@ -300,7 +300,7 @@ $year = $currentdate[0];
                                 <div class="form-floating">
                                     <input type="date" class="form-control" id="date" name="date" required
                                         placeholder="date">
-                                    <label for="date">Date</label>
+                                    <label for="date"><?= __t('Date')?></label>
                                 </div>
                             </div>
 
@@ -309,7 +309,7 @@ $year = $currentdate[0];
                                 <div class="text-center">
                                     <input type="hidden" name="give_to_vehicle_transaction" class="btn btn-dark"
                                         value="give_to_vehicle_transaction">
-                                    <button type="submit" class="btn btn-dark">Submit</button>
+                                    <button type="submit" class="btn btn-dark"><?= __t('Submit')?></button>
 
                                 </div>
 
@@ -327,7 +327,7 @@ $year = $currentdate[0];
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Recieved from Vehicle</h5>
+                        <h5 class="modal-title"><?= __t('Recieved from Vehicle')?></h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -343,7 +343,7 @@ $year = $currentdate[0];
                                                 value="<?php echo $current_vehicle_number; ?>">
                                             <input type="hidden" name="vehicle_id"
                                                 value="<?php echo $current_vehicle_id; ?>">
-                                            <label for="vehicle">Vehicle</label>
+                                            <label for="vehicle"><?= __t('Vehicle')?></label>
                                         </div>
                                     </div>
 
@@ -353,7 +353,7 @@ $year = $currentdate[0];
                             <div class="col-md-12">
                                 <div class="form-floating">
                                     <input type="text" class="form-control" id="note" name="note">
-                                    <label for="date">Note</label>
+                                    <label for="date"><?= __t('Note')?></label>
                                 </div>
                             </div>
 
@@ -361,7 +361,7 @@ $year = $currentdate[0];
                                 <div class="form-floating">
                                     <input type="number" class="form-control" id="amount" name="amount" required
                                         placeholder="Amount">
-                                    <label for="amount">Amount</label>
+                                    <label for="amount"><?= __t('Amount')?></label>
                                 </div>
                             </div>
 
@@ -369,7 +369,7 @@ $year = $currentdate[0];
                                 <div class="form-floating">
                                     <input type="date" class="form-control" id="date" name="date" required
                                         placeholder="date">
-                                    <label for="date">Date</label>
+                                    <label for="date"><?= __t('Date')?></label>
                                 </div>
                             </div>
 
@@ -378,7 +378,7 @@ $year = $currentdate[0];
                                 <div class="text-center">
                                     <input type="hidden" name="receive_from_vehicle_transaction" class="btn btn-dark"
                                         value="receive_from_vehicle_transaction">
-                                    <button type="submit" class="btn btn-dark">Submit</button>
+                                    <button type="submit" class="btn btn-dark"><?= __t('Submit')?></button>
                                 </div>
 
                             </div>
@@ -397,7 +397,7 @@ $year = $currentdate[0];
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Pay to pump</h5>
+                        <h5 class="modal-title"><?= __t('Pay to Pump')?></h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -414,16 +414,16 @@ $year = $currentdate[0];
                                             <option value="<?php echo $pump['id'] ?>"><?php echo $pump['name'] ?>
                                             </option>
                                         <?php } ?>
-                                        <option Selected hidden>Please select pump from the list</option>
+                                        <option Selected hidden><?= __t('Please select pump from the list')?></option>
                                     </select>
-                                    <label for="pump">Pump</label>
+                                    <label for="pump"><?= __t('Pump')?></label>
                                 </div>
                             </div>
 
                             <div class="col-md-12">
                                 <div class="form-floating">
                                     <input type="text" class="form-control" id="note" name="note">
-                                    <label for="date">Note</label>
+                                    <label for="date"><?= __t('Note')?></label>
                                 </div>
                             </div>
 
@@ -431,7 +431,7 @@ $year = $currentdate[0];
                                 <div class="form-floating">
                                     <input type="number" class="form-control" id="amount" name="amount" required
                                         placeholder="Amount">
-                                    <label for="amount">Amount</label>
+                                    <label for="amount"><?= __t('Amount')?></label>
                                 </div>
                             </div>
 
@@ -439,7 +439,7 @@ $year = $currentdate[0];
                                 <div class="form-floating">
                                     <input type="date" class="form-control" id="date" name="date" required
                                         placeholder="date">
-                                    <label for="date">Date</label>
+                                    <label for="date"><?= __t('Date')?></label>
                                 </div>
                             </div>
 
@@ -448,7 +448,7 @@ $year = $currentdate[0];
                                 <div class="text-center">
                                     <input type="hidden" name="pay_to_pump_transaction" class="btn btn-dark"
                                         value="pay_to_pump_transaction">
-                                    <button type="submit" class="btn btn-dark">Submit</button>
+                                    <button type="submit" class="btn btn-dark"><?= __t('Submit')?></button>
                                 </div>
 
                             </div>
@@ -466,7 +466,7 @@ $year = $currentdate[0];
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Return Cash</h5>
+                        <h5 class="modal-title"><?= __t('Return Cash')?></h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -483,16 +483,16 @@ $year = $currentdate[0];
                                             <option value="<?php echo $customer['id'] ?>"><?php echo $customer['name'] ?>
                                             </option>
                                         <?php } ?>
-                                        <option Selected hidden>Select Customer</option>
+                                        <option Selected hidden><?= __t('Select Customer')?></option>
                                     </select>
-                                    <label for="vehicle">Customers</label>
+                                    <label for="vehicle"><?= __t('customers')?></label>
                                 </div>
                             </div>
 
                             <div class="col-md-12">
                                 <div class="form-floating">
                                     <input type="text" class="form-control" id="note" name="note">
-                                    <label for="date">Note</label>
+                                    <label for="date"><?= __t('Note')?></label>
                                 </div>
                             </div>
 
@@ -500,7 +500,7 @@ $year = $currentdate[0];
                                 <div class="form-floating">
                                     <input type="number" class="form-control" id="amount" name="amount" required
                                         placeholder="Amount">
-                                    <label for="amount">Amount</label>
+                                    <label for="amount"><?= __t('Amount')?></label>
                                 </div>
                             </div>
 
@@ -508,7 +508,7 @@ $year = $currentdate[0];
                                 <div class="form-floating">
                                     <input type="date" class="form-control" id="date" name="date" required
                                         placeholder="date">
-                                    <label for="date">Date</label>
+                                    <label for="date"><?= __t('Date')?></label>
                                 </div>
                             </div>
 
@@ -516,7 +516,7 @@ $year = $currentdate[0];
 
                                 <div class="text-center">
                                     <input type="hidden" name="return_cash" class="btn btn-dark" value="return_cash">
-                                    <button type="submit" class="btn btn-dark">Submit</button>
+                                    <button type="submit" class="btn btn-dark"><?= __t('Submit')?></button>
                                 </div>
 
                             </div>
@@ -553,7 +553,7 @@ $year = $currentdate[0];
                             <div class="row">
 
                                 <div class="col-md-7 mt-3">
-                                    <h5 class="card-title">Select year and month </h5>
+                                    <h5 class="card-title"><?= __t('Select year and month')?> </h5>
                                 </div>
 
                                 <div class="col-md-2">
@@ -637,16 +637,16 @@ $year = $currentdate[0];
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Delete Cash Record</h5>
+                    <h5 class="modal-title"><?= __t('Delete Cash Record')?></h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
 
-                    <p>Are you sure you want to delete this record?</p>
+                    <p><?= __t('Are you sure you want to delete this record?')?></p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                    <button type="button" class="btn btn-danger " id="confirmDelete">Yes</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?= __t('No')?></button>
+                    <button type="button" class="btn btn-danger " id="confirmDelete"><?= __t('Yes')?></button>
                 </div>
             </div>
         </div>

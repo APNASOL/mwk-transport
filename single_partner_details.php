@@ -20,11 +20,11 @@ foreach ($stmtpartners as $value) {
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Partner</h1>
+      <h1><?= __t('Partner')?></h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-          <li class="breadcrumb-item active">Details</li>
+          <li class="breadcrumb-item"><a href="index.php"><?= __t('Home')?></a></li>
+          <li class="breadcrumb-item active"><?= __t('Details')?></li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -54,7 +54,7 @@ foreach ($stmtpartners as $value) {
                               
                                 <button type="button" class="btn btn-dark btn-block" data-bs-toggle="modal"
                                     data-bs-target="#proditWithdraw">
-                                    Profit Withdraw
+                                    <?= __t('Profit Withdraw')?>
                                 </button>
                             </div>
                           
@@ -73,8 +73,8 @@ foreach ($stmtpartners as $value) {
                          <input type="hidden" id="p_id" name="p_id" value="<?php echo $id;?>">
                           <td width="5%">
                               <select class="form-control chosen" placeholder="" name="detailtype" id="sale_details"> 
-                                <option value="2" selected>Yearly</option>
-                                <option value="4">Custom</option>
+                                <option value="2" selected><?= __t('Yearly')?></option>
+                                <option value="4"><?= __t('Custom')?></option>
                               </select>
                           </td>
                         
@@ -97,7 +97,7 @@ foreach ($stmtpartners as $value) {
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Profit withdraw</h5>
+                        <h5 class="modal-title"><?= __t('Profit withdraw')?></h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -111,7 +111,7 @@ foreach ($stmtpartners as $value) {
                                         
                                     <input type="hidden" name="partner_id" value="<?php echo $id;?>">
                                     <input type="hidden" name="vehicle_id" value="<?php echo $current_vehicle_id;?>">
-                                    <label for="vehicle">Vehicle</label>
+                                    <label for="vehicle"><?= __t('Vehicle')?></label>
                                 </div>
                             </div>
 
@@ -119,7 +119,7 @@ foreach ($stmtpartners as $value) {
                                 <div class="form-floating">
                                     <input type="text" readonly class="form-control"
                                         value="<?php echo $partner_name;?>">
-                                    <label for="vehicle">Partner</label>
+                                    <label for="vehicle"><?= __t('Partner')?></label>
                                 </div>
                             </div>
 
@@ -127,21 +127,21 @@ foreach ($stmtpartners as $value) {
                                 <div class="form-floating">
                                     <input type="number" class="form-control" id="amount" name="amount"
                                         required placeholder="Amount">
-                                    <label for="amount">Amount</label>
+                                    <label for="amount"><?= __t('Amount')?></label>
                                 </div>
                             </div>
                             
                             <div class="col-md-12">
                                 <div class="form-floating">
                                     <input type="text" class="form-control" id="note" name="note">
-                                    <label for="date">Note</label>
+                                    <label for="date"><?= __t('Note')?></label>
                                 </div>
                             </div>
 
                             <div class="col-md-12">
                                 <div class="form-floating">
                                     <input type="date" class="form-control" id="date" name="date" required placeholder="date">
-                                    <label for="date">Date</label>
+                                    <label for="date"><?= __t('Date')?></label>
                                 </div>
                             </div>
 
@@ -151,7 +151,7 @@ foreach ($stmtpartners as $value) {
                                     
                                     <input type="hidden" name="profit_withdraw" value="profit_withdraw">
                                     <button type="submit"
-                                        class="btn btn-dark btn-lg">Submit</button>
+                                        class="btn btn-dark btn-lg"><?= __t('Submit')?></button>
 
                                 </div>
 
@@ -171,16 +171,16 @@ foreach ($stmtpartners as $value) {
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Delete Profit Record</h5>
+                        <h5 class="modal-title"><?= __t('Delete Profit Record')?></h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         
-                        <p>Are you sure you want to delete this record?</p>
+                        <p><?= __t('Are you sure you want to delete this record?')?></p>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                        <button type="button" class="btn btn-danger " id="confirmDelete">Yes</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?= __t('No')?></button>
+                        <button type="button" class="btn btn-danger " id="confirmDelete"><?= __t('Yes')?></button>
                     </div>
                 </div>
             </div>

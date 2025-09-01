@@ -11,12 +11,12 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Profile</h1>
+      <h1><?= __t('Profile')?></h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item">Users</li>
-          <li class="breadcrumb-item active">Profile</li>
+          <li class="breadcrumb-item"><a href="index.html"><?= __t('Home')?></a></li>
+          <li class="breadcrumb-item"><?= __t('Users')?></li>
+          <li class="breadcrumb-item active"><?= __t('Profile')?></li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -27,7 +27,7 @@
   <div class="col-md-6">
     <div class="card shadow-lg border-0 rounded-4">
       <div class="card-header bg-dark text-white rounded-top-4 d-flex justify-content-between align-items-center">
-        <h4 class="card-title mb-0 text-white text-center" id="tel-repeater">Update Password</h4>
+        <h4 class="card-title mb-0 text-white text-center" id="tel-repeater"><?= __t('Update Password')?></h4>
         <a class="text-white" data-action="expand"><i class="ft-maximize"></i></a>
       </div>
       <div class="card-body pt-4">
@@ -42,7 +42,7 @@
           <div class="d-flex justify-content-end">
             <button onclick="return val_a();" type="submit" name="btn_password"
               class="btn btn-dark active mt-2 px-4 rounded-pill shadow-sm">
-              Save Changes
+              <?= __t('Save Changes')?>
             </button>
           </div>
         </form>

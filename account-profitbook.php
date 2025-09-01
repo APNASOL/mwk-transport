@@ -19,12 +19,12 @@ $year = $currentdate[0];
 
         <div class="pagetitle">
 
-            <h1>Profit Book</h1>
+            <h1><?= __t('Profit Book')?></h1>
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="index.html"><?= __t('Home')?></a></li>
 
-                    <li class="breadcrumb-item active">Profit Book</li>
+                    <li class="breadcrumb-item active"><?= __t('Profit Book')?></li>
                 </ol>
             </nav>
 
@@ -41,7 +41,7 @@ $year = $currentdate[0];
                     <div class="row mt-3">
                          <div class="col-md-7"></div>
                          <div class="col-md-2">
-                             <a  class="btn btn-dark btn-block" href="profit-create.php">Add Profit</a>
+                             <a  class="btn btn-dark btn-block" href="profit-create.php"><?= __t('Add Profit')?></a>
 
                           </div>
 
@@ -49,7 +49,7 @@ $year = $currentdate[0];
                               
                                 <button type="button" class="btn btn-dark btn-block" data-bs-toggle="modal"
                                     data-bs-target="#proditWithdraw">
-                                    Profit Withdraw
+                                    <?= __t('Profit Withdraw')?>
                                 </button>
                             </div>
                           
@@ -86,7 +86,7 @@ $year = $currentdate[0];
                         <div class="row">
                         
                         <div class="col-md-9 mt-3">
-                            <h5 class="card-title">Select year</h5>
+                            <h5 class="card-title"><?= __t('Select year')?></h5>
                         </div>
 
                         <div class="col-md-2">
@@ -145,7 +145,7 @@ $year = $currentdate[0];
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Profit withdraw</h5>
+                        <h5 class="modal-title"><?= __t('Profit withdraw')?></h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -157,7 +157,7 @@ $year = $currentdate[0];
                                     <input type="text" readonly class="form-control"
                                         value="<?php echo $current_vehicle_number;?>">
                                     <input type="hidden" name="vehicle_id" value="<?php echo $current_vehicle_id;?>">
-                                    <label for="vehicle">Vehicle</label>
+                                    <label for="vehicle"><?= __t('Vehicle')?></label>
                                 </div>
                             </div>
 
@@ -177,7 +177,7 @@ $year = $currentdate[0];
                                                 }
                                             }?>
                                         </select>
-                                <label for="date">Month</label>
+                                <label for="date"><?= __t('Month')?></label>
                             </div>
                         </div>
 
@@ -185,21 +185,21 @@ $year = $currentdate[0];
                                 <div class="form-floating">
                                     <input type="number" class="form-control" id="amount" name="amount"
                                         required placeholder="Amount">
-                                    <label for="amount">Amount</label>
+                                    <label for="amount"><?= __t('Amount')?></label>
                                 </div>
                             </div>
                             
                             <div class="col-md-12">
                                 <div class="form-floating">
                                     <input type="text" class="form-control" id="note" name="note">
-                                    <label for="date">Note</label>
+                                    <label for="date"><?= __t('Note')?></label>
                                 </div>
                             </div>
 
                             <div class="col-md-12">
                                 <div class="form-floating">
                                     <input type="date" class="form-control" id="date" name="date" required placeholder="date">
-                                    <label for="date">Date</label>
+                                    <label for="date"><?= __t('Date')?></label>
                                 </div>
                             </div>
 
@@ -209,7 +209,7 @@ $year = $currentdate[0];
                                     
                                     <input type="hidden" name="profit_withdraw" value="profit_withdraw">
                                     <button type="submit"
-                                        class="btn btn-dark btn-lg">Submit</button>
+                                        class="btn btn-dark btn-lg"><?= __t('Submit')?></button>
 
                                 </div>
 
@@ -229,16 +229,16 @@ $year = $currentdate[0];
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Delete Profit Record</h5>
+                        <h5 class="modal-title"><?= __t('Delete Profit Record')?></h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         
-                        <p>Are you sure you want to delete this record?</p>
+                        <p><?= __t('Are you sure you want to delete this record?')?></p>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                        <button type="button" class="btn btn-danger " id="confirmDelete">Yes</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?= __t('No')?></button>
+                        <button type="button" class="btn btn-danger " id="confirmDelete"><?= __t('Yes')?></button>
                     </div>
                 </div>
             </div>

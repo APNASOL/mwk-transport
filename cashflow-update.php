@@ -11,12 +11,12 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>Update Cash Entry</h1>
+            <h1><?= __t('Update Cash Entry')?></h1>
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item">Cashflow</li>
-                    <li class="breadcrumb-item active">Update Cash</li>
+                    <li class="breadcrumb-item"><a href="index.html"><?= __t('Home')?></a></li>
+                    <li class="breadcrumb-item"><?= __t('Cashflow')?></li>
+                    <li class="breadcrumb-item active"><?= __t('Update Cash')?></li>
                 </ol>
             </nav>
         </div><!-- End Page Title -->
@@ -54,7 +54,7 @@
     ?>
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Update Cashflow</h5>
+                    <h5 class="card-title"><?= __t('Update Cashflow')?></h5>
 
                     <!-- Floating Labels Form -->
                     <form class="row g-3" action="Controllers/TripsController.php" method="post" onsubmit="handleSubmit(event, this)">
@@ -82,9 +82,9 @@
                                     </option>
 
                                     <?php }}    ?>
-                                    <option hidden>Please select customer from the list</option>
+                                    <option hidden><?= __t('Please select customer from the list')?></option>
                                 </select>
-                                <label for="pump_name">Customer</label>
+                                <label for="pump_name"><?= __t('Customer')?></label>
                             </div>
                         </div>
 
@@ -106,16 +106,16 @@
                                     </option>
 
                                     <?php }}    ?>
-                                    <option hidden>Please select customer from the list</option>
+                                    <option hidden><?= __t('Please select customer from the list')?></option>
                                 </select>
-                                <label for="pump_name">Vehicle</label>
+                                <label for="pump_name"><?= __t('Vehicle')?></label>
                             </div>
                         </div>
 
                         <div class="col-md-6">
                             <div class="form-floating">
                             <input type="date" class="form-control" id="date" name="date" required placeholder="Date" value="<?php echo $date; ?>">
-                                <label for="address">Date</label>
+                                <label for="address"><?= __t('Date')?></label>
                             </div>
                         </div>
 
@@ -123,7 +123,7 @@
                             <div class="form-floating">
                                 <input type="text" class="form-control" id="new_balance" name="new_balance"
                                     required placeholder="Balance" value="<?php echo $cash_received; ?>">
-                                <label for="balnce">Cash</label>
+                                <label for="balnce"><?= __t('Cash')?></label>
                             </div>
                         </div>
 
@@ -132,7 +132,7 @@
                         <div class="text-center">
                             <input type="hidden" name="update_cash" value="1">
                             <button type="submit" class="btn btn-dark">Update</button>
-                            <button type="submit" name="delete_cash" class="btn btn-danger" onclick="return confirmDelete()">Delete</button>
+                            <button type="submit" name="delete_cash" class="btn btn-danger" onclick="return confirmDelete()"><?= __t('Delete')?></button>
                         </div>
 
                     </form><!-- End floating Labels Form -->

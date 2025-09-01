@@ -12,16 +12,16 @@
 
     <div class="pagetitle">
 
-      <h1>Cash Flow</h1>
+      <h1><?= __t('Cash Flow')?></h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item">Cashflow</li>
-          <li class="breadcrumb-item active">Index</li>
+          <li class="breadcrumb-item"><a href="index.html"><?= __t('Home')?></a></li>
+          <li class="breadcrumb-item"><?= __t('Cashflow')?></li>
+          <li class="breadcrumb-item active"><?= __t('Index')?></li>
         </ol>
       </nav>
       <div class="d-flex justify-content-end">
-        <a class="btn btn-dark" href="cashflow-create.php"><i class="bi bi-plus-lg"></i> Add Cash Entries
+        <a class="btn btn-dark" href="cashflow-create.php"><i class="bi bi-plus-lg"></i> <?= __t('Add Cash Entries')?>
         </a>
       </div>
     </div><!-- End Page Title -->
@@ -54,7 +54,7 @@ $cashflow_totals = mysqli_query($conn, "SELECT COUNT(id) AS total_entries,SUM(ca
                 <div class="card bg-white text-warning mb-3" style="">
 
                 <div class="card-body p-3">
-                <h5><b class="card-title text-dark text-left">Total Entries</b></h5><hr>
+                <h5><b class="card-title text-dark text-left"><?= __t('Total Entries')?></b></h5><hr>
                 <h3 class="card-title"><?php echo $total_entries; ?></h3>
 
                 </div>
@@ -65,7 +65,7 @@ $cashflow_totals = mysqli_query($conn, "SELECT COUNT(id) AS total_entries,SUM(ca
                 <div class="card bg-white text-warning mb-3" style="">
 
                 <div class="card-body p-3">
-                <h5><b class="card-title text-dark text-left">Total Cash Received</b></h5><hr>
+                <h5><b class="card-title text-dark text-left"><?= __t('Total Cash Received')?></b></h5><hr>
                 <h3 class="card-title"><b><?php echo $total_due; ?></b></h3>
                 </div>
                 </div>
@@ -83,13 +83,12 @@ $cashs = mysqli_query($conn, "SELECT * FROM cashflow order by date");
 
               <tr>
                 <th scope="col">#</th>
-                <th scope="col">Date</th>
-                <th scope="col">Customer</th>
-                <th scope="col">Vehicle</th>
-                <th scope="col">Cash Received</th>
-                
-                <th scope="col">Balance</th>
-                <th scope="col">Action</th>
+                <th scope="col"> <?= __t('Date')?></th>
+                <th scope="col"> <?= __t('Customer')?></th>
+                <th scope="col"> <?= __t('Vehicle')?></th>
+                <th scope="col"> <?= __t('Cash Received')?></th>
+                <th scope="col"> <?= __t('Balance')?></th>
+                <th scope="col"> <?= __t('Action')?></th>
               </tr>
 
             </thead>

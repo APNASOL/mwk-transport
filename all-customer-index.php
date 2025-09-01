@@ -12,12 +12,12 @@
 
     <div class="pagetitle">
 
-      <h1>Customers</h1>
+      <h1><?= __t('Customers')?></h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item">Customers</li>
-          <li class="breadcrumb-item active">Index</li>
+          <li class="breadcrumb-item"><a href="index.html"><?= __t('Home')?></a></li>
+          <li class="breadcrumb-item"><?= __t('Customers')?></li>
+          <li class="breadcrumb-item active"><?= __t('Index')?></li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -36,7 +36,7 @@ if (@$_GET['successMessage']) {
 ?>
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title">Customers</h5>
+          <h5 class="card-title"><?= __t('Customers')?></h5>
 
           <?php 
             $conn = OpenCon();
@@ -47,7 +47,7 @@ if (@$_GET['successMessage']) {
     <thead>
         <tr>
             <th scope="col">#</th>
-            <th scope="col">Customer</th>
+            <th scope="col"><?= __t('Customer')?></th>
             <?php
             // Initialize an array to store total dues per vehicle
             
@@ -130,7 +130,7 @@ if (@$_GET['successMessage']) {
     
     <tr>
         <th scope="row"></th>
-        <td><strong>Total:</strong></td>
+        <td><strong><?= __t('Total:')?></strong></td>
         <?php
         // Loop through each vehicle and display the total dues for that vehicle
         $grand_total = 0;
@@ -157,18 +157,18 @@ if (@$_GET['successMessage']) {
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="confirmDeleteModalLabel">Confirm Deletion</h5>
+        <h5 class="modal-title" id="confirmDeleteModalLabel"><?= __t('Confirm Deletion')?></h5>
         <button type="button" class="close" data-bs-dismiss="modal"  aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <p>Please enter your password to confirm deletion:</p>
+        <p><?= __t('Please enter your password to confirm deletion:')?></p>
         <input type="password" id="deletePassword" class="form-control" placeholder="Your Password">
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-danger" onclick="confirmDelete()">Delete</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?= __t('Cancel')?></button>
+        <button type="button" class="btn btn-danger" onclick="confirmDelete()"><?= __t('Delete')?></button>
       </div>
     </div>
   </div>

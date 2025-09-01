@@ -11,16 +11,16 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>Update trip</h1>
+            <h1><?= __t('Update trip')?></h1>
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item">Trip</li>
-                    <li class="breadcrumb-item active">Update trip</li>
+                    <li class="breadcrumb-item"><a href="index.html"><?= __t('Home')?></a></li>
+                    <li class="breadcrumb-item"><?= __t('Trip')?></li>
+                    <li class="breadcrumb-item active"><?= __t('Update trip')?></li>
                 </ol>
             </nav>
             <div class="d-flex justify-content-end">
-                <a class="btn btn-dark" href="trip-index.php"><i class="bi bi-back"></i> Go to all Trips list
+                <a class="btn btn-dark" href="trip-index.php"><i class="bi bi-back"></i> <?= __t('Go to all Trips list')?>
                 </a>
             </div>
         </div><!-- End Page Title -->
@@ -51,7 +51,7 @@ $customers = mysqli_query($conn, "SELECT * FROM customers where vehicle_id = '$c
 ?>
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Trip Information</h5>
+                    <h5 class="card-title"><?= __t('Trip Information')?></h5>
                     <!-- Floating Labels Form -->
                     <form class="row g-3" action="Controllers/TripsController.php" method="post" onsubmit="handleSubmit(event, this)">
 
@@ -61,7 +61,7 @@ $customers = mysqli_query($conn, "SELECT * FROM customers where vehicle_id = '$c
                                 <input type="text" readonly class="form-control"
                                     value="<?php echo $current_vehicle_number; ?>">
                                 <input type="hidden" name="vehicle_id" value="<?php echo $current_vehicle_id; ?>">
-                                <label for="vehicle">Vehicle</label>
+                                <label for="vehicle"><?= __t('Vehicle')?></label>
                             </div>
                         </div>
 
@@ -87,7 +87,7 @@ $customers = mysqli_query($conn, "SELECT * FROM customers where vehicle_id = '$c
                                     <?php }}    ?>
                                     <option hidden>Please select customer from the list</option>
                                 </select>
-                                <label for="vehicle">Customer</label>
+                                <label for="vehicle"><?= __t('Customer')?></label>
                             </div>
                         </div>
 
@@ -102,7 +102,7 @@ $customers = mysqli_query($conn, "SELECT * FROM customers where vehicle_id = '$c
                                     <option <?php if($trip['load_type']!="coal") echo 'selected="selected"'; ?>  value="custom">Custom</option>
                                 </select> -->
                                 <input type="text" readonly value="<?php echo $trip['load_type']?>" class="form-control">
-                                <label for="vehicle">Load type</label>
+                                <label for="vehicle"><?= __t('Load type')?></label>
                             </div>
                         </div> 
 
@@ -111,7 +111,7 @@ $customers = mysqli_query($conn, "SELECT * FROM customers where vehicle_id = '$c
                             <div class="form-floating">
                                 <input type="text" class="form-control" id="custom_type" name="custom_type"
                                     placeholder="Custome type" value="<?php echo $trip['load_type'];?>">
-                                <label for="balnce">Custom Type</label>
+                                <label for="balnce"><?= __t('Custom Type')?></label>
                             </div>
                         </div>
 
@@ -119,7 +119,7 @@ $customers = mysqli_query($conn, "SELECT * FROM customers where vehicle_id = '$c
                             <div class="form-floating">
                                 <input type="date" class="form-control" id="start_date" name="start_date"
                                     placeholder="Date" value="<?php echo $trip['start_date'];?>">
-                                <label for="start_date">Start date</label>
+                                <label for="start_date"><?= __t('Start date')?></label>
                             </div>
                         </div>
 
@@ -127,7 +127,7 @@ $customers = mysqli_query($conn, "SELECT * FROM customers where vehicle_id = '$c
                             <div class="form-floating">
                                 <input type="date" class="form-control" id="end_date" name="end_date"
                                     placeholder="Date" value="<?php echo $trip['end_date'];?>">
-                                <label for="end_date" >End date</label>
+                                <label for="end_date" ><?= __t('End date')?></label>
                             </div>
                         </div>
 
@@ -136,7 +136,7 @@ $customers = mysqli_query($conn, "SELECT * FROM customers where vehicle_id = '$c
                             <input type="hidden" value="<?php echo $trip['weight'];?>" name="old_weight">
                                 <input type="number" step="0.001" class="form-control" id="weight" name="weight"
                                     placeholder="Weight" value="<?php echo $trip['weight'];?>">
-                                <label for="balnce">Weight</label>
+                                <label for="balnce"><?= __t('Weight')?></label>
                             </div>
                         </div>
 
@@ -145,7 +145,7 @@ $customers = mysqli_query($conn, "SELECT * FROM customers where vehicle_id = '$c
                             <input type="hidden" value="<?php echo $trip['price_per_ton'];?>" name="old_price_per_ton">
                                 <input type="number" step="0.001" class="form-control" id="price_per_ton"
                                     name="price_per_ton" placeholder="Price per ton" value="<?php echo $trip['price_per_ton'];?>">
-                                <label for="balnce" >Price per ton</label>
+                                <label for="balnce" ><?= __t('Price per ton')?></label>
                             </div>
                         </div>
 
@@ -154,7 +154,7 @@ $customers = mysqli_query($conn, "SELECT * FROM customers where vehicle_id = '$c
                             <input type="hidden" value="<?php echo $trip['price'];?>" name="old_price">
                                 <input type="number" step="0.001" readonly class="form-control" id="price" name="price"
                                     placeholder="Price" value="<?php echo $trip['price'];?>">
-                                <label for="balnce">Price</label>
+                                <label for="balnce"><?= __t('Price')?></label>
                             </div>
                         </div>
 
@@ -163,7 +163,7 @@ $customers = mysqli_query($conn, "SELECT * FROM customers where vehicle_id = '$c
                             <input type="hidden" value="<?php echo $trip['expense'];?>" name="old_expense">
                                 <input type="number" step="0.001" class="form-control" id="expense" name="expense"
                                     placeholder="Expense" value="<?php echo $trip['expense'];?>">
-                                <label for="balnce" >Expense</label>
+                                <label for="balnce" ><?= __t('Expense')?></label>
                             </div>
                         </div>
 
@@ -172,7 +172,7 @@ $customers = mysqli_query($conn, "SELECT * FROM customers where vehicle_id = '$c
                             <input type="hidden" value="<?php echo $trip['total_bill'];?>" name="old_total_bill">
                                 <input type="number" step="0.001" readonly class="form-control" id="total_bill"
                                     name="total_bill" placeholder="Total"  value="<?php echo $trip['total_bill'];?>" required>
-                                <label for="total_bill">Total</label>
+                                <label for="total_bill"><?= __t('Total')?></label>
                             </div>
                         </div>
 
@@ -189,7 +189,7 @@ $customers = mysqli_query($conn, "SELECT * FROM customers where vehicle_id = '$c
                                     <option <?php if($trip['payment_status']!="received") echo 'selected="selected"'; ?>  value="due">Due</option>
                                 </select> -->
                                 <input type="text" class="form-control" readonly name="payment_status" value="<?php echo $trip['payment_status'];?>">
-                                <label for="vehicle">Status</label>
+                                <label for="vehicle"><?= __t('Status')?></label>
                             </div>
                         </div>
 
@@ -199,7 +199,7 @@ $customers = mysqli_query($conn, "SELECT * FROM customers where vehicle_id = '$c
                         <div class="col-md-9"></div>
                         <div class="col-md-3">
                             <input type="hidden" name="update"  value="Update">
-                            <button type="submit" class="btn btn-dark  btn-block form-control">Update</button>
+                            <button type="submit" class="btn btn-dark  btn-block form-control"><?= __t('Update')?></button>
                         </div>
                     </form>
                     
@@ -216,7 +216,7 @@ $customers = mysqli_query($conn, "SELECT * FROM customers where vehicle_id = '$c
                     <div class="col-md-9"></div>
                     <div class="col-md-3">
                           <input  type="hidden" name="delete" value="Delete">
-                          <button type="submit" class="btn btn-danger btn-block form-control" onclick="return confirmDelete()">Delete</button> 
+                          <button type="submit" class="btn btn-danger btn-block form-control" onclick="return confirmDelete()"><?= __t('Delete')?></button> 
                     </div>
                             
                 </form>

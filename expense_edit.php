@@ -15,12 +15,12 @@ $transaction_id = $_GET['transaction_id'];
 
         <div class="pagetitle">
 
-            <h1>Vehicles Expenses update</h1>
+            <h1><?= __t('Vehicles Expenses update')?></h1>
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item">Expenses transactions update</li>
-                    <li class="breadcrumb-item active">Index</li>
+                    <li class="breadcrumb-item"><a href="index.html"><?= __t('Home')?></a></li>
+                    <li class="breadcrumb-item"><?= __t('Expenses transactions update')?></li>
+                    <li class="breadcrumb-item active"><?= __t('Index')?></li>
                 </ol>
             </nav>
 
@@ -53,8 +53,8 @@ $common_expenses = mysqli_query($conn, "SELECT * FROM vehicle_expenses_details w
                             <table>
                                 <thead>
                                     <tr>
-                                        <td>Expense</td>
-                                        <td>Amount</td>
+                                        <td> <?= __t('Expense')?></td>
+                                        <td> <?= __t('Amount')?></td>
                                         <!-- <td>Action</td> -->
 
                                     </tr>
@@ -101,7 +101,7 @@ $common_expenses = mysqli_query($conn, "SELECT * FROM vehicle_expenses_details w
                         
                       
                            <input  type="hidden" name="vehicle_expense_transaction_update" value="Update">
-                           <button type="submit" class="btn btn-dark btn-block form-control">Delete</button> 
+                           <button type="submit" class="btn btn-dark btn-block form-control"><?= __t('Delete')?></button> 
                        
                        
                     </div>
@@ -117,7 +117,7 @@ $common_expenses = mysqli_query($conn, "SELECT * FROM vehicle_expenses_details w
                     <div class="col-md-9"></div>
                     <div class="col-md-3">
                           <input  type="hidden" name="vehicle_expense_transaction_delete" value="Delete">
-                          <button type="submit" class="btn btn-danger btn-block form-control" onclick="return confirmDelete()">Delete</button> 
+                          <button type="submit" class="btn btn-danger btn-block form-control" onclick="return confirmDelete()"><?= __t('Delete')?></button> 
                     </div>
                             
                 </form>

@@ -15,16 +15,16 @@ $v_name = $_SESSION['current_vehicle_number'];
 
     <div class="pagetitle">
 
-      <h1>Customers</h1>
+      <h1><?= __t('customers')?></h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item">Customers</li>
-          <li class="breadcrumb-item active">Index</li>
+          <li class="breadcrumb-item"><a href="index.html"><?= __t('home')?></a></li>
+          <li class="breadcrumb-item"><?= __t('customers')?></li>
+          <li class="breadcrumb-item active"><?= __t('Index')?></li>
         </ol>
       </nav>
       <div class="d-flex justify-content-end">
-        <a class="btn btn-dark" href="customer-create.php"><i class="bi bi-plus-lg"></i> Add new customer
+        <a class="btn btn-dark" href="customer-create.php"><i class="bi bi-plus-lg"></i> <?= __t('Add new customer')?>
         </a>
       </div>
     </div><!-- End Page Title -->
@@ -44,7 +44,7 @@ if (@$_GET['successMessage']) {
       <div class="card">
           
         <div class="card-body">
-          <h5 class="card-title">Customers</h5>
+          <h5 class="card-title"><?= __t('customers')?></h5>
           <div class="row text-center ">
         <?php
 $conn = OpenCon();
@@ -92,7 +92,7 @@ $customers_totals = mysqli_query($conn, "SELECT * FROM customers where vehicle_i
                 <div class="card bg-white text-warning mb-3" style="">
 
                 <div class="card-body p-3">
-                <h5><b class="card-title text-dark text-left">Total</b></h5><hr>
+                <h5><b class="card-title text-dark text-left"><?= __t('Total')?></b></h5><hr>
                 <h3 class="card-title"><?php echo $total; ?></h3>
 
                 </div>
@@ -103,7 +103,7 @@ $customers_totals = mysqli_query($conn, "SELECT * FROM customers where vehicle_i
                 <div class="card bg-white text-warning mb-3" style="">
 
                 <div class="card-body p-3">
-                <h5><b class="card-title text-dark text-left">Total Dues</b></h5><hr>
+                <h5><b class="card-title text-dark text-left"><?= __t('Total Dues')?></b></h5><hr>
                 <h3 class="card-title"><b><?php echo $dues; ?></b></h3>
                 </div>
                 </div>
@@ -121,11 +121,11 @@ $customers = mysqli_query($conn, "SELECT * FROM customers where vehicle_id = '$c
 
               <tr>
                 <th scope="col">#</th>
-                <th scope="col">Customer name</th>
-                <th scope="col">Contact #</th>
-                <th scope="col">Dues</th>
-                <th scope="col">Last Trip</th>
-                <th scope="col">Action</th>
+                <th scope="col"> <?= __t('Customer name')?></th>
+                <th scope="col"> <?= __t('Contact #')?></th>
+                <th scope="col"> <?= __t('Dues')?></th>
+                <th scope="col"> <?= __t('Last Trip')?></th>
+                <th scope="col"> <?= __t('Action')?></th>
               </tr>
 
             </thead>
@@ -254,7 +254,7 @@ $res = $dat . ' ' . $month_name . ' , ' . $year;
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Set Customer Differance</h5>
+                        <h5 class="modal-title"><?= __t('Set Customer Differance')?></h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -265,7 +265,7 @@ $res = $dat . ' ' . $month_name . ' , ' . $year;
                                 <div class="form-floating">
                                 <input type="hidden" id="customer_id" name="customer_id">
                                     <input type="text" readonly class="form-control" id="customer">
-                                    <label for="vehicle">Customer</label>
+                                    <label for="vehicle"><?= __t('Customer')?></label>
                                 </div>
                             </div>
 
@@ -273,14 +273,14 @@ $res = $dat . ' ' . $month_name . ' , ' . $year;
                                 <div class="form-floating">
                                     <input type="text" class="form-control" id="amount" name="amount"
                                         required placeholder="Amount">
-                                    <label for="amount">Amount</label>
+                                    <label for="amount"><?= __t('Amount')?></label>
                                 </div>
                             </div>
 
                             <div class="col-md-12">
                                 <div class="form-floating">
                                     <input type="date" class="form-control" id="date" name="date" required placeholder="date">
-                                    <label for="date">Date</label>
+                                    <label for="date"><?= __t('Date')?></label>
                                 </div>
                             </div>
 
@@ -310,18 +310,18 @@ $res = $dat . ' ' . $month_name . ' , ' . $year;
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="confirmDeleteModalLabel">Confirm Deletion</h5>
+        <h5 class="modal-title" id="confirmDeleteModalLabel"><?= __t('Confirm Deletion')?></h5>
         <button type="button" class="close" data-bs-dismiss="modal"  aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <p>Please enter your password to confirm deletion:</p>
+        <p><?= __t('Please enter your password to confirm deletion:')?></p>
         <input type="password" id="deletePassword" class="form-control" placeholder="Your Password">
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-danger" onclick="confirmDelete()">Delete</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?= __t('Cancel')?></button>
+        <button type="button" class="btn btn-danger" onclick="confirmDelete()"><?= __t('Delete')?></button>
       </div>
     </div>
   </div>

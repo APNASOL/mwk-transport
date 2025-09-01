@@ -1,4 +1,9 @@
 <?php
+
+require_once __DIR__ . '/../i18n/lang.php';
+
+
+
 $activePage = basename($_SERVER['PHP_SELF'], ".php");
 $current_vehicle_id = $_SESSION['current_vehicle_id'];
 ?>
@@ -12,7 +17,7 @@ $current_vehicle_id = $_SESSION['current_vehicle_id'];
       <a class="nav-link d-flex align-items-center gap-2 <?= $activePage === 'index' ? 'active' : 'text-dark'; ?>"
         href="index.php">
         <i class="bi bi-grid-fill"></i>
-        <span>Dashboard</span>
+        <span><?= __t('dashboard')?></span>
       </a>
     </li>
 
@@ -23,7 +28,7 @@ $current_vehicle_id = $_SESSION['current_vehicle_id'];
       <a class="nav-link d-flex align-items-center gap-2 <?= $activePage === 'dailyoperation' ? 'active' : 'text-dark'; ?>"
         href="dailyoperation.php">
         <i class="bi bi-calendar-range-fill"></i>
-        <span>Daily Operation</span>
+        <span><?= __t('Daily Operation')?></span>
       </a>
     </li>
 
@@ -32,7 +37,7 @@ $current_vehicle_id = $_SESSION['current_vehicle_id'];
       <a class="nav-link d-flex align-items-center gap-2 <?= in_array($activePage, ['vehicle-details', 'vehicle-expenses-transaction']) ? 'active' : 'text-dark'; ?>"
         href="Controllers/VehicleController.php?vehicle_id=<?= $current_vehicle_id ?>&process=details">
         <i class="bi bi-truck"></i>
-        <span>Vehicle Details</span>
+        <span><?= __t('Vehicle Details')?></span>
       </a>
     </li>
 
@@ -41,7 +46,7 @@ $current_vehicle_id = $_SESSION['current_vehicle_id'];
       <a class="nav-link d-flex align-items-center gap-2 <?= $activePage === 'vehicle-income-statements' ? 'active' : 'text-dark'; ?>"
         href="Controllers/VehicleController.php?vehicle_id=<?= $current_vehicle_id ?>&process=vehicle-income-statement">
         <i class="bi bi-journal-text"></i>
-        <span>Income Statements</span>
+        <span><?= __t('Income Statements')?></span>
       </a>
     </li>
 
@@ -50,7 +55,7 @@ $current_vehicle_id = $_SESSION['current_vehicle_id'];
       <a class="nav-link d-flex align-items-center gap-2 <?= $activePage === 'vehicle-finacial-statements' ? 'active' : 'text-dark'; ?>"
         href="Controllers/VehicleController.php?vehicle_id=<?= $current_vehicle_id ?>&process=vehicle-financial-statement">
         <i class="bi bi-layout-text-window-reverse"></i>
-        <span>Financial Statement</span>
+        <span><?= __t('Financial Statement')?></span>
       </a>
     </li>
 
@@ -59,7 +64,7 @@ $current_vehicle_id = $_SESSION['current_vehicle_id'];
       <a class="nav-link d-flex align-items-center gap-2 <?= $activePage === 'vehicle-repair' ? 'active' : 'text-dark'; ?>"
         href="vehicle-repair.php">
         <i class="bi bi-tools"></i>
-        <span>Vehicle Repair</span>
+        <span><?= __t('Vehicle Repair')?></span>
       </a>
     </li>
 
@@ -68,7 +73,7 @@ $current_vehicle_id = $_SESSION['current_vehicle_id'];
       <a class="nav-link d-flex align-items-center gap-2 <?= in_array($activePage, ['pump-index', 'pump-details']) ? 'active' : 'text-dark'; ?>"
         href="pump-index.php">
         <i class="bi bi-file-post"></i>
-        <span>Pumps</span>
+        <span><?= __t('Pumps')?></span>
       </a>
     </li>
 
@@ -77,7 +82,7 @@ $current_vehicle_id = $_SESSION['current_vehicle_id'];
       <a class="nav-link d-flex align-items-center gap-2 <?= $activePage === 'fuel-index' ? 'active' : 'text-dark'; ?>"
         href="fuel-index.php">
         <i class="bi bi-droplet-fill"></i>
-        <span>Fuels</span>
+        <span><?= __t('Fuels')?></span>
       </a>
     </li>
 
@@ -86,7 +91,7 @@ $current_vehicle_id = $_SESSION['current_vehicle_id'];
       <a class="nav-link d-flex align-items-center gap-2 <?= $activePage === 'trip-index' ? 'active' : 'text-dark'; ?>"
         href="trip-index.php">
         <i class="bi bi-minecart-loaded"></i>
-        <span>Trips</span>
+        <span><?= __t('Trips')?></span>
       </a>
     </li>
 
@@ -95,7 +100,7 @@ $current_vehicle_id = $_SESSION['current_vehicle_id'];
       <a class="nav-link d-flex align-items-center gap-2 <?= in_array($activePage, ['customer-index', 'customer-details']) ? 'active' : 'text-dark'; ?>"
         href="customer-index.php">
         <i class="bi bi-people"></i>
-        <span>Customers</span>
+        <span><?= __t('customers')?></span>
       </a>
     </li>
 
@@ -104,7 +109,7 @@ $current_vehicle_id = $_SESSION['current_vehicle_id'];
       <a class="nav-link d-flex align-items-center gap-2 <?= $activePage === 'profit-index' ? 'active' : 'text-dark'; ?>"
         href="profit-index.php">
         <i class="bi bi-book"></i>
-        <span>ProfitBook</span>
+        <span><?= __t('ProfitBook')?></span>
       </a>
     </li>
 
@@ -113,7 +118,7 @@ $current_vehicle_id = $_SESSION['current_vehicle_id'];
       <a class="nav-link d-flex align-items-center gap-2 <?= $activePage === 'partners-index' ? 'active' : 'text-dark'; ?>"
         href="partners-index.php">
         <i class="bi bi-cash-coin"></i>
-        <span>Partners</span>
+        <span><?= __t('Partners')?></span>
       </a>
     </li>
 
@@ -122,7 +127,7 @@ $current_vehicle_id = $_SESSION['current_vehicle_id'];
       <a class="nav-link d-flex align-items-center gap-2 <?= $activePage === 'account-cashbook' ? 'active' : 'text-dark'; ?>"
         href="account-cashbook.php">
         <i class="bi bi-wallet2"></i>
-        <span>Cash Book</span>
+        <span><?= __t('Cash Book')?></span>
       </a>
     </li>
 
@@ -137,7 +142,7 @@ $isReportActive = in_array($activePage, $reportPages);
         data-bs-toggle="collapse" href="#reportMenu" role="button"
         aria-expanded="<?= $isReportActive ? 'true' : 'false'; ?>" aria-controls="reportMenu">
         <i class="bi bi-bar-chart-line <?= $isReportActive ? 'text-white' : ''; ?>"></i>
-        <span class="<?= $isReportActive ? 'text-white fw-semibold' : ''; ?>">Reports</span>
+        <span class="<?= $isReportActive ? 'text-white fw-semibold' : ''; ?>"><?= __t('Reports')?></span>
         <i class="bi bi-chevron-down ms-auto <?= $isReportActive ? 'text-white' : ''; ?>"></i>
       </a>
 
@@ -146,19 +151,19 @@ $isReportActive = in_array($activePage, $reportPages);
           <li class="mt-1 ">
             <a href="vehicle-reports.php"
               class="nav-link <?= $activePage === 'vehicle-reports' ? 'active text-white bg-dark rounded' : 'text-dark'; ?>">
-              Vehicle Report
+              <?= __t('Vehicle Report')?>
             </a>
           </li>
           <li>
             <a href="customer-reports.php"
               class="nav-link <?= $activePage === 'customer-reports' ? 'active text-white bg-dark rounded' : 'text-dark'; ?>">
-              Customer Report
+              <?= __t('Customer Report')?>
             </a>
           </li>
           <li>
             <a href="pump-reports.php"
               class="nav-link <?= $activePage === 'pump-reports' ? 'active text-white bg-dark rounded' : 'text-dark'; ?>">
-              Pump Report
+              <?= __t('Pump Report')?>
             </a>
           </li>
         </ul>

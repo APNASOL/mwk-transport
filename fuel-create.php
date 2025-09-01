@@ -11,17 +11,16 @@
 
         <div class="pagetitle">
  
-            <h1>Fuel new entry </h1>
+            <h1><?= __t('Fuel new entry')?></h1>
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item">Fuel</li>
-                    <li class="breadcrumb-item active">Fuel entry create</li>
+                    <li class="breadcrumb-item"><a href="index.html"><?= __t('Home')?></a></li>
+                    <li class="breadcrumb-item"><?= __t('Fuel')?></li>
+                    <li class="breadcrumb-item active"><?= __t('Fuel entry create')?></li>
                 </ol>
             </nav>
             <div class="d-flex justify-content-end">
-                <a class="btn btn-dark" href="fuel-index.php"><i class="bi bi-back"></i> Go to all fuel
-                    entries
+                <a class="btn btn-dark" href="fuel-index.php"><i class="bi bi-back"></i> <?= __t('Go to all fuel entries')?>
                 </a>
             </div>
         </div><!-- End Page Title -->
@@ -42,7 +41,7 @@
     ?>
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Fuel Information</h5>
+                    <h5 class="card-title"><?= __t('Fuel Information')?></h5>
                     <?php 
                         $conn = OpenCon();
                         $pumps = mysqli_query($conn, "SELECT * FROM pumps where vehicle_id = '$current_vehicle_id'");
@@ -54,7 +53,7 @@
                             <div class="form-floating mb-3">
                             <input type="text" readonly class="form-control" value="<?php echo $current_vehicle_number;?>" >
                                      <input type="hidden" name="vehicle_id" value="<?php echo $current_vehicle_id;?>">
-                                <label for="vehicle">Vehicle</label>
+                                <label for="vehicle"><?= __t('Vehicle')?></label>
                             </div>
                         </div>
 
@@ -68,7 +67,7 @@
                                     <?php }?> 
                                     
                                 </select>
-                                <label for="vehicle">Pumps</label>
+                                <label for="vehicle"><?= __t('Pumps')?></label>
                             </div>
                         </div> 
                         
@@ -76,7 +75,7 @@
                             <div class="form-floating">
                                 <input type="date" class="form-control" id="date" name="date"
                                     required placeholder="Date">
-                                <label for="date">Date</label>
+                                <label for="date"><?= __t('Date')?></label>
                             </div>
                         </div>
 
@@ -90,7 +89,7 @@
                             <div class="form-floating">
                                 <input type="text" class="form-control" id="balance" name="bill"
                                     required placeholder="Balance">
-                                <label for="balnce">Total bill</label>
+                                <label for="balnce"><?= __t('Total bill')?></label>
                             </div>
                         </div>
 
@@ -121,8 +120,8 @@
                         </div> -->
 
                         <div class="text-center">
-                            <button type="submit" name="create" class="btn btn-dark">Submit</button>
-                            <button type="reset" class="btn btn-secondary">Reset</button>
+                            <button type="submit" name="create" class="btn btn-dark"><?= __t('Submit')?></button>
+                            <button type="reset" class="btn btn-secondary"><?= __t('Reset')?></button>
                         </div>
                     </form><!-- End floating Labels Form -->
 

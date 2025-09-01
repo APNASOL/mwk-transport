@@ -12,12 +12,12 @@
 
         <div class="pagetitle">
 
-            <h1>Customer Reports</h1>
+            <h1><?= __t('Customer Reports')?></h1>
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item">Customer</li>
-                    <li class="breadcrumb-item active">Reports</li>
+                    <li class="breadcrumb-item"><a href="index.html"><?= __t('home')?></a></li>
+                    <li class="breadcrumb-item"><?= __t('Customer')?></li>
+                    <li class="breadcrumb-item active"><?= __t('Reports')?></li>
                 </ol>
             </nav>
             <div class="d-flex justify-content-end">
@@ -45,7 +45,7 @@
 
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Records</h5>
+                            <h5 class="card-title"><?= __t('Records')?></h5>
 
                             <?php
  
@@ -58,10 +58,10 @@ $connect =  OpenCon();
                                     <div class="content-body">
                                         <div class="row">
                                             <div class="col-md-10">
-                                                <h2><b>Single Customer Reports</b></h2>
+                                                <h2><b><?= __t('Single Customer Reports')?></b></h2>
                                             </div>
                                             <div class="col-md-2">
-                    <h4 align="right">Customer:</h4>
+                    <h4 align="right"><?= __t('Customer')?>:</h4>
                    </div>
                    <div class="col-sm-3">
                                 
@@ -83,9 +83,9 @@ $connect =  OpenCon();
                                                         <td width="5%">
                                                             <select class="form-control chosen" placeholder=""
                                                                 name="reporttype" id="sale_report">
-                                                                <option value="2" selected>Monthly</option>
-                                                                <option value="3">Yearly</option>
-                                                                <option value="4">Custom</option>
+                                                                <option value="2" selected><?= __t('Monthly')?></option>
+                                                                <option value="3"><?= __t('Yearly')?></option>
+                                                                <option value="4"><?= __t('Custom')?></option>
                                                             </select>
                                                         </td>
 

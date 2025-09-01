@@ -12,16 +12,16 @@
 
     <div class="pagetitle">
 
-      <h1>Vehicles</h1>
+      <h1><?= __t('Vehicles')?></h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item">Vehicles</li>
-          <li class="breadcrumb-item active">Index</li>
+          <li class="breadcrumb-item"><a href="index.html"><?= __t('home')?></a></li>
+          <li class="breadcrumb-item"><?= __t('Vehicles')?></li>
+          <li class="breadcrumb-item active"><?= __t('Index')?></li>
         </ol>
       </nav>
       <div class="d-flex justify-content-end">
-        <a class="btn btn-dark" href="vehicle-create.php"><i class="bi bi-plus-lg"></i> Add new vehicle
+        <a class="btn btn-dark" href="vehicle-create.php"><i class="bi bi-plus-lg"></i> <?= __t('Add new vehicle')?>
         </a>
       </div>
     </div><!-- End Page Title -->
@@ -40,7 +40,7 @@ if (@$_GET['successMessage']) {
 ?>
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title">Vehicles</h5>
+          <h5 class="card-title"><?= __t('Vehicles')?></h5>
 
           <?php 
             $conn = OpenCon();
@@ -52,11 +52,11 @@ if (@$_GET['successMessage']) {
               
               <tr>
                 <th scope="col">#</th>
-                <th scope="col">Owner</th>
-                <th scope="col">Vehicle number</th>
-                <th scope="col">Balance</th> 
-                <th scope="col">Cashbook</th> 
-                <th scope="col">Action</th> 
+                <th scope="col"> <?= __t('Owner')?></th>
+                <th scope="col"> <?= __t('Vehicle number')?></th>
+                <th scope="col"> <?= __t('Balance')?></th> 
+                <th scope="col"> <?= __t('Cashbook')?></th> 
+                <th scope="col"> <?= __t('Action')?></th> 
               </tr>
 
             </thead>
@@ -147,18 +147,18 @@ if (@$_GET['successMessage']) {
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="confirmDeleteModalLabel">Confirm Deletion</h5>
+        <h5 class="modal-title" id="confirmDeleteModalLabel"><?= __t('Confirm Deletion')?></h5>
         <button type="button" class="close" data-bs-dismiss="modal"  aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <p>Please enter your password to confirm deletion:</p>
+        <p><?= __t('Please enter your password to confirm deletion:')?></p>
         <input type="password" id="deletePassword" class="form-control" placeholder="Your Password">
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-danger" onclick="confirmDelete()">Delete</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?= __t('Cancel')?></button>
+        <button type="button" class="btn btn-danger" onclick="confirmDelete()"><?= __t('Delete')?></button>
       </div>
     </div>
   </div>

@@ -11,12 +11,12 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Update vehicle</h1>
+      <h1><?= __t('Update vehicle')?></h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item">Vehicle</li>
-          <li class="breadcrumb-item active">Update vehicle</li>
+          <li class="breadcrumb-item"><a href="index.html"><?= __t('home')?></a></li>
+          <li class="breadcrumb-item"><?= __t('Vehicle')?></li>
+          <li class="breadcrumb-item active"><?= __t('Update vehicle')?></li>
         </ol>
       </nav>
       
@@ -43,7 +43,7 @@
     ?>
     <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Update vehicle</h5>
+              <h5 class="card-title"><?= __t('Update vehicle')?></h5>
 
               <!-- Floating Labels Form -->
               <form class="row g-3" action="Controllers/VehicleController.php" method="post">
@@ -51,14 +51,14 @@
                 <div class="col-md-4">
                     <div class="form-floating">
                       <input type="text" class="form-control" id="owner_name" name="owner_name" required placeholder="Owner Name" value="<?php echo $vehicle['owner_name']; ?>">
-                      <label for="owner_name">Owner name</label>
+                      <label for="owner_name"><?= __t('Owner name')?></label>
                     </div>
                   </div>
 
                   <div class="col-md-4">
                     <div class="form-floating">
                       <input type="text" class="form-control" id="number" name="number" required placeholder="Vehicle number" value="<?php echo $vehicle['number']; ?>">
-                      <label for="number">Vehicle number</label>
+                      <label for="number"><?= __t('Vehicle number')?></label>
                     </div>
                   </div>
 
@@ -66,13 +66,13 @@
                   <div class="col-md-4">
                   <div class="form-floating">
                     <input type="date" class="form-control" id="date" name="date" required placeholder="Date" value="<?php echo $vehicle['date']; ?>">
-                    <label for="name">Date</label>
+                    <label for="name"><?= __t('Date')?></label>
                   </div>
                 </div>
                     
                   <div class="text-center">
-                    <button type="submit" name="update" class="btn btn-dark">Update</button>
-                    <button type="reset" class="btn btn-secondary">Reset</button>
+                    <button type="submit" name="update" class="btn btn-dark"><?= __t('Update')?></button>
+                    <button type="reset" class="btn btn-secondary"><?= __t('Reset')?></button>
                   </div>
                   </form>
                   <!-- End floating Labels Form -->

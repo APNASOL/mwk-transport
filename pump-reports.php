@@ -12,12 +12,12 @@
 
         <div class="pagetitle">
 
-            <h1>Pump Reports</h1>
+            <h1><?= __t('Pump Reports')?></h1>
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item">Pump</li>
-                    <li class="breadcrumb-item active">Reports</li>
+                    <li class="breadcrumb-item"><a href="index.html"><?= __t('home')?></a></li>
+                    <li class="breadcrumb-item"><?= __t('Pump')?></li>
+                    <li class="breadcrumb-item active"><?= __t('Reports')?></li>
                 </ol>
             </nav>
             <div class="d-flex justify-content-end">
@@ -51,16 +51,16 @@ $connect = OpenCon();
                             <div class="d-flex justify-content-between">
                                 <div>
 
-                                    <h5 class="card-title">Single Pump Reports
+                                    <h5 class="card-title"><?= __t('Single Pump Reports')?>
                                     </h5>
                                 </div>
                                 <div class="mt-3">
 
                                     <select class="form-control chosen" placeholder="" name="reporttype"
                                         id="sale_report">
-                                        <option value="2" selected>Monthly</option>
-                                        <option value="3">Yearly</option>
-                                        <option value="4">Custom</option>
+                                        <option value="2" selected><?= __t('Monthly')?></option>
+                                        <option value="3"><?= __t('Yearly')?></option>
+                                        <option value="4"><?= __t('Custom')?></option>
                                     </select>
                                 </div>
 

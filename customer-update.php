@@ -11,17 +11,17 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Update customer</h1>
+      <h1><?= __t('Update customer')?></h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item">Customer</li>
-          <li class="breadcrumb-item active">Update customer</li>
+          <li class="breadcrumb-item"><a href="index.html"><?= __t('home')?></a></li>
+          <li class="breadcrumb-item"><?= __t('Customer')?></li>
+          <li class="breadcrumb-item active"><?= __t('Update customer')?></li>
         </ol>
       </nav>
       <div class="d-flex justify-content-end">
             <a class="btn btn-dark" href="pages-blank-index.php"
-            ><i class="bi bi-back"></i> Go to all customers
+            ><i class="bi bi-back"></i> <?= __t('Go to all customers')?>
           </a>
         </div>
     </div><!-- End Page Title -->
@@ -53,7 +53,7 @@
     ?>
     <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Update customer</h5>
+              <h5 class="card-title"><?= __t('Update customer')?></h5>
 
               <!-- Floating Labels Form -->
               <form class="row g-3" action="Controllers/CustomerController.php" method="post" onsubmit="handleSubmit(event, this)">
@@ -62,14 +62,14 @@
               <div class="col-md-4">
                   <div class="form-floating">
                     <input type="text" class="form-control" id="name" name="username" required placeholder="Customer Username" value="<?php echo $customer['username']; ?>">
-                    <label for="name">Username</label>
+                    <label for="name"><?= __t('Username')?></label>
                   </div>
                 </div>
 
                 <div class="col-md-4">
                     <div class="form-floating">
                       <input type="text" class="form-control" id="name" name="name" required placeholder="Customer Name" value="<?php echo $customer['name']; ?>">
-                      <label for="name">Customer name</label>
+                      <label for="name"><?= __t('Customer name')?></label>
                     </div>
                   </div>
 
@@ -78,7 +78,7 @@
                       <input type="hidden" name="customer_details_table_id"
                                   value="<?php echo $customer_details_object_id; ?>">
                     <input type="date" class="form-control" id="date" name="date" required placeholder="Date" value="<?php echo $customer['date']; ?>">
-                    <label for="name">Date</label>
+                    <label for="name"><?= __t('Date')?></label>
                   </div>
                 </div>
 
@@ -106,8 +106,8 @@
                     
                   <div class="text-center">
                       <input type="hidden" name="update" value="1">
-                    <button type="submit" class="btn btn-dark">Update</button>
-                    <button type="reset" class="btn btn-secondary">Reset</button>
+                    <button type="submit" class="btn btn-dark"><?= __t('Update')?></button>
+                    <button type="reset" class="btn btn-secondary"><?= __t('Reset')?></button>
                   </div>
                   </form>
                   <!-- End floating Labels Form -->

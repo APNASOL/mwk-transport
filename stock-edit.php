@@ -27,12 +27,12 @@ if (!$stock) {
 
 <main id="main" class="main">
   <div class="pagetitle">
-    <h1>Edit Stock</h1>
+    <h1><?= __t('Edit Stock')?></h1>
     <nav>
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-        <li class="breadcrumb-item">Stock</li>
-        <li class="breadcrumb-item active">Edit</li>
+        <li class="breadcrumb-item"><a href="index.php"><?= __t('Home')?></a></li>
+        <li class="breadcrumb-item"><?= __t('Stock')?></li>
+        <li class="breadcrumb-item active"><?= __t('Edit')?></li>
       </ol>
     </nav>
   </div>
@@ -54,7 +54,7 @@ if (!$stock) {
 
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">Update Stock</h5>
+        <h5 class="card-title"><?= __t('Update Stock')?></h5>
 
         <form class="row g-3" action="Controllers/StockController.php" method="post">
           <input type="hidden" name="id" value="<?php echo (int)$stock['id']; ?>">
@@ -63,7 +63,7 @@ if (!$stock) {
             <div class="form-floating">
               <input type="text" class="form-control" id="title" name="title" required
                      value="<?php echo htmlspecialchars($stock['title']); ?>" placeholder="Title of item">
-              <label for="title">Title</label>
+              <label for="title"><?= __t('Title')?></label>
             </div>
           </div>
 
@@ -71,7 +71,7 @@ if (!$stock) {
             <div class="form-floating">
               <input type="text" class="form-control" id="supplier" name="supplier" required
                      value="<?php echo htmlspecialchars($stock['supplier']); ?>" placeholder="Supplier name">
-              <label for="supplier">Supplier</label>
+              <label for="supplier"><?= __t('Supplier')?></label>
             </div>
           </div>
 
@@ -79,7 +79,7 @@ if (!$stock) {
             <div class="form-floating">
               <input type="date" class="form-control" id="date" name="date" required
                      value="<?php echo htmlspecialchars($stock['date']); ?>" placeholder="Date">
-              <label for="date">Date</label>
+              <label for="date"><?= __t('Date')?></label>
             </div>
           </div>
 
@@ -87,7 +87,7 @@ if (!$stock) {
             <div class="form-floating">
               <input type="text" class="form-control" id="note" name="note" required
                      value="<?php echo htmlspecialchars($stock['note']); ?>" placeholder="Enter note">
-              <label for="note">Note</label>
+              <label for="note"><?= __t('Note')?></label>
             </div>
           </div>
 
@@ -95,7 +95,7 @@ if (!$stock) {
             <div class="form-floating">
               <input type="number" step="0.001" class="form-control" id="quantity" name="quantity" required
                      value="<?php echo htmlspecialchars($stock['quantity']); ?>" placeholder="Quantity">
-              <label for="quantity">Quantity</label>
+              <label for="quantity"><?= __t('Quantity')?></label>
             </div>
           </div>
 
@@ -103,7 +103,7 @@ if (!$stock) {
             <div class="form-floating">
               <input type="text" class="form-control" id="bill" name="bill" required
                      value="<?php echo htmlspecialchars($stock['total_bill']); ?>" placeholder="Total Bill">
-              <label for="bill">Total Bill</label>
+              <label for="bill"><?= __t('Total Bill')?></label>
             </div>
           </div>
 
@@ -111,7 +111,7 @@ if (!$stock) {
             <div class="form-floating">
               <input type="text" class="form-control" id="unit_price" name="unit_price" required readonly
                      value="<?php echo htmlspecialchars($stock['unit_price']); ?>" placeholder="Unit Price">
-              <label for="unit_price">Unit Price</label>
+              <label for="unit_price"><?= __t('Unit Price')?></label>
             </div>
           </div>
 
@@ -129,13 +129,13 @@ if (!$stock) {
                 <option value="1" <?php echo $stock['status'] == 1 ? 'selected' : ''; ?>>Active</option>
                 <option value="0" <?php echo $stock['status'] == 0 ? 'selected' : ''; ?>>Inactive</option>
               </select>
-              <label for="status">Status</label>
+              <label for="status"><?= __t('Status')?></label>
             </div>
           </div>
 
           <div class="text-center">
-            <button type="submit" name="update_stock" class="btn btn-dark">Update</button>
-            <a href="stock-index.php" class="btn btn-secondary">Cancel</a>
+            <button type="submit" name="update_stock" class="btn btn-dark"><?= __t('Update')?></button>
+            <a href="stock-index.php" class="btn btn-secondary"><?= __t('Cancel')?></a>
           </div>
         </form>
 

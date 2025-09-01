@@ -11,17 +11,17 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>New customer</h1>
+      <h1><?= __t('New customer')?></h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item">Customer</li>
-          <li class="breadcrumb-item active">New customer create</li>
+          <li class="breadcrumb-item"><a href="index.html"><?= __t('home')?></a></li>
+          <li class="breadcrumb-item"><?= __t('Customer')?></li>
+          <li class="breadcrumb-item active"><?= __t('New customer create')?></li>
         </ol>
       </nav>
       <div class="d-flex justify-content-end">
             <a class="btn btn-dark" href="customer-index.php"
-            ><i class="bi bi-back"></i> Go to all customers
+            ><i class="bi bi-back"></i> <?= __t('Go to all customers')?>
           </a>
         </div>
     </div><!-- End Page Title -->
@@ -41,7 +41,7 @@
     ?>
     <div class="card">
             <div class="card-body">
-              <h5 class="card-title">New customer</h5>
+              <h5 class="card-title"><?= __t('New customer')?></h5>
 
               <!-- Floating Labels Form -->
               <form class="row g-3" action="Controllers/CustomerController.php" method="post" onsubmit="handleSubmit(event, this)">
@@ -49,43 +49,43 @@
                 <div class="col-md-6">
                   <div class="form-floating">
                     <input type="text" class="form-control" id="name" name="username" required placeholder="Customer Username">
-                    <label for="name">Username</label>
+                    <label for="name"><?= __t('Username')?></label>
                   </div>
                 </div>
 
                 <div class="col-md-6">
                   <div class="form-floating">
                     <input type="text" class="form-control" id="name" name="name" required placeholder="Customer Name">
-                    <label for="name">Name</label>
+                    <label for="name"><?= __t('Name')?></label>
                   </div>
                 </div>
 
                 <div class="col-md-6">
                   <div class="form-floating">
                     <input type="text" class="form-control" id="contact" name="contact" required placeholder="Contact contact">
-                    <label for="contact">Contact number</label>
+                    <label for="contact"><?= __t('Contact number')?></label>
                   </div>
                 </div>
 
                 <div class="col-md-3">
                   <div class="form-floating">
                     <input type="number" class="form-control" id="dues" name="dues" required placeholder="Dues">
-                    <label for="dues">Dues</label>
+                    <label for="dues"><?= __t('Dues')?></label>
                   </div>
                 </div>
 
                 <div class="col-md-3">
                   <div class="form-floating">
                     <input type="date" class="form-control" id="date" name="date" required placeholder="Date">
-                    <label for="name">Date</label>
+                    <label for="name"><?= __t('Date')?></label>
                   </div>
                 </div>
 
                                    
                 <div class="text-center">
                     <input type="hidden" name="create_customer" value="1">
-                  <button type="submit" class="btn btn-dark">Submit</button>
-                  <button type="reset" class="btn btn-secondary">Reset</button>
+                  <button type="submit" class="btn btn-dark"><?= __t('Submit')?></button>
+                  <button type="reset" class="btn btn-secondary"><?= __t('Reset')?></button>
                 </div>
               </form><!-- End floating Labels Form -->
 

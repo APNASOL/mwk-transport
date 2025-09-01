@@ -22,12 +22,12 @@ $year = $currentdate[0];
 
         <div class="pagetitle">
 
-            <h1>Add Monthly Profit</h1>
+            <h1><?= __t('Add Monthly Profit')?></h1>
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="index.html"><?= __t('home')?></a></li>
 
-                    <li class="breadcrumb-item active">Profit</li>
+                    <li class="breadcrumb-item active"><?= __t('Profit')?></li>
                 </ol>
             </nav>
 
@@ -43,24 +43,24 @@ $year = $currentdate[0];
                     <div class="row mt-2">
 
                        <div class="col-md-2 mt-4">
-                                <h5>Profit:</h5>
+                                <h5><?= __t('Profit:')?></h5>
                         </div>
                         
                         <div class="col-md-4">
                             <div class="form-floating">
                                 <input type="number" class="form-control" id="amount" name="amount" required placeholder="Amount Note" oninput="calculateDistributedAmounts()">
-                                <label for="amount">Profit Amount</label>
+                                <label for="amount"><?= __t('Profit Amount')?></label>
                             </div>
                         </div>
 
                         <div class="col-md-2 mt-4">
-                                <h5>Expanse:</h5>
+                                <h5><?= __t('Expanse:')?></h5>
                         </div>
 
                         <div class="col-md-4">
                             <div class="form-floating">
                                 <input type="number" class="form-control" id="expanse" name="expanse" required placeholder="Amount" oninput="calculateDistributedAmounts()">
-                                <label for="expanse">Extra Expanse</label>
+                                <label for="expanse"><?= __t('Extra Expanse')?></label>
                             </div>
                         </div>
 
@@ -72,7 +72,7 @@ $year = $currentdate[0];
                         <div class="col">
                             <div class="form-floating">
                                 <input type="text" class="form-control"  name="expanse_note" placeholder="Expanse Note" >
-                                <label for="expanse">Expanse Message</label>
+                                <label for="expanse"><?= __t('Expanse Message')?></label>
                             </div>
                         </div>
                     </div>
@@ -94,7 +94,7 @@ $year = $currentdate[0];
                                                 }
                                             }?>
                                         </select>
-                                <label for="date">Month</label>
+                                <label for="date"><?= __t('Month')?></label>
                             </div>
                         </div>
 
@@ -102,7 +102,7 @@ $year = $currentdate[0];
                             <div class="form-floating">
                                 <input type="hidden" name="vehicle" value="<?php echo $current_vehicle_id ?>">
                                 <input type="date" class="form-control" id="date" name="date" required placeholder="date">
-                                <label for="date">Date</label>
+                                <label for="date"><?= __t('Date')?></label>
                             </div>
                         </div>
 
@@ -122,7 +122,7 @@ $year = $currentdate[0];
             <div class="row p-2 mt-3"> 
             <div class="col-md-3 mt-2">
 
-                <h5><?=$username;?> Amount:</h5>
+                <h5><?=$username;?> <?= __t('Amount:')?></h5>
                 
             </div>
             <div class="col-md-2">
@@ -153,7 +153,7 @@ $year = $currentdate[0];
                         <div class="text-center">
                             <input type="hidden" name="cash_in_transaction" value="cash_in_transaction">
                             <button type="submit"
-                                class="btn btn-dark btn-block" id="saveBtn">Add Profit</button>
+                                class="btn btn-dark btn-block" id="saveBtn"><?= __t('Add Profit')?></button>
                         </div>
 
                      </div>

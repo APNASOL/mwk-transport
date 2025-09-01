@@ -11,12 +11,12 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>Update fuel</h1>
+            <h1><?= __t('Update fuel')?></h1>
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item">Fuel</li>
-                    <li class="breadcrumb-item active">Update fuel</li>
+                    <li class="breadcrumb-item"><a href="index.html"><?= __t('Home')?></a></li>
+                    <li class="breadcrumb-item"><?= __t('Fuel')?></li>
+                    <li class="breadcrumb-item active"><?= __t('Update fuel')?></li>
                 </ol>
             </nav>
         
@@ -49,7 +49,7 @@
     ?>
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Fuel Information</h5>
+                    <h5 class="card-title"><?= __t('Fuel Information')?></h5>
                     <?php 
                         $conn = OpenCon();
                         $pumps = mysqli_query($conn, "SELECT * FROM pumps where vehicle_id = '$current_vehicle_id'");
@@ -65,7 +65,7 @@
                             <div class="form-floating mb-3">
                             <input type="text" readonly class="form-control" value="<?php echo $current_vehicle_number;?>" >
                                      <input type="hidden" name="vehicle_id" value="<?php echo $current_vehicle_id;?>">
-                                <label for="vehicle">Vehicle</label>
+                                <label for="vehicle"><?= __t('Vehicle')?></label>
                             </div>
                         </div>
                         
@@ -90,9 +90,9 @@
                                     </option> 
 
                                     <?php }}    ?>
-                                    <option hidden>Please select pump from the list</option>
+                                    <option hidden><?= __t('Please select pump from the list')?></option>
                                 </select>
-                                <label for="vehicle">Pump</label>
+                                <label for="vehicle"><?= __t('Pump')?></label>
                             </div>
                         </div>
 
@@ -100,7 +100,7 @@
                             <div class="form-floating">
                                 <input type="date" class="form-control" id="date" name="date" placeholder="Date"
                                     value="<?php echo $fuel['date'];?>">
-                                <label for="date">Date</label>
+                                <label for="date"><?= __t('Date')?></label>
                             </div>
                         </div>
 
@@ -121,14 +121,14 @@
                                      value="<?php echo $fuel['balance'];?>">
                             <input type="text" class="form-control" id="balance" name="bill"
                                      value="<?php echo $fuel['balance'];?>">
-                                <label for="balnce">Total bill</label>
+                                <label for="balnce"><?= __t('Total bill')?></label>
                             </div>
                         </div>
 
                         <div class="text-center">
-                            <button type="submit" name="update" class="btn btn-dark">Submit</button>
+                            <button type="submit" name="update" class="btn btn-dark"><?= __t('Submit')?></button>
                             <button  type="submit" name="fuel_delete"
-                            class="btn btn-danger" onclick="return confirmDelete()">Delete</button>
+                            class="btn btn-danger" onclick="return confirmDelete()"><?= __t('Delete')?></button>
                         </div>
                     </form><!-- End floating Labels Form -->
 

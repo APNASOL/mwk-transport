@@ -23,12 +23,12 @@ $year = $currentdate[0];
 
     <div class="pagetitle">
 
-      <h1>Vehicle</h1>
+      <h1><?= __t('Vehicle')?></h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item">Repair</li>
-          <li class="breadcrumb-item active"> Details</li>
+          <li class="breadcrumb-item"><a href="index.html"><?= __t('home')?></a></li>
+          <li class="breadcrumb-item"><?= __t('Repair')?></li>
+          <li class="breadcrumb-item active"> <?= __t('Details')?></li>
         </ol>
       </nav>
       <div class="d-flex justify-content-end">
@@ -56,7 +56,7 @@ if (@$_GET['successMessage']) {
           <div class="row">
                         
                         <div class="col-md-7 mt-3">
-                            <h5 class="card-title">Select year and month </h5>
+                            <h5 class="card-title"><?= __t('Select year and month')?> </h5>
                         </div>
 
                         <div class="col-md-2">

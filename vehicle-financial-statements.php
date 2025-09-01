@@ -16,12 +16,12 @@ $v_name = $_SESSION['current_vehicle_number'];
 
         <div class="pagetitle">
 
-            <h1>Vehicle Financial Statement</h1>
+            <h1><?= __t('Vehicle Financial Statement')?></h1>
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item">Vehicle</li>
-                    <li class="breadcrumb-item active">Financial Statement</li>
+                    <li class="breadcrumb-item"><a href="index.html"><?= __t('home')?></a></li>
+                    <li class="breadcrumb-item"><?= __t('Vehicle')?></li>
+                    <li class="breadcrumb-item active"><?= __t('Financial Statement')?></li>
                 </ol>
             </nav>
 
@@ -42,7 +42,7 @@ if (@$_GET['successMessage']) {
 ?>
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Vehicle Financial Statement</h5>
+                    <h5 class="card-title"><?= __t('Vehicle Financial Statement')?></h5>
                     <?php
 $yearsQuery = "SELECT * FROM years ORDER BY id";
 $years = mysqli_query($conn, $yearsQuery);
@@ -354,10 +354,10 @@ if (@$_GET['year'] || @$_GET['month']) {
                         <thead>
 
                             <tr>
-                                <th scope="col">Assests</th>
-                                <th scope="col">Amount</th>
-                                <th scope="col">Liabilities + Equity</th>
-                                <th scope="col">Amount</th>
+                                <th scope="col"> <?= __t('Assests')?></th>
+                                <th scope="col"> <?= __t('Amount')?></th>
+                                <th scope="col"> <?= __t('Liabilities + Equity')?></th>
+                                <th scope="col"> <?= __t('Amount')?></th>
                             </tr>
 
                         </thead>
@@ -377,7 +377,7 @@ if (@$_GET['year'] || @$_GET['month']) {
 
                             </tr>
                             <tr>
-                                <td>Customer Dues </td>
+                                <td><?= __t('Customer Dues')?></td>
                                 <td> <?=$dues?></td>
 
                                 <td> </td>
@@ -409,9 +409,9 @@ if (@$_GET['year'] || @$_GET['month']) {
                             </tr>-->
 
                             <tr>
-                                <td>Total </td>
+                                <td><?= __t('Total')?> </td>
                                 <td> <?=$total_assets?></td>
-                                <td>Total </td>
+                                <td><?= __t('Total')?> </td>
                                 <td> <?=$total_lib?></td>
 
                             </tr>
