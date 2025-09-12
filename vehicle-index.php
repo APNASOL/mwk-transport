@@ -199,7 +199,7 @@ if (@$_GET['successMessage']) {
     // You may want to validate the password here before proceeding
     // For simplicity, let's assume a password "1234" for demonstration
 
-    if (password === "IttefaqMaster") {
+    if (password === ".2025.MWK#") {
         window.location.href = 'Controllers/VehicleController.php?vehicle_id=' + customerId + '&process=delete';
     } else {
         alert('Incorrect password. Deletion canceled.');
