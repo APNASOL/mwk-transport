@@ -4,7 +4,7 @@ function OpenCon()
     $dbhost = "localhost";
     $dbuser = "root";
     $dbpass = ""; 
-    $db = "apnasole_mwk_transport";
+    $db = "u103076311_trans_kwm";
     $conn = new mysqli($dbhost, $dbuser, $dbpass, $db) or die("Connect failed: %s\n" . $conn->error);
     return $conn;
 }
