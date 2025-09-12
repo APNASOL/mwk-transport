@@ -87,7 +87,7 @@ if ($stmt = mysqli_prepare($conn, "SELECT id, number FROM vehicles WHERE status 
           <div class="col-md-6">
             <div class="form-floating">
               <select class="form-select" id="vehicle_id" name="vehicle_id" required>
-                <option value=""><?= __('Select Vehicle')?></option>
+                <option value=""><?= __t('Select Vehicle')?></option>
                 <?php foreach ($vehicles as $v): ?>
                   <option value="<?php echo (int)$v['id']; ?>">
                     <?php echo htmlspecialchars($v['number']); ?>
