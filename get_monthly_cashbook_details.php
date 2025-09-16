@@ -1,7 +1,9 @@
 <?php
 include 'Controllers/DatabaseController.php';
+include 'i18n/lang.php';
+
 $conn = OpenCon();
-session_start();
+//session_start();
 $v_name = $_SESSION['current_vehicle_number'];
 
 
@@ -69,7 +71,7 @@ $vehicle_details = mysqli_query($conn, "SELECT * FROM vehicle_details WHERE vehi
 
 
                                                 <div class="card-body">
-                                                    <h5 class="card-title">Cash in</h5>
+                                                    <h5 class="card-title">'.__t('Cash in').'</h5>
 
                                                     <div class="d-flex align-items-center">
 
@@ -91,7 +93,7 @@ $vehicle_details = mysqli_query($conn, "SELECT * FROM vehicle_details WHERE vehi
                                             <div class="card info-card revenue-card">
 
                                                 <div class="card-body">
-                                                    <h5 class="card-title">Cash out</h5>
+                                                    <h5 class="card-title">'.__t('Cash out').'</h5>
 
                                                     <div class="d-flex align-items-center">
 
@@ -111,7 +113,7 @@ $vehicle_details = mysqli_query($conn, "SELECT * FROM vehicle_details WHERE vehi
                                             <div class="card info-card revenue-card">
 
                                                 <div class="card-body">
-                                                    <h5 class="card-title">Balance </h5>
+                                                    <h5 class="card-title">'.__t('Balance').' </h5>
 
                                                     <div class="d-flex align-items-center ">
 
@@ -133,15 +135,15 @@ $vehicle_details = mysqli_query($conn, "SELECT * FROM vehicle_details WHERE vehi
 
                                 <tr>
                                         <th scope="col">#</th>
-                                        <th scope="col">Date</th>
-                                        <th scope="col">Consume from</th>
-                                        <th scope="col">Operation for</th>
-                                        <th scope="col">Cash In</th>
-                                        <th scope="col">Cash Out</th>
-                                        <th scope="col">Balance</th>
+                                        <th scope="col">'.__t('Date').'</th>
+                                        <th scope="col">'.__t('Consume from').'</th>
+                                        <th scope="col">'.__t('Operation for').'</th>
+                                        <th scope="col">'.__t('Cash In').'</th>
+                                        <th scope="col">'.__t('Cash Out').'</th>
+                                        <th scope="col">'.__t('Balance').'</th>
                                         
-                                        <th scope="col">Notes</th>
-                                        <th scope="col">Action</th>
+                                        <th scope="col">'.__t('Notes').'</th>
+                                        <th scope="col">'.__t('Action').'</th>
                               </tr>
                                 </thead>
                                 <tbody>

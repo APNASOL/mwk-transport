@@ -1,5 +1,6 @@
 <?php   
 include 'Controllers/DatabaseController.php';
+include 'i18n/lang.php';
 $connect = OpenCon();
 session_start();
 $current_vehicle_id = $_SESSION['current_vehicle_id'];
@@ -60,11 +61,11 @@ if(isset($_POST['f_date'])){
                         <table id="example" class="table">
                           <thead>
                           <tr>    
-                      <th width="10%">Date</th>
-                      <th width="25%">Message</th>
-                      <th width="10%">Debit</th>
-                      <th width="10%">Credit</th>
-                      <th width="10%">Balance</th>
+                      <th width="10%">'.__t('Date').'</th>
+                      <th width="25%">'.__t('Message').'</th>
+                      <th width="10%">'.__t('Debit').'</th>
+                      <th width="10%">'.__t('Credit').'</th>
+                      <th width="10%">'.__t('Balance').'</th>
                       
                                             </tr>
                               </thead>';
@@ -160,11 +161,11 @@ if(isset($_POST['f_date'])){
                       <table id="example" class="table table-bordered">
                       <thead>
                       <tr>   
-                       <th width="10%">Date</th>
-                       <th width="25%">Message</th>
-                       <th width="10%">Credit</th>
-                       <th width="10%">Debit</th>
-                       <th width="10%">Balance</th>
+                       <th width="10%">'.__t('Date').'</th>
+                      <th width="25%">'.__t('Message').'</th>
+                      <th width="10%">'.__t('Debit').'</th>
+                      <th width="10%">'.__t('Credit').'</th>
+                      <th width="10%">'.__t('Balance').'</th>
                        
                                              </tr>
                           </thead>

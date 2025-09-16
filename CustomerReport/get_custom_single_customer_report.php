@@ -1,6 +1,7 @@
 
 <?php
 include '../Controllers/DatabaseController.php';
+include '../i18n/lang.php';
 $connect = OpenCon();
 if (isset($_POST['f_date'])) {
     $table_daily_result = '';
@@ -25,7 +26,7 @@ if (isset($_POST['f_date'])) {
                 <div class="card bg-white text-warning mb-3" style="">
 
                 <div class="card-body p-3">
-                <h5><b class="card-title text-dark text-left">Total bills</b></h5><hr>
+                <h5><b class="card-title text-dark text-left">'.__t('Total bills').'</b></h5><hr>
                 <h3 class="card-title">' . $total_amount . '</h3>
 
                 </div>
@@ -36,7 +37,7 @@ if (isset($_POST['f_date'])) {
                 <div class="card bg-white text-warning mb-3" style="">
 
                 <div class="card-body p-3">
-                <h5><b class="card-title text-dark text-left">Total Orders</b></h5><hr>
+                <h5><b class="card-title text-dark text-left">'.__t('Total Orders').'</b></h5><hr>
                 <h3 class="card-title"><b>' . $total_order . '</b></h3>
                 </div>
                 </div>
@@ -71,14 +72,14 @@ if (isset($_POST['f_date'])) {
                       <table id="CustomTable" class="table table-bordered">
                       <thead>
                        <tr>
-                         <th>Date</th>
-                         <th>Load type</th>
-                         <th>Weight</th>
-                         <th>PPT</th>
-                         <th>Expense</th>
-                         <th>Credit</th>
-                         <th>Debit</th>
-                         <th>Balance</th>
+                         <th>'.__t('Date').'</th>
+                         <th>'.__t('Load type').'</th>
+                         <th>'.__t('Weight').'</th>
+                         <th>'.__t('PPT').'</th>
+                         <th>'.__t('Expense').'</th>
+                         <th>'.__t('Credit').'</th>
+                         <th>'.__t('Debit').'</th>
+                         <th>'.__t('Balance').'</th>
                           </tr>
                           </thead>';
 
@@ -203,7 +204,7 @@ if (isset($_POST['f_date'])) {
                                              <tr class="table-danger" >
                                                  <td >' . $res . '</td>
                                                  
-                                                 <td > Cash Payment Received</td>
+                                                 <td > '.__t('Cash Payment Received').'</td>
                                                  <td ></td>
                                                  
                                                  <td></td>
@@ -216,7 +217,7 @@ if (isset($_POST['f_date'])) {
                     $table_daily_result .= ' <tr class="table-info">
 
                                 <td >' . $res . '</td>
-                                 <td > Return Cash</td>
+                                 <td > '.__t('Return Cash').'</td>
                                 <td ></td>
                                     <td ></td>
                                     
@@ -235,9 +236,9 @@ if (isset($_POST['f_date'])) {
                                                  <td >' . $res . '</td>';
                                                  if($note == "Old amount"){
                                                  
-                                                 $table_daily_result .= '<td > Customer old due </td>';
+                                                 $table_daily_result .= '<td > '.__t('Customer old due').' </td>';
                                                  }else{
-                                                    $table_daily_result .= '<td > Customer Differance </td>'; 
+                                                    $table_daily_result .= '<td > '.__t('Customer Differance').' </td>'; 
                                                  }
                                                  $table_daily_result .= '<td ></td>
                                                  
@@ -263,18 +264,18 @@ if (isset($_POST['f_date'])) {
                      <table id="example" class="table table-bordered">
                          <thead>
                           <tr>
-                         <th>Date</th>
-                         <th>Load type</th>
-                         <th>Weight</th>
-                         <th>PPT</th>
-                         <th>Expense</th>
-                         <th>Credit</th>
-                         <th>Debit</th>
-                         <th>Balance</th>
+                         <th>'.__t('Date').'</th>
+                         <th>'.__t('Load type').'</th>
+                         <th>'.__t('Weight').'</th>
+                         <th>'.__t('PPT').'</th>
+                         <th>'.__t('Expense').'</th>
+                         <th>'.__t('Credit').'</th>
+                         <th>'.__t('Debit').'</th>
+                         <th>'.__t('Balance').'</th>
                           </tr>
                              </thead>
                              <tr>
-                             <td colspan="8" align="center"> No Record found</td>
+                             <td colspan="8" align="center"> '.__t('No Record found').'</td>
                              </tr>';
             echo $table_daily_result;
         }

@@ -1,5 +1,6 @@
 <?php
 include 'Controllers/DatabaseController.php';
+include 'i18n/lang.php';
 $conn = OpenCon();
 session_start();
 if (isset($_POST['date'])) {
@@ -63,7 +64,7 @@ if (isset($_POST['date'])) {
 
 
                                             <div class="card-body">
-                                                <h5 class="card-title">Vehicle cash in</h5>
+                                                <h5 class="card-title">'.__t('Vehicle cash in').'</h5>
 
                                                 <div class="d-flex align-items-center">
 
@@ -85,7 +86,7 @@ if (isset($_POST['date'])) {
                                         <div class="card info-card revenue-card">
 
                                             <div class="card-body">
-                                                <h5 class="card-title">Vehicle cash out</h5>
+                                                <h5 class="card-title">'.__t('Vehicle cash out').'</h5>
 
                                                 <div class="d-flex align-items-center">
 
@@ -105,7 +106,7 @@ if (isset($_POST['date'])) {
                                         <div class="card info-card revenue-card">
 
                                             <div class="card-body">
-                                                <h5 class="card-title">Vehicle balance </h5>
+                                                <h5 class="card-title">'.__t('Vehicle balance').' </h5>
 
                                                 <div class="d-flex align-items-center ">
 
@@ -136,7 +137,7 @@ if (isset($_POST['date'])) {
 
 
                                             <div class="card-body">
-                                                <h5 class="card-title">Company cash in</h5>
+                                                <h5 class="card-title">'.__t('Company cash in').'</h5>
 
                                                 <div class="d-flex align-items-center">
 
@@ -158,7 +159,7 @@ if (isset($_POST['date'])) {
                                         <div class="card info-card revenue-card">
 
                                             <div class="card-body">
-                                                <h5 class="card-title">Company cash out</h5>
+                                                <h5 class="card-title">'.__t('Company cash out').'</h5>
 
                                                 <div class="d-flex align-items-center">
 
@@ -178,7 +179,7 @@ if (isset($_POST['date'])) {
                                         <div class="card info-card revenue-card">
 
                                             <div class="card-body">
-                                                <h5 class="card-title">Company balance </h5>
+                                                <h5 class="card-title">'.__t('Company balance').' </h5>
 
                                                 <div class="d-flex align-items-center ">
 
@@ -203,12 +204,12 @@ if (isset($_POST['date'])) {
 
                                     <tr>
                                         <th scope="col">#</th>
-                                        <th scope="col">Date</th>
-                                        <th scope="col">Trips</th>
-                                        <th scope="col">Credit</th>
-                                        <th scope="col">Debit</th>
-                                        <th scope="col">Balance</th>
-                                        <th scope="col">Details</th>
+                                        <th scope="col">'.__t('Date').'</th>
+                                        <th scope="col">'.__t('Trips').'</th>
+                                        <th scope="col">'.__t('Credit').'</th>
+                                        <th scope="col">'.__t('Debit').'</th>
+                                        <th scope="col">'.__t('Balance').'</th>
+                                        <th scope="col">'.__t('Details').'</th>
                                     </tr>
 
                                 </thead>
@@ -306,7 +307,7 @@ if (isset($_POST['date'])) {
          else{
                 $table_daily_result .= '
                         <tr>
-                        <td colspan="8" align="center"> No Record found</td>
+                        <td colspan="8" align="center"> '.__t('No Record found').'</td>
                         </tr>
                         </tbody>
                             </table>

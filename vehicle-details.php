@@ -115,7 +115,7 @@ if ($vehicle_id != "empty") {
                             </div>
                                         
                             <div class="col-md-2">
-                                <label>Month</label>
+                                <label><?= __t('Month')?></label>
                                 <select class="form-control chosen" placeholder="" name="year" id="selected_month_v"> 
                                     <?php
                                             $selectmonthquery = "SELECT * FROM months ORDER BY id";

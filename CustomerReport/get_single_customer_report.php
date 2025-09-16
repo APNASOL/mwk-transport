@@ -1,7 +1,8 @@
  <?php
 include '../Controllers/DatabaseController.php';
+include '../i18n/lang.php';
 $connect = OpenCon();
-session_start();
+//session_start();
 if (isset($_POST['id'])) {
     $table_result = '';
     $id = $_POST['id'];
@@ -18,7 +19,7 @@ if (isset($_POST['id'])) {
         $table_result .= '
             <div class="row">
                     <div class="col-md-5 mt-3">
-                    <h5 class="card-title">Select customer year and month
+                    <h5 class="card-title">'.__t('Select customer year and month').'
                                     </h5>
 
                    </div>
@@ -27,7 +28,7 @@ if (isset($_POST['id'])) {
                          <tr>
 
                           <td>
-                            <label>Customer</label>
+                            <label>'.__t('Customer').'</label>
                              <select class="form-control chosen target" placeholder="Choose an product" name="m_c_id" id="m_c_id">';
         $selectuserquery = "SELECT * FROM customers where vehicle_id =".$_SESSION['current_vehicle_id']." ORDER BY id ";
         $selectuser = mysqli_query($connect, $selectuserquery);
@@ -40,7 +41,7 @@ if (isset($_POST['id'])) {
                           </td>
 
                            <td colspan="2">
-                           <label>Year</label>
+                           <label>'.__t('Year').'</label>
                               <select class="form-control chosen" placeholder="" name="year" id="selected_year">';
         $selectuserquery = "SELECT * FROM years ORDER BY id";
         $selectuser = mysqli_query($connect, $selectuserquery);
@@ -57,7 +58,7 @@ if (isset($_POST['id'])) {
                                         </select></td>
 
                           <td colspan="2">
-                          <label>Month</label>
+                          <label>'.__t('Month').'</label>
                               <select class="form-control chosen" placeholder="" name="year" id="selected_month"> ';
         $selectmonthquery = "SELECT * FROM months ORDER BY id";
         $selectmonth = mysqli_query($connect, $selectmonthquery);
@@ -88,18 +89,18 @@ if (isset($_POST['id'])) {
                      <table id="example" class="table table-bordered">
                          <thead>
                          <tr>
-                         <th>Date</th>
-                         <th>Load type</th>
-                         <th>Weight</th>
-                         <th>PPT</th>
-                         <th>Expense</th>
-                         <th>Credit</th>
-                         <th>Debit</th>
-                         <th>Balance</th>
+                         <th>'.__t('Date').'</th>
+                         <th>'.__t('Load type').'</th>
+                         <th>'.__t('Weight').'</th>
+                         <th>'.__t('PPT').'</th>
+                         <th>'.__t('Expense').'</th>
+                         <th>'.__t('Credit').'</th>
+                         <th>'.__t('Debit').'</th>
+                         <th>'.__t('Balance').'</th>
                           </tr>
                              </thead>
                              <tr>
-                             <td colspan="8" align="center"> No Record found</td>
+                             <td colspan="8" align="center"> '.__t('No Record found').'</td>
                              </tr>
                              </table>
                              </div>
@@ -117,14 +118,14 @@ if (isset($_POST['id'])) {
         $table_result .= '
             <div class="row">
                     <div class="col-md-5 mt-3">
-                    <h5 class="card-title">Select year & customer</h5>
+                    <h5 class="card-title">'.__t('Select year & customer').'</h5>
                     </div>
                    <div class="col-md-7">
                       <table class="table">
                          <tr>
 
                           <td>
-                          <label>Customer</label>
+                          <label>'.__t('Customer').'</label>
                              <select class="form-control chosen target" placeholder="Choose an product" name="y_c_id" id="y_c_id">';
         $selectuserquery = "SELECT * FROM customers where vehicle_id =".$_SESSION['current_vehicle_id']." ORDER BY id";
         $selectuser = mysqli_query($connect, $selectuserquery);
@@ -137,7 +138,7 @@ if (isset($_POST['id'])) {
                                                 </td>
 
                                                 <td >
-                                                <label>Year</label>
+                                                <label>'.__t('Year').'</label>
                                                     <select class="form-control chosen" placeholder="" name="year" id="selected_year_y">';
         $selectuserquery = "SELECT * FROM years ORDER BY id";
         $selectuser = mysqli_query($connect, $selectuserquery);
@@ -172,18 +173,18 @@ if (isset($_POST['id'])) {
                                 <table id="example" class="table table-bordered">
                                     <thead>
                                    <tr>
-                         <th>Date</th>
-                         <th>Load type</th>
-                         <th>Weight</th>
-                         <th>PPT</th>
-                         <th>Expense</th>
-                         <th>Credit</th>
-                         <th>Debit</th>
-                         <th>Balance</th>
+                         <th>'.__t('Date').'</th>
+                         <th>'.__t('Load type').'</th>
+                         <th>'.__t('Weight').'</th>
+                         <th>'.__t('PPT').'</th>
+                         <th>'.__t('Expense').'</th>
+                         <th>'.__t('Credit').'</th>
+                         <th>'.__t('Debit').'</th>
+                         <th>'.__t('Balance').'</th>
                           </tr>
                                         </thead>
                                         <tr>
-                                        <td colspan="8" align="center"> No Record found</td>
+                                        <td colspan="8" align="center"> '.__t('No Record found').'</td>
                                         </tr>
                                         </table>
                                         </div>
@@ -199,7 +200,7 @@ if (isset($_POST['id'])) {
         $table_result .= '
             <div class="row">
                     <div class="col-md-4">
-                        <h5 class="card-title"> Select customer & date range </h5>
+                        <h5 class="card-title"> '.__t('Select customer & date range').' </h5>
                    </div>
                    <div class="col-md-8 table-responsive">
                       <table class="table">
@@ -220,12 +221,12 @@ if (isset($_POST['id'])) {
 
 
                           <td>
-                            <label>From date</label>
+                            <label>'.__t('From date').'</label>
                               <input type="date" class="form-control" name="day" id="from_date" required>
                           </td>
 
                           <td>
-                          <label>From date</label>
+                          <label>'.__t('From date').'</label>
                               <input type="date" class="form-control" name="day" id="to_date" required>
                           </td>
 
@@ -247,18 +248,18 @@ if (isset($_POST['id'])) {
                      <table id="example" class="table table-bordered">
                          <thead>
                         <tr>
-                         <th>Date</th>
-                         <th>Load type</th>
-                         <th>Weight</th>
-                         <th>PPT</th>
-                         <th>Expense</th>
-                         <th>Credit</th>
-                         <th>Debit</th>
-                         <th>Balance</th>
+                         <th>'.__t('Date').'</th>
+                         <th>'.__t('Load type').'</th>
+                         <th>'.__t('Weight').'</th>
+                         <th>'.__t('PPT').'</th>
+                         <th>'.__t('Expense').'</th>
+                         <th>'.__t('Credit').'</th>
+                         <th>'.__t('Debit').'</th>
+                         <th>'.__t('Balance').'</th>
                           </tr>
                              </thead>
                              <tr>
-                             <td colspan="8" align="center"> No Record found</td>
+                             <td colspan="8" align="center"> '.__t('No Record found').'</td>
                              </tr>
                              </table>
                              </div>

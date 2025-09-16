@@ -1,5 +1,6 @@
 <?php
 include '../Controllers/DatabaseController.php';
+include '../i18n/lang.php';
 $connect = OpenCon();
 if (isset($_POST['year'])) {
     $table_daily_result = '';
@@ -27,7 +28,7 @@ if (isset($_POST['year'])) {
                 <div class="card bg-white text-warning mb-3" >
 
                 <div class="card-body p-3">
-                <h5><b class="text-dark text-left card-title">Total Bills</b></h5><hr>
+                <h5><b class="text-dark text-left card-title">'.__t('Total Bills').'</b></h5><hr>
                 <h3 class="card-title"><b>' . $total_amount . '</b></h3>
 
                 </div>
@@ -38,7 +39,7 @@ if (isset($_POST['year'])) {
                 <div class="card bg-white text-warning mb-3" >
 
                 <div class="card-body p-3">
-                <h5><b class="card-title text-dark text-left">Total Orders</b></h5><hr>
+                <h5><b class="card-title text-dark text-left">'.__t('Total Orders').'</b></h5><hr>
                 <h3 class="card-title"><b>' . $total_order . '</b></h3>
                 </div>
                 </div>
@@ -73,12 +74,11 @@ if (isset($_POST['year'])) {
                       <table id="YearlyTable" class="table table-bordered">
                       <thead>
                       <tr>
-                      <th>Date</th>
-
-                      <th>litres</th>
-                      <th>Credit</th>
-                      <th>Debit</th>
-                      <th>Balance</th>
+                      <th>'.__t('Date').'</th>
+                      <th>'.__t('litres').'</th>
+                      <th>'.__t('Credit').'</th>
+                      <th>'.__t('Debit').'</th>
+                      <th>'.__t('Balance').'</th>
                        </tr>
                           </thead>';
                           $totalDueAmount = 0;
@@ -157,7 +157,7 @@ if (isset($_POST['year'])) {
                     $table_daily_result .= ' <tr >
 
                                                          <td>' . $res . '</td>
-                                                         <td> Pumps old due amount</td>
+                                                         <td> '.__t('Pumps old due amount').'</td>
 
                                                          <td >' . $credit . '</td>
                                                          <td >' . $debit . '</td>
@@ -170,7 +170,7 @@ if (isset($_POST['year'])) {
 
                     <td>' . $res . '</td>
 
-                    <td >Vehicle fuel</td>
+                    <td >'.__t('Vehicle fuel').'</td>
                     <td >' . $credit . '</td>
                     <td >' . $debit . '</td>
                     <td >' . $totalDueAmount . '</td>
@@ -180,7 +180,7 @@ if (isset($_POST['year'])) {
 
                                 <td >' . $res . '</td>
 
-                                <td > Cash Received</td>
+                                <td > '.__t('Cash Received').'</td>
                                 <td >' . $credit . '</td>
                                 <td >' . $debit . '</td>
                                 <td >' . $totalDueAmount . '</th>
@@ -200,16 +200,15 @@ if (isset($_POST['year'])) {
                      <table id="example" class="table table-bordered">
                      <thead>
                      <tr>
-                      <th>Date</th>
-
-                      <th>Operation</th>
-                      <th>Credit</th>
-                      <th>Debit</th>
-                      <th>Balance</th>
+                      <th>'.__t('Date').'</th>
+                      <th>'.__t('Operation').'</th>
+                      <th>'.__t('Credit').'</th>
+                      <th>'.__t('Debit').'</th>
+                      <th>'.__t('Balance').'</th>
                        </tr>
                          </thead>
                              <tr>
-                             <td colspan="5" align="center"> No Record found</td>
+                             <td colspan="5" align="center"> '.__t('No Record found').'</td>
                              </tr>';
             echo $table_daily_result;
         }

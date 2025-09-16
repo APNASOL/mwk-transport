@@ -1,7 +1,8 @@
  <?php
 include '../Controllers/DatabaseController.php';
+include '../i18n/lang.php';
 $connect = OpenCon();
-session_start();
+//session_start();
 if (isset($_POST['id'])) {
     $table_result = '';
     $id = $_POST['id'];
@@ -19,11 +20,11 @@ if (isset($_POST['id'])) {
         $table_result .= '
             <div class="row">
                     <div class="col-md-7 mt-3">
-                        <h5 class="card-title">Select year and month </h5>
+                        <h5 class="card-title">'.__t('Select year and month').' </h5>
                     </div>
                     <div class="col-md-2">
                     <input type="hidden" value="' . $_SESSION['current_vehicle_id'] .'" name="m_c_id" id="m_v_id" />
-                           <label>Year</label>
+                           <label>'.__t('Year').'</label>
                               <select class="form-control chosen" placeholder="" name="year" id="selected_year_v">';
         $selectuserquery = "SELECT * FROM years ORDER BY id";
         $selectuser = mysqli_query($connect, $selectuserquery);
@@ -41,7 +42,7 @@ if (isset($_POST['id'])) {
                     </div>
                   
                       <div class="col-md-2">
-                      <label>Month</label>
+                      <label>'.__t('Month').'</label>
                               <select class="form-control chosen" placeholder="" name="year" id="selected_month_v"> ';
         $selectmonthquery = "SELECT * FROM months ORDER BY id";
         $selectmonth = mysqli_query($connect, $selectmonthquery);
@@ -70,19 +71,19 @@ if (isset($_POST['id'])) {
                      <table id="example" class="table table-bordered">
                          <thead>
                          <tr>
-                         <th>Date</th>
-                         <th>Customer</th>
-                         <th>Load type</th>
-                         <th>Weight</th>
-                         <th>PPT</th>
-                         <th>Expense</th>
-                         <th>Credit</th>
-                         <th>Debit</th>
-                         <th>Balance</th>
+                         <th>'.__t('Date').'</th>
+                         <th>'.__t('Customer').'</th>
+                         <th>'.__t('Load type').'</th>
+                         <th>'.__t('Weight').'</th>
+                         <th>'.__t('PPT').'</th>
+                         <th>'.__t('Expense').'</th>
+                         <th>'.__t('Credit').'</th>
+                         <th>'.__t('Debit').'</th>
+                         <th>'.__t('Balance').'</th>
                           </tr>
                              </thead>
                              <tr>
-                             <td colspan="9" align="center"> No Record found</td>
+                             <td colspan="9" align="center"> '.__t('No Record found').'</td>
                              </tr>
                              </table>
                              </div>
@@ -137,19 +138,19 @@ if (isset($_POST['id'])) {
                                 <table class="table table-bordered">
                                     <thead>
                                    <tr>
-                         <th>Date</th>
-                         <th>Customer</th>
-                         <th>Load type</th>
-                         <th>Weight</th>
-                         <th>PPT</th>
-                         <th>Expense</th>
-                         <th>Credit</th>
-                         <th>Debit</th>
-                         <th>Balance</th>
+                         <th>'.__t('Date').'</th>
+                         <th>'.__t('Customer').'</th>
+                         <th>'.__t('Load type').'</th>
+                         <th>'.__t('Weight').'</th>
+                         <th>'.__t('PPT').'</th>
+                         <th>'.__t('Expense').'</th>
+                         <th>'.__t('Credit').'</th>
+                         <th>'.__t('Debit').'</th>
+                         <th>'.__t('Balance').'</th>
                           </tr>
                                         </thead>
                                         <tr>
-                                        <td colspan="9" align="center"> No Record found</td>
+                                        <td colspan="9" align="center"> '.__t('No Record found').'</td>
                                         </tr>
                                         </table>
                                         </div>
@@ -204,19 +205,19 @@ if (isset($_POST['id'])) {
                      <table id="example" class="table table-bordered">
                          <thead>
                         <tr>
-                         <th>Date</th>
-                         <th>Customer</th>
-                         <th>Load type</th>
-                         <th>Weight</th>
-                         <th>PPT</th>
-                         <th>Expense</th>
-                         <th>Credit</th>
-                         <th>Debit</th>
-                         <th>Balance</th>
+                         <th>'.__t('Date').'</th>
+                         <th>'.__t('Customer').'</th>
+                         <th>'.__t('Load type').'</th>
+                         <th>'.__t('Weight').'</th>
+                         <th>'.__t('PPT').'</th>
+                         <th>'.__t('Expense').'</th>
+                         <th>'.__t('Credit').'</th>
+                         <th>'.__t('Debit').'</th>
+                         <th>'.__t('Balance').'</th>
                           </tr>
                              </thead>
                              <tr>
-                             <td colspan="9" align="center"> No Record found</td>
+                             <td colspan="9" align="center"> '.__t('No Record found').'</td>
                              </tr>
                              </table>
                              </div>

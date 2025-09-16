@@ -1,7 +1,8 @@
 <?php 
 include 'Controllers/DatabaseController.php';
+include 'i18n/lang.php';
 $conn = OpenCon();
-session_start();
+//session_start();
 $current_vehicle_id = $_SESSION['current_vehicle_id'];
 if (isset($_POST['date'])) {
 $current_date = $_POST['date'];
@@ -15,9 +16,9 @@ $expenses = mysqli_query($conn, "SELECT * FROM temprory_vehicle_expense_storage 
                     <thead>
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Amount</th>
-                            <th scope="col">Action</th>
+                            <th scope="col">'.__t('Name').'</th>
+                            <th scope="col">'.__t('Amount').'</th>
+                            <th scope="col">'.__t('Action').'</th>
                         </tr>
                     </thead>
                    <tbody>';
@@ -55,7 +56,7 @@ $expenses = mysqli_query($conn, "SELECT * FROM temprory_vehicle_expense_storage 
   <tr class="p-5">
 
                                 
-                                <td colspan="2">Total</td>
+                                <td colspan="2">'.__t('Total').'</td>
                                 <td>
                             
                                 <input type="hidden" class="form-control" id="gSelectDate" name="date" value="' . $current_date . '">

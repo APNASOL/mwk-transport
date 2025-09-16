@@ -1,6 +1,8 @@
 <?php
 include 'Controllers/DatabaseController.php';
-session_start();
+include 'i18n/lang.php';
+
+//session_start();
 $connect = OpenCon();
 $current_vehicle_id = $_SESSION['current_vehicle_id'];
 $pumps = mysqli_query($connect, "SELECT * FROM pumps where vehicle_id = '$current_vehicle_id'");
@@ -19,16 +21,16 @@ if (isset($_POST['number'])) {
             <thead>
                    <tr>
                    <th>S#</th>
-                   <th>Customer</th>
-                   <th>From</th>
-                   <th>To</th>
-                   <th>Type</th>
-                   <th>Weight</th>
-                   <th>Price</th>
-                   <th>Bill</th>
-                   <th>Expense</th>
-                   <th>Total</th>
-                   <th>Payment</th>
+                   <th>'.__t('Customer').'</th>
+                   <th>'.__t('From').'</th>
+                   <th>'.__t('To').'</th>
+                   <th>'.__t('Type').'</th>
+                   <th>'.__t('Weight').'</th>
+                   <th>'.__t('Price').'</th>
+                   <th>'.__t('Bill').'</th>
+                   <th>'.__t('Expense').'</th>
+                   <th>'.__t('Total').'</th>
+                   <th>'.__t('Payment').'</th>
 
                    </tr>
             </thead>';
@@ -46,39 +48,39 @@ if (isset($_POST['number'])) {
                 $table_result .= '
                 </select></td>
            
-            <td ><input type="text"  class="form-control from_address" id="from_address' . $i . '" name="from_address[]" data-id="' . $i . '" placeholder="From"></td>
-            <td ><input type="text"  class="form-control to_address" id="to_address' . $i . '" name="to_address[]" data-id="' . $i . '" placeholder="From"></td>
+            <td ><input type="text"  class="form-control from_address" id="from_address' . $i . '" name="from_address[]" data-id="' . $i . '" placeholder="'.__t('From').'"></td>
+            <td ><input type="text"  class="form-control to_address" id="to_address' . $i . '" name="to_address[]" data-id="' . $i . '" placeholder="'.__t('From').'"></td>
 
 
-             <td><select class="form-control chosen target c_load_type" placeholder="Choose an load type" name="load_type[]" id="load_type' . $i . '" data-id="' . $i . '">
+             <td><select class="form-control chosen target c_load_type" placeholder="'.__t('Choose an load type').'" name="load_type[]" id="load_type' . $i . '" data-id="' . $i . '">
 
                     <option Selected hidden>
-                        Please select load type
+                        '.__t('Please select load type').'
                      </option>
-                     <option Selected value="custom">Custom</option>
-                    <option Selected value="coal">Coal</option>
+                     <option Selected value="custom">'.__t('Custom').'</option>
+                    <option Selected value="coal">'.__t('Coal').'</option>
             </select></td>
 
-            <td class="c_custom_type" id="custom_type_block' . $i . '"><input type="text" class="form-control" id="custom_type' . $i . '" name="custom_type[]" placeholder="type">  </td>
+            <td class="c_custom_type" id="custom_type_block' . $i . '"><input type="text" class="form-control" id="custom_type' . $i . '" name="custom_type[]" placeholder="'.__t('type').'">  </td>
 
-            <td id="weight_block' . $i . '" ><input type="number" step="0.001" class="form-control" id="weight' . $i . '" name="weight[]" placeholder="weight"></td>
+            <td id="weight_block' . $i . '" ><input type="number" step="0.001" class="form-control" id="weight' . $i . '" name="weight[]" placeholder="'.__t('weight').'"></td>
    
             
-            <td id="price_per_ton_block' . $i . '"><input type="number" class="form-control c_price_per_ton" step="0.001" id="price_per_ton' . $i . '" name="price_per_ton[]" data-id="' . $i . '" placeholder="price per ton"></td>
+            <td id="price_per_ton_block' . $i . '"><input type="number" class="form-control c_price_per_ton" step="0.001" id="price_per_ton' . $i . '" name="price_per_ton[]" data-id="' . $i . '" placeholder="'.__t('price per ton').'"></td>
             <td class="c_pp" id="c_pp' . $i . '">
 
-            <td class="c_price" id="main_div_price' . $i . '"><input type="number" step="0.001" class="form-control c_price" id="price' . $i . '" name="price[]" data-id="' . $i . '" placeholder="price"></td>
+            <td class="c_price" id="main_div_price' . $i . '"><input type="number" step="0.001" class="form-control c_price" id="price' . $i . '" name="price[]" data-id="' . $i . '" placeholder="'.__t('price').'"></td>
             <td class="c_p" id="c_p' . $i . '">
 
-            <td ><input type="number" step="0.001" class="form-control c_expense" id="expanse' . $i . '" name="expanse[]" data-id="' . $i . '" placeholder="expanse"></td>
+            <td ><input type="number" step="0.001" class="form-control c_expense" id="expanse' . $i . '" name="expanse[]" data-id="' . $i . '" placeholder="'.__t('expanse').'"></td>
 
-            <td class="c_total_price"><input type="number" step="0.001" class="form-control c_total_bill" id="total_bill' . $i . '" name="total_bill[]" placeholder="Total bill"></td>
+            <td class="c_total_price"><input type="number" step="0.001" class="form-control c_total_bill" id="total_bill' . $i . '" name="total_bill[]" placeholder="'.__t('Total bill').'"></td>
 
-            <td><select class="form-control chosen target" placeholder="Choose an product" name="payment_status[]" id="payment_status' . $i . '">
+            <td><select class="form-control chosen target" placeholder="'.__t('Choose an product').'" name="payment_status[]" id="payment_status' . $i . '">
 
-            <option Selected hidden> Select status</option>
-            <option Selected value="received">Received</option>
-            <option Selected value="due">Due</option>
+            <option Selected hidden> '.__t('Select status').'</option>
+            <option Selected value="received">'.__t('Received').'</option>
+            <option Selected value="due">'.__t('Due').'</option>
 
             </select></td>
 
@@ -92,7 +94,7 @@ if (isset($_POST['number'])) {
 <hr>
                                        <div class="row form-group">
                                             <div class="col-sm-6">
-                                            <h5 class="card-title">Fuel Entry</h5>
+                                            <h5 class="card-title">'.__t('Diesel').'</h5>
                                             </div>
 
                                             <div class="col-sm-3">
@@ -106,7 +108,7 @@ if (isset($_POST['number'])) {
                                                         }
                                                         
                                                         $table_result .= '</select>
-                                                    <label for="vehicle">Pumps</label>
+                                                    <label for="vehicle">'.__t('Pumps').'</label>
                                                 </div>
                                             </div> 
 
@@ -115,7 +117,7 @@ if (isset($_POST['number'])) {
                                                 
                                                 <div class="form-floating">
                                                 <input type="text" class="form-control" id="pump_bill" name="pump_bill" placeholder="Total bill">
-                                                    <label for="balnce">Total bill</label>
+                                                    <label for="balnce">'.__t('Total bill').'</label>
                                                 </div>
                                                  
                                             </div>
@@ -132,7 +134,7 @@ if (isset($_POST['number'])) {
                                                 <div class="form-floating mb-3">
                                                     <input type="text" class="form-control" id="custom_pump_name" name="custom_pump_name" placeholder="Total bill">
                                                     
-                                                    <label for="vehicle">Pump Name</label>
+                                                    <label for="vehicle">'.__t('Pump Name').'</label>
                                                 </div>
                                             </div> 
 
@@ -141,7 +143,7 @@ if (isset($_POST['number'])) {
                                                 
                                                 <div class="form-floating">
                                                 <input type="text" class="form-control" id="custom_pump_bill" name="custom_pump_bill" placeholder="Total bill">
-                                                    <label for="balnce">Cash bill</label>
+                                                    <label for="balnce">'.__t('Cash bill').'</label>
                                                 </div>
                                                  
                                             </div>
@@ -153,7 +155,7 @@ if (isset($_POST['number'])) {
                                            <div class="row form-group">
 
                                                 <div class="col-sm-8">
-                                                   <h5 class="card-title">Select Photo to Upload:</h5>
+                                                   <h5 class="card-title">'.__t('Select Photo to Upload:').'</h5>
                                                 </div>
 
                                                 <div class="col-sm-4">
@@ -165,7 +167,7 @@ if (isset($_POST['number'])) {
                                         <hr>
                                         
                                         <div class="row">
-                                            <div class="col-md-3 "> <h5 class="card-title">Expanse Entry</h5>
+                                            <div class="col-md-3 "> <h5 class="card-title">'.__t('Expanse Entry').'</h5>
                                             </div>
                                         </div>
                                         ';
@@ -207,18 +209,18 @@ if (isset($_POST['number'])) {
                                             <div class="row">
                                             
                                             <div class="col-md-3" id="">
-                                                <label for="expense_name"> Custom Expense name</label>
+                                                <label for="expense_name">'.__t('Custom Expense name').'</label>
                                                 <input type="text" class="form-control" id="expense_name" name="expense_name"
                                                     placeholder="Expense expense name" >
                                             </div>
                                                <div class="col-md-3">
-                                                <label for="amount">Amount</label>
+                                                <label for="amount">'.__t('Amount').'</label>
                                                 <input type="number" class="form-control" id="amount" name="amount"
                                                     placeholder="Amount">
                                               </div>
                                               <div class="col-md-2 text-center mt-4">
                                                    <button type="button" id="submitBtn"
-                                                    class="btn btn-dark form-control">Add</button>
+                                                    class="btn btn-dark form-control">'.__t('Add').'</button>
                                               </div>
                                             
                                             
@@ -231,13 +233,13 @@ if (isset($_POST['number'])) {
                                              <thead>
                                                  <tr>
                                                      <th scope="col">#</th>
-                                                     <th scope="col">Name</th>
-                                                     <th scope="col">Amount</th>
-                                                     <th scope="col">Action</th>
+                                                     <th scope="col">'.__t('Name').'</th>
+                                                     <th scope="col">'.__t('Amount').'</th>
+                                                     <th scope="col">'.__t('Action').'</th>
                                                  </tr>
                                              </thead>
                                             <tbody>
-                                             <tr><td colspan="4" align="center">No expanse added yet</td></tr>
+                                             <tr><td colspan="4" align="center">'.__t('No expanse added yet').'</td></tr>
                                             </tbody>
                                             </table>
                                              </div>
@@ -250,7 +252,7 @@ if (isset($_POST['number'])) {
                                             <div class="col-sm-3">
  
                                                 <input type="hidden" name="btn_save_all" value="1">
-                                                <button type="submit" id="saveBtn" class=" form-control btn btn-dark" > Save All </button>
+                                                <button type="submit" id="saveBtn" class=" form-control btn btn-dark" > '.__t('Save All').' </button>
                                                  
                                             </div>
 

@@ -1,5 +1,6 @@
 <?php
 include 'Controllers/DatabaseController.php';
+include 'i18n/lang.php';
 session_start();
 $connect = OpenCon();
 $current_vehicle_id = $_SESSION['current_vehicle_id'];
@@ -18,9 +19,9 @@ if (isset($_POST['number'])) {
             <thead>
                    <tr>
                    <th>S#</th>
-                   <th>Customer</th>
-                   <th>Vehicle</th>
-                   <th>Cash In</th>
+                   <th>'.__t('Customer').'</th>
+                   <th>'.__t('Vehicle').'</th>
+                   <th>'.__t('Cash In').'</th>
 
                    </tr>
             </thead>';

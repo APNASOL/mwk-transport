@@ -1,7 +1,8 @@
  <?php
 include '../Controllers/DatabaseController.php';
+include '../i18n/lang.php';
 $connect = OpenCon();
-session_start();
+//session_start();
 if (isset($_POST['id'])) {
     $table_result = '';
     $id = $_POST['id'];
@@ -18,7 +19,7 @@ if (isset($_POST['id'])) {
         $table_result .= '
             <div class="row">
                     <div class="col-md-5 mt-3">
-                    <h5 class="card-title">Select Pump year and month
+                    <h5 class="card-title">'.__t('Select Pump year and month').'
                                     </h5>
 
                    </div>
@@ -27,7 +28,7 @@ if (isset($_POST['id'])) {
                          <tr>
 
                           <td>
-                            <label>Pump</label>
+                            <label>'.__t('Pump').'</label>
                              <select class="form-control chosen target" placeholder="Choose an product" name="m_c_id" id="m_c_id">';
         $selectuserquery = "SELECT * FROM pumps where vehicle_id =" . $_SESSION['current_vehicle_id'] . " ORDER BY id";
         $selectuser = mysqli_query($connect, $selectuserquery);
@@ -40,7 +41,7 @@ if (isset($_POST['id'])) {
                           </td>
 
                            <td colspan="2">
-                           <label>Year</label>
+                           <label>'.__t('Year').'</label>
                               <select class="form-control chosen" placeholder="" name="year" id="selected_year">';
         $selectuserquery = "SELECT * FROM years ORDER BY id";
         $selectuser = mysqli_query($connect, $selectuserquery);
@@ -57,7 +58,7 @@ if (isset($_POST['id'])) {
                                         </select></td>
 
                           <td colspan="2">
-                          <label>Month</label>
+                          <label>'.__t('Month').'</label>
                               <select class="form-control chosen" placeholder="" name="year" id="selected_month"> ';
         $selectmonthquery = "SELECT * FROM months ORDER BY id";
         $selectmonth = mysqli_query($connect, $selectmonthquery);
@@ -88,16 +89,16 @@ if (isset($_POST['id'])) {
                      <table id="example" class="table table-bordered">
                          <thead>
                          <tr>
-                               <th width="10%">Shop</th>
-                               <th width="10%">Total Bill</th>
-                               <th width="10%">Paid Bill</th>
-                               <th width="10%">Remained Bill</th>
-                               <th width="10%">Date</th>
-                               <th width="10%">Action</th>
+                               <th width="10%">'.__t('Shop').'</th>
+                               <th width="10%">'.__t('Total Bill').'</th>
+                               <th width="10%">'.__t('Paid Bill').'</th>
+                               <th width="10%">'.__t('Remained Bill').'</th>
+                               <th width="10%">'.__t('Date').'</th>
+                               <th width="10%">'.__t('Action').'</th>
                           </tr>
                              </thead>
                              <tr>
-                             <td colspan="6" align="center"> No Record found</td>
+                             <td colspan="6" align="center">'.__t(' No Record found').'</td>
                              </tr>
                              </table>
                              </div>
@@ -122,7 +123,7 @@ if (isset($_POST['id'])) {
                          <tr>
 
                           <td>
-                          <label>Pumps</label>
+                          <label>'.__t('Pumps').'</label>
                              <select class="form-control chosen target" placeholder="Choose an product" name="y_c_id" id="y_c_id">';
         $selectuserquery = "SELECT * FROM pumps where vehicle_id =" . $_SESSION['current_vehicle_id'] . " ORDER BY id";
         $selectuser = mysqli_query($connect, $selectuserquery);
@@ -170,16 +171,16 @@ if (isset($_POST['id'])) {
                                 <table id="example" class="table table-bordered">
                                     <thead>
                                     <tr>
-                                        <th width="10%">Shop</th>
-                                        <th width="10%">Total Bill</th>
-                                        <th width="10%">Paid Bill</th>
-                                        <th width="10%">Remained Bill</th>
-                                        <th width="10%">Date</th>
-                                        <th width="10%">Action</th>
+                                        <th width="10%">'.__t('Shop').'</th>
+                                        <th width="10%">'.__t('Total Bill').'</th>
+                                        <th width="10%">'.__t('Paid Bill').'</th>
+                                        <th width="10%">'.__t('Remained Bill').'</th>
+                                        <th width="10%">'.__t('Date').'</th>
+                                        <th width="10%">'.__t('Action').'</th>
                                     </tr>
                                         </thead>
                                         <tr>
-                                        <td colspan="6" align="center"> No Record found</td>
+                                        <td colspan="6" align="center"> '.__t('No Record found').'</td>
                                         </tr>
                                         </table>
                                         </div>
@@ -195,14 +196,14 @@ if (isset($_POST['id'])) {
         $table_result .= '
             <div class="row">
                     <div class="col-md-3">
-                        <h5 class="card-title"> Select Pump & date range </h5>
+                        <h5 class="card-title"> '.__t('Select Pump & date range').' </h5>
                    </div>
                    <div class="col-md-9">
                       <table class="table">
                          <tr>
 
                           <td>
-                          <label>Pump</label>
+                          <label>'.__t('Pump').'</label>
                              <select class="form-control chosen target" placeholder="Choose an product" name="c_c_id" id="c_c_id">';
         $selectuserquery = "SELECT * FROM pumps where vehicle_id =" . $_SESSION['current_vehicle_id'] . " ORDER BY id";
         $selectuser = mysqli_query($connect, $selectuserquery);
@@ -216,12 +217,12 @@ if (isset($_POST['id'])) {
 
 
                           <td>
-                            <label>From date</label>
+                            <label>'.__t('From date').'</label>
                               <input type="date" class="form-control" name="day" id="from_date" required>
                           </td>
 
                           <td>
-                          <label>From date</label>
+                          <label>'.__t('From date').'</label>
                               <input type="date" class="form-control" name="day" id="to_date" required>
                           </td>
 
@@ -243,16 +244,16 @@ if (isset($_POST['id'])) {
                      <table id="example" class="table table-bordered">
                          <thead>
                          <tr>
-                               <th width="10%">Shop</th>
-                               <th width="10%">Total Bill</th>
-                               <th width="10%">Paid Bill</th>
-                               <th width="10%">Remained Bill</th>
-                               <th width="10%">Date</th>
+                               <th width="10%">'.__t('Shop').'</th>
+                               <th width="10%">'.__t('Total Bill').'</th>
+                               <th width="10%">'.__t('Paid Bill').'</th>
+                               <th width="10%">'.__t('Remained Bill').'</th>
+                               <th width="10%">'.__t('Date').'</th>
 
                           </tr>
                              </thead>
                              <tr>
-                             <td colspan="5" align="center"> No Record found</td>
+                             <td colspan="5" align="center"> '.__t('No Record found').'</td>
                              </tr>
                              </table>
                              </div>
